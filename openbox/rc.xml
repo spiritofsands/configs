@@ -400,7 +400,7 @@
         <startupnotify>
           <enabled>true</enabled>
         </startupnotify>
-        <command>~/bin/kos_dmenu</command>
+        <command>~/bin/dmenu_run_history</command>
       </action>
     </keybind>
     <keybind key="W-grave">
