@@ -443,6 +443,16 @@
         <command>~/bin/xbacklight -dec 5</command>
       </action>
     </keybind>
+    <keybind key="XF86Forward">
+      <action name="Execute">
+        <command>~/bin/xbacklight -inc 5</command>
+      </action>
+    </keybind>
+    <keybind key="XF86Back">
+      <action name="Execute">
+        <command>~/bin/xbacklight -dec 5</command>
+      </action>
+    </keybind>
   </keyboard>
   <mouse>
     <dragThreshold>1</dragThreshold>
