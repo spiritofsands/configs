@@ -2,6 +2,6 @@ parcellte -n &
 keynav &
 redshift &
 /home/kos/.fehbg &
-/home/kos/touchpad_setup.sh &
+/home/kos/bin/touchpad-setup.sh &
 setxkbmap -option 'grp:caps_toggle' -layout us,ru &
 # srandrd -n ~/bin/display_handler.sh 2>/dev/null &
