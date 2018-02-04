@@ -20,3 +20,6 @@ ln -s ~/.config/moc/ ~/.moc
 ln -s .config/babelrc .babelrc
 echo
 echo 'sudo cp Xresources-xdm /etc/X11/xdm/Xresources'
+echo 'sudo cp slock@.service /etc/systemd/system/slock@.service'
+echo 'sudo systemctl daemon-reload'
+echo 'sudo systemctl enable slock@'
