@@ -15,4 +15,5 @@ ln -s /home/kos/.config/vim ~/.vim
 ln -s /home/kos/.config/vimrc ~/.vimrc
 ln -s /home/kos/.config/Xresources ~/.Xresources
 ln -s ~/.config/profile ~/.profile
+ln -s ~/.config/mozilla-chrome-tweaks/ ~/.config/mozilla/firefox/*/chrome
 echo 'sudo cp Xresources-xdm /etc/X11/xdm/Xresources'
