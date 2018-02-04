@@ -432,6 +432,26 @@
         <command>amixer -q -D pulse sset Capture toggle</command>
       </action>
     </keybind>
+    <keybind key="XF86AudioPrev">
+      <action name="Execute">
+        <command>mocp -r</command>
+      </action>
+    </keybind>
+    <keybind key="XF86AudioNext">
+      <action name="Execute">
+        <command>mocp -f</command>
+      </action>
+    </keybind>
+    <keybind key="XF86AudioPlay">
+      <action name="Execute">
+        <command>mocp -G</command>
+      </action>
+    </keybind>
+    <keybind key="XF86AudioStop">
+      <action name="Execute">
+        <command>mocp -s</command>
+      </action>
+    </keybind>
     <!-- Keybinding for brightness management -->
     <keybind key="XF86MonBrightnessUp">
       <action name="Execute">
