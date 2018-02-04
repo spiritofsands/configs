@@ -7,8 +7,6 @@
 
   <menu id="root-menu" label="Openbox 3">
     <!-- This requires the presence of the 'openbox-menu' package to work -->
-    <menu id="/Debian" />
-    <separator />
     <menu id="applications-menu" label="Applications" execute="openbox-menu -i lxde-applications.menu"/>
     <separator />
     <item label="Reconfigure">
