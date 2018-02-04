@@ -1,0 +1,132 @@
+! etc
+URxvt*saveLines: 0
+URxvt*utf8: 1
+URxvt*metaSendsEscape: true
+URxvt*eightBitInput: false
+
+URxvt.perl-ext-common:  default,-searchable-scrollback,tabbed
+URxvt.perl-ext: clipboard
+! Any scripts placed here will override global ones with the same name
+URxvt.perl-lib: /home/kos/.config/urxvt-modules/
+
+! Tabbed extension configuration
+URxvt.tabbed.tabbar-fg: 8
+URxvt.tabbed.tabbar-bg: 0
+URxvt.tabbed.tab-fg:    15
+URxvt.tabbed.tab-bg:    8
+URxvt.tabbed.new-button: false
+
+! Copy-Paste
+URxvt.iso14755 : false
+URxvt.keysym.C-C: perl:clipboard:copy
+URxvt.keysym.C-V: perl:clipboard:paste
+
+! Inverse
+! URxvt.reverseVideo:true
+
+! Fix meta keys: http://www.netswarm.net/misc/urxvt-xtermcompat.txt
+! URxvt.keysym.M-Page_Up:     \033[5;3~
+! URxvt.keysym.M-Page_Down:   \033[6;3~
+! URxvt.keysym.M-Up:          \033[1;3A
+! URxvt.keysym.M-Down:        \033[1;3B
+! URxvt.keysym.M-Right:       \033[1;3C
+! URxvt.keysym.M-Left:        \033[1;3D
+
+! Font
+! URxvt*font: -misc-fixed-medium-r-normal--14-130-75-75-c-70-iso10646-1
+! URxvt*font: xft:Ubuntu Mono:size=12:antialias=false
+URxvt*font:            xft:Terminus:size=13:autohint=false:antialias=false:hinting=false
+URxvt*boldFont:        xft:Terminus:size=13:bold:autohint=false:antialias=false:hinting=false
+
+! Forbid bold
+! URxvt*allowBoldFonts: false
+
+! Small border
+URxvt.internalBorder:  0
+
+!! PaperColor Theme
+!URxvt.foreground: #000000
+!! URxvt.foreground: #4D4D4C
+!URxvt.background: #EEEEEE
+!
+!! black
+!URxvt.color0: #EDEDED
+!URxvt.color8: #969694
+!
+!! red
+!URxvt.color1: #D7005F
+!URxvt.color9: #D7005F
+!
+!! green
+!URxvt.color2: #718C00
+!URxvt.color10: #718C00
+!
+!! yellow / orange
+!URxvt.color3: #D75F00
+!URxvt.color11: #D75F00
+!
+!! blue
+!URxvt.color4: #4271AE
+!URxvt.color12: #4271AE
+!
+!! magenta
+!URxvt.color5: #8959A8
+!URxvt.color13: #8959A8
+!
+!! cyan
+!URxvt.color6: #3E999F
+!URxvt.color14: #3E999F
+!
+!! white
+!URxvt.color7: #4D4D4C
+!URxvt.color15: #F5F5F5
+
+! Dark color scheme
+URxvt.background: #050708
+URxvt.foreground: #EFF0F1
+URxvt.color0: #282828
+URxvt.color1: #cc241d
+URxvt.color2: #98971a
+URxvt.color3: #d79921
+URxvt.color4: #458588
+URxvt.color5: #b16286
+URxvt.color6: #689d6a
+URxvt.color7: #bdae93
+URxvt.color8: #7c6f64
+URxvt.color9: #fb4934
+URxvt.color10: #b8bb26
+URxvt.color11: #fabd2f
+URxvt.color12: #83a598
+URxvt.color13: #d3869b
+URxvt.color14: #8ec07c
+URxvt.color15: #ebdbb2
+URxvt.color24: #076678
+URxvt.color66: #427b58
+URxvt.color88: #9d0006
+URxvt.color96: #8f3f71
+URxvt.color100: #79740e
+URxvt.color108: #8ec07c
+URxvt.color109: #83a598
+URxvt.color130: #af3a03
+URxvt.color136: #b57614
+URxvt.color142: #b8bb26
+URxvt.color167: #fb4934
+URxvt.color175: #d3869b
+URxvt.color208: #fe8019
+URxvt.color214: #fabd2f
+URxvt.color223: #ebdbb2
+URxvt.color228: #f4e8ba
+URxvt.color229: #fdf4c1
+URxvt.color230: #ffffc8
+URxvt.color234: #1d2021
+URxvt.color235: #282828
+URxvt.color236: #32302f
+URxvt.color237: #3c3836
+URxvt.color239: #504945
+URxvt.color241: #665c54
+URxvt.color243: #7c6f64
+URxvt.color244: #928374
+URxvt.color245: #928374
+URxvt.color246: #a89984
+URxvt.color248: #bdae93
+URxvt.color250: #d5c4a1

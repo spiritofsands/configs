@@ -1,0 +1,7 @@
+parcellte -n &
+keynav &
+redshift &
+/home/kos/.fehbg &
+xinput set-prop 12 275 1 &
+setxkbmap -option 'grp:caps_toggle' -layout us,ru &
+srandrd -n ~/bin/display_handler.sh 2>/dev/null &

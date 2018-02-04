@@ -1,0 +1,28 @@
+@namespace url("http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul");
+
+#main-window[tabsintitlebar="true"]:not([extradragspace="true"]) #TabsToolbar {
+  opacity: 0;
+  pointer-events: none;
+}
+#main-window:not([tabsintitlebar="true"]) #TabsToolbar {
+    visibility: collapse !important;
+}
+
+#sidebar-box[sidebarcommand="treestyletab_piro_sakura_ne_jp-sidebar-action"] #sidebar-header {
+  display: none;
+}
+
+/*
+@-moz-document url(chrome://browser/content/browser.xul)
+{
+    #main-window,
+    browser[type="content-primary"],
+    browser[type="content"],
+    tabbrowser#content,
+    #content,
+    browser[type="content"] > html
+    {
+        background: #323234 !important;
+    }
+}
+*/

@@ -1,0 +1,14 @@
+/*
+@-moz-document url(about:home),
+               url(about:newtab) {
+  body {
+      background: #1d1f21 !important;
+  }
+}
+
+@-moz-document  {
+  body {
+      background: #1d1f21 !important;
+  }
+}
+*/
