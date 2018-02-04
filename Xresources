@@ -4,10 +4,9 @@ URxvt*utf8: 1
 URxvt*metaSendsEscape: true
 URxvt*eightBitInput: false
 
-URxvt.perl-ext-common:  default,-searchable-scrollback
+URxvt.perl-ext-common:  default,-searchable-scrollback, clipboard
+URxvt*perl-lib: "/home/kos/.urxvt/ext"
 URxvt.perl-ext: clipboard
-! Any scripts placed here will override global ones with the same name
-URxvt.perl-lib: /home/kos/.config/urxvt-modules/
 
 ! Tabbed extension configuration
 URxvt.tabbed.tabbar-fg: 8
