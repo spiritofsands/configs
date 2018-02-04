@@ -17,5 +17,6 @@ ln -s /home/kos/.config/Xresources ~/.Xresources
 ln -s ~/.config/profile ~/.profile
 ln -s ~/.config/mozilla-chrome-tweaks/ ~/.config/mozilla/firefox/*/chrome
 ln -s ~/.config/moc/ ~/.moc
+ln -s .config/babelrc .babelrc
 echo
 echo 'sudo cp Xresources-xdm /etc/X11/xdm/Xresources'

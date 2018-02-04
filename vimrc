@@ -13,6 +13,13 @@ Plug 'kchmck/vim-coffee-script', { 'for': 'coffee' }
 Plug 'gregsexton/MatchTag', { 'for': ['eruby', 'html', 'xml'] }
 " Linter
 Plug 'w0rp/ale'
+
+" used:
+" sudo apt intall shellcheck tidy rails_best_practices reek
+" sudo npm install -g csslint prettier stylelint alex htmlhint proselint eslint babel-cli babel-preset-flow flow-bin jshint standard
+" # setup rbenv
+" gem install rails_best_practices brakeman reek rubocop
+
 " Autocompletion
 Plug 'maralla/completor.vim'
 " Buffers as tabs
@@ -127,6 +134,9 @@ inoremap <expr> <cr> pumvisible() ? "\<C-y>\<cr>" : "\<cr>"
 " set paste no more
 let &t_SI .= "\<Esc>[?2004h"
 let &t_EI .= "\<Esc>[?2004l"
+
+" Disable bell
+set visualbell
 
 inoremap <special> <expr> <Esc>[200~ XTermPasteBegin()
 
