@@ -120,13 +120,11 @@ cap-update-production() {
   cap production deploy:log_revision
 }
 
-if [[ ! -z "$TMUX" && "$(tmux display-message -p '#W')" == 'git' ]]; then
-  IS_GIT=1
-else
-  IS_GIT=0
-fi
+is_git() {
+  [[ -d '.git' ]] || git rev-parse --is-inside-work-tree &> /dev/null
+}
 
-if [[ "$IS_GIT" -eq 1 ]]; then
+if is_git; then
   alias add='git add'
   alias am='git am'
   alias branch='git branch'
@@ -143,6 +141,7 @@ if [[ "$IS_GIT" -eq 1 ]]; then
   alias merge='git merge'
   alias mergetool='git mergetool'
   alias pull='git pull'
+  alias push='git push'
   alias rebase='git rebase'
   alias remote='git remote'
   alias reset='git reset'

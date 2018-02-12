@@ -73,7 +73,7 @@ __prompt_command() {
         PS1+="${Cyan}\$${RCol} "
     fi
 
-    if [[ "$IS_GIT" -eq 1 ]]; then
+    if is_git; then
       git_status="$(git status --porcelain=2 2>/dev/null)"
       if [[ $? -eq 0  ]]; then
         if [[ ! -z "$git_status" ]]; then

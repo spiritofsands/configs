@@ -68,10 +68,10 @@ noremap <F12> :update<CR>
 
 " Buffers
 set hidden
-noremap <leader>c :enew<cr>
-noremap <leader>n :bnext<CR>
-noremap <leader>b :bprevious<CR>
-noremap <leader>x :bp <BAR> bd #<CR>
+noremap <leader>= :enew<cr>
+noremap <leader>0 :bnext<CR>
+noremap <leader>9 :bprevious<CR>
+noremap <leader>- :bp <BAR> bd #<CR>
 
 " Ctrl-P
 noremap <Leader>p :CtrlP<CR>
@@ -120,7 +120,9 @@ nmap <leader>e <Plug>BufTabLine.Go(6)
 nmap <leader>a <Plug>BufTabLine.Go(7)
 nmap <leader>s <Plug>BufTabLine.Go(8)
 nmap <leader>d <Plug>BufTabLine.Go(9)
-
+nmap <leader>z <Plug>BufTabLine.Go(10)
+nmap <leader>x <Plug>BufTabLine.Go(11)
+nmap <leader>c <Plug>BufTabLine.Go(12)
 
 " Linter settings
 let g:ale_lint_on_text_changed = 'normal'

@@ -1,9 +1,8 @@
 /usr/lib/policykit-1-gnome/polkit-gnome-authentication-agent-1 &
-parcellte -n &
+parcellite -n &
 keynav &
 redshift &
 /home/kos/.fehbg &
 /home/kos/bin/touchpad-setup.sh &
 setxkbmap -option 'grp:caps_toggle' -layout us,ru &
 kbdd &
-# srandrd -n ~/bin/display_handler.sh 2>/dev/null &

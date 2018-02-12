@@ -238,7 +238,7 @@
         <wrap>no</wrap>
       </action>
     </keybind>
-    <keybind key="W-d">
+    <keybind key="C-A-j">
       <action name="ToggleShowDesktop"/>
     </keybind>
     <!-- Keybindings for windows -->
@@ -327,7 +327,7 @@
         <height>50%</height>
       </action>
     </keybind>
-    <keybind key="C-M-,">
+    <keybind key="C-M-comma">
       <action name="UnmaximizeFull"/>
       <action name="MoveResizeTo">
         <x>50%</x>
@@ -471,6 +471,11 @@
     <keybind key="XF86Back">
       <action name="Execute">
         <command>~/bin/xbacklight -dec 5</command>
+      </action>
+    </keybind>
+    <keybind key="M-Insert">
+      <action name="Execute">
+        <command>~/bin/display_handler.sh</command>
       </action>
     </keybind>
   </keyboard>
