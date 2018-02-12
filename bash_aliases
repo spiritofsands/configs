@@ -151,6 +151,7 @@ if is_git; then
   alias stage='git stage'
   alias stash='git stash'
   alias status='git status'
+  alias s='git status'
   alias tag='git tag'
 
   alias_completion
