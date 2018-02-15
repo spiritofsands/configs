@@ -15,8 +15,8 @@ Plug 'gregsexton/MatchTag', { 'for': ['eruby', 'html', 'xml'] }
 Plug 'w0rp/ale'
 
 " used:
-" sudo apt intall shellcheck tidy rails_best_practices reek
-" sudo npm install -g csslint prettier stylelint alex htmlhint proselint eslint babel-cli babel-preset-flow flow-bin jshint standard
+" sudo apt intall shellcheck tidy
+" sudo npm install -g csslint prettier stylelint alex htmlhint proselint eslint eslint-plugin-react babel-eslint babel-cli babel-preset-flow flow-bin jshint
 " # setup rbenv
 " gem install rails_best_practices brakeman reek rubocop
 

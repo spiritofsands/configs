@@ -105,3 +105,6 @@ stty -ixon
 # Rbenv
 export PATH="$HOME/.rbenv/bin:$PATH"
 eval "$(rbenv init -)"
+
+# My path
+PATH="$HOME/bin:$PATH"
