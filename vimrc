@@ -26,6 +26,8 @@ Plug 'maralla/completor.vim'
 Plug 'ap/vim-buftabline'
 " Ctrl+P
 Plug 'ctrlpvim/ctrlp.vim'
+" Remember last position
+Plug 'farmergreg/vim-lastplace'
 
 call plug#end()
 
