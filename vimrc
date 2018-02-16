@@ -16,7 +16,7 @@ Plug 'w0rp/ale'
 
 " used:
 " sudo apt intall shellcheck tidy
-" sudo npm install -g csslint prettier stylelint alex htmlhint proselint eslint eslint-plugin-react babel-eslint babel-cli babel-preset-flow flow-bin jshint
+" sudo npm install -g csslint prettier stylelint alex htmlhint proselint eslint eslint-plugin-react babel-eslint babel-cli babel-preset-flow flow-bin
 " # setup rbenv
 " gem install rails_best_practices brakeman reek rubocop
 
