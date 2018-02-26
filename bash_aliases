@@ -1,5 +1,5 @@
 # Automatically add completion for all aliases to commands having completion functions
-function alias_completion {
+_alias_completion() {
     local namespace="alias_completion"
 
     # parse function based completion definitions, where capture group 2 => function and 3 => trigger
@@ -124,7 +124,7 @@ is_git() {
   [[ -d '.git' ]] || git rev-parse --is-inside-work-tree &> /dev/null
 }
 
-if is_git; then
+_add_git_associations() {
   alias add='git add'
   alias am='git am'
   alias branch='git branch'
@@ -154,7 +154,36 @@ if is_git; then
   alias s='git status'
   alias tag='git tag'
 
-  alias_completion
-fi
+  _alias_completion
+}
 
-unset -f alias_completion
+_remove_git_associations() {
+  unset add
+  unset am
+  unset branch
+  unset checkout
+  unset cherry-pick
+  unset clean
+  unset commit
+  unset config
+  unset diff
+  unset difftool
+  unset fetch
+  unset format-patch
+  unset log
+  unset merge
+  unset mergetool
+  unset pull
+  unset push
+  unset rebase
+  unset remote
+  unset reset
+  unset revert
+  unset show
+  unset show-branch
+  unset stage
+  unset stash
+  unset status
+  unset s
+  unset tag
+}

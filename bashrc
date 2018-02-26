@@ -74,6 +74,8 @@ __prompt_command() {
     fi
 
     if is_git; then
+      _add_git_associations
+
       git_status="$(git status --porcelain=2 2>/dev/null)"
       if [[ $? -eq 0  ]]; then
         if [[ ! -z "$git_status" ]]; then
@@ -83,6 +85,8 @@ __prompt_command() {
         fi
       fi
       PS1+="git> ${RCol}"
+    else
+      _remove_git_associations
     fi
   }
 
