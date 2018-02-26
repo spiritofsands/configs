@@ -110,6 +110,8 @@ highlight Search term=reverse cterm=NONE ctermfg=white ctermbg=172
 highlight TabLine      ctermfg=white  ctermbg=241     cterm=NONE
 highlight TabLineFill  ctermfg=white  ctermbg=241     cterm=NONE
 highlight TabLineSel   ctermfg=white  ctermbg=25  cterm=NONE
+
+" Buff tab line settings
 let g:buftabline_numbers=2
 let g:buftabline_indicators=1
 let g:buftabline_plug_max=9
@@ -135,17 +137,17 @@ inoremap <expr> <Tab> pumvisible() ? "\<C-n>" : "\<Tab>"
 inoremap <expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<S-Tab>"
 inoremap <expr> <cr> pumvisible() ? "\<C-y>\<cr>" : "\<cr>"
 
+" Disable bell
+set visualbell
+
 " set paste no more
 let &t_SI .= "\<Esc>[?2004h"
 let &t_EI .= "\<Esc>[?2004l"
 
-" Disable bell
-set visualbell
-
 inoremap <special> <expr> <Esc>[200~ XTermPasteBegin()
 
 function! XTermPasteBegin()
-  set pastetoggle=<Esc>[201~
-  set paste
-  return ""
+    set pastetoggle=<Esc>[201~
+    set paste
+    return ""
 endfunction
