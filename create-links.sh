@@ -19,6 +19,8 @@ ln -s /home/kos/.config/mozilla-chrome-tweaks/ /home/kos/.config/mozilla/firefox
 ln -s /home/kos/.config/moc/ /home/kos/.moc
 ln -s /home/kos/.config/babelrc /home/kos/.babelrc
 ln -s /home/kos/.config/jshintrc /home/kos/.jshintrc
+ln -s /home/kos/.config/gitignore /home/kos/.gitignore
+git config --global core.excludesfile ~/.gitignore
 
 echo
 echo 'sudo cp Xresources-xdm /etc/X11/xdm/Xresources'
