@@ -93,6 +93,8 @@ __prompt_command() {
 # Get immediate notification of background job termination
 set -o notify
 
+# Disable ctrl+d (10 times)
+set -o ignoreeof
 
 # Fix small typos
 shopt -s cdspell
