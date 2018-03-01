@@ -162,14 +162,12 @@ _remove_git_associations() {
   unset am
   unset branch
   unset checkout
-  unset cherry-pick
   unset clean
   unset commit
   unset config
   unset diff
   unset difftool
   unset fetch
-  unset format-patch
   unset log
   unset merge
   unset mergetool
@@ -180,10 +178,14 @@ _remove_git_associations() {
   unset reset
   unset revert
   unset show
-  unset show-branch
   unset stage
   unset stash
   unset status
   unset s
   unset tag
+
+  # can't unset such aliases
+  alias cherry-pick=''
+  alias format-patch=''
+  alias show-branch=''
 }
