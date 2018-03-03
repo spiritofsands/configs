@@ -24,10 +24,11 @@ Plug 'w0rp/ale'
 Plug 'maralla/completor.vim'
 " Buffers as tabs
 Plug 'ap/vim-buftabline'
-" Ctrl+P
-Plug 'ctrlpvim/ctrlp.vim'
 " Remember last position
 Plug 'farmergreg/vim-lastplace'
+" Snippets
+Plug 'SirVer/ultisnips', { 'for': ['c', 'cpp'] }
+Plug 'honza/vim-snippets', { 'for': ['c', 'cpp'] }
 
 call plug#end()
 
@@ -97,8 +98,8 @@ nnoremap Q <Nop>
 nnoremap <F1> <Nop>
 
 " avoid misspelling
-:command Q exit
-:command W write
+nnoremap Q exit
+nnoremap W write
 nnoremap X xit
 
 
@@ -131,6 +132,8 @@ nmap <leader>c <Plug>BufTabLine.Go(12)
 " Linter settings
 let g:ale_lint_on_text_changed = 'normal'
 let g:ale_lint_on_insert_leave = 1
+let g:ale_c_gcc_options = '-I./sources/include'
+let g:ale_c_clang_options = '-I./sources/include'
 
 " Completer settings
 inoremap <expr> <Tab> pumvisible() ? "\<C-n>" : "\<Tab>"
@@ -143,6 +146,11 @@ set visualbell
 " set paste no more
 let &t_SI .= "\<Esc>[?2004h"
 let &t_EI .= "\<Esc>[?2004l"
+
+" Snippets engine config
+let g:UltiSnipsExpandTrigger="<leader><tab>"
+let g:UltiSnipsJumpForwardTrigger="<tab>"
+let g:UltiSnipsJumpBackwardTrigger="<S-tab>"
 
 inoremap <special> <expr> <Esc>[200~ XTermPasteBegin()
 
