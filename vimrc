@@ -14,11 +14,21 @@ Plug 'gregsexton/MatchTag', { 'for': ['eruby', 'html', 'xml'] }
 " Linter
 Plug 'w0rp/ale'
 
-" used:
-" sudo apt intall shellcheck tidy
-" sudo npm install -g csslint prettier stylelint alex htmlhint proselint eslint eslint-plugin-react babel-eslint babel-cli babel-preset-flow flow-bin
-" # setup rbenv
+" SHELL linters
+" sudo apt install shellcheck
+"
+" TEXT linters
+" sudo npm install -g alex proselint
+"
+" FRONTEND linters
+" sudo apt install tidy
+" sudo npm install -g csslint prettier stylelint htmlhint eslint eslint-plugin-react babel-eslint babel-cli babel-preset-flow flow-bin
+"
+" BACKEND linters
 " gem install rails_best_practices brakeman reek rubocop
+"
+" C linters
+" sudo apt install cppcheck cpplint clang clangtidy clang-format flawfinder gcc
 
 " Autocompletion
 Plug 'maralla/completor.vim'
