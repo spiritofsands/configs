@@ -11,6 +11,8 @@ Plug 'ntpeters/vim-better-whitespace'
 Plug 'kchmck/vim-coffee-script', { 'for': 'coffee' }
 " highlight XML tags
 Plug 'gregsexton/MatchTag', { 'for': ['eruby', 'html', 'xml'] }
+" Typescript
+Plug 'leafgarland/typescript-vim', { 'for': 'typescript' }
 " Linter
 Plug 'w0rp/ale'
 
