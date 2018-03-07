@@ -4,5 +4,7 @@ keynav &
 redshift &
 /home/kos/.fehbg &
 /home/kos/bin/touchpad-setup.sh &
-setxkbmap -option 'grp:caps_toggle' -layout us,ru &
+/home/kos/bin/kbl.sh ru &
 kbdd &
+
+[ "$hostname" == 'kos-Inspiron-5565' ] && slack & hubstaff &
