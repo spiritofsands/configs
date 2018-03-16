@@ -10,7 +10,7 @@ Plug 'ntpeters/vim-better-whitespace'
 " Coffee-script
 Plug 'kchmck/vim-coffee-script', { 'for': 'coffee' }
 " highlight XML tags
-Plug 'gregsexton/MatchTag', { 'for': ['eruby', 'html', 'xml'] }
+Plug 'spiritofsands/MatchTag', { 'for': ['eruby', 'html', 'xml', 'javascript'] }
 " Typescript
 Plug 'leafgarland/typescript-vim', { 'for': 'typescript' }
 " Linter
