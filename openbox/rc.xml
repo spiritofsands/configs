@@ -40,7 +40,7 @@
                   'Active' - where the active window is -->
   </placement>
   <theme>
-    <name>Nightmare-02</name>
+    <name>Bear2</name>
     <titleLayout>NLC</titleLayout>
     <!--
       available characters are NDSLIMC, each can occur at most once.
@@ -123,6 +123,7 @@
     <popupTime>0</popupTime>
     <!-- The number of milliseconds to show the popup for when switching
        desktops.  Set this to 0 to disable the popup. -->
+    <names/>
   </desktops>
   <resize>
     <drawContents>no</drawContents>

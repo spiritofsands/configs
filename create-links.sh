@@ -23,6 +23,7 @@ ln -s /home/kos/.config/gitignore /home/kos/.gitignore
 git config --global core.excludesfile ~/.gitignore
 ln -s /home/kos/.config/reek /home/kos/.reek
 ln -s /home/kos/config/clang-format /home/kos/.clang-format
+ln -s /home/kos/.config/reek /home/kos/.reek
 
 echo
 echo 'sudo cp Xresources-xdm /etc/X11/xdm/Xresources'

@@ -146,6 +146,7 @@ let g:ale_lint_on_text_changed = 'normal'
 let g:ale_lint_on_insert_leave = 1
 let g:ale_c_gcc_options = '-I./sources/include'
 let g:ale_c_clang_options = '-I./sources/include'
+let g:ale_lint_delay = 0
 
 " Completer settings
 inoremap <expr> <Tab> pumvisible() ? "\<C-n>" : "\<Tab>"

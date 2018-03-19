@@ -69,12 +69,17 @@ _alias_completion() {
 
 # make json requests easier
 curl-json() {
-  curl -H "Accept:application/json" $@ | python -m json.tool
+  curl -H "Accept:application/json" "$@" | python -m json.tool
 }
 
 # enable color support of ls and also add handy aliases
 if [ -x /usr/bin/dircolors ]; then
-  test -r ~/.dircolors && eval "$(dircolors -b ~/.dircolors)" || eval "$(dircolors -b)"
+  if [[ -r ~/.dircolors ]]; then
+    eval "$(dircolors -b ~/.dircolors)"
+  else
+    eval "$(dircolors -b)"
+  fi
+
   alias ls='ls --color=auto'
   alias grep='grep --color=auto'
   alias rgrep='rgrep --color=auto'
@@ -96,15 +101,16 @@ alias find='find-ext.sh'
 alias findf='find -type f -name'
 alias findd='find -type d -name'
 alias ssh-support-server='ssh warrior109@104.197.82.185'
+alias :q='exit'
 
 # usage:  cd.. 10   cd.. dir
 cd..() {
   case $1 in
-    *[!0-9]*)                                          # if no a number
-      cd $( pwd | sed -r "s|(.*/$1[^/]*/).*|\1|" )     # search dir_name in current path, if found - cd to it
+    *[!0-9]*)
+      cd "$( pwd | sed -r "s|(.*/$1[^/]*/).*|\1|" )" || return
       ;;                                               # if not found - not cd
     *)
-      cd $(printf "%0.0s../" $(seq 1 $1));             # cd ../../../../  (N dirs)
+      cd "$(printf "%0.0s../" $(seq 1 "$1"))" || return
       ;;
   esac
 }
