@@ -31,8 +31,10 @@ URxvt*allowBoldFonts: true
 URxvt.internalBorder: 0
 
 ! Dark color scheme
-URxvt.background: #050708
-URxvt.foreground: #EFF0F1
+URxvt.background: #000000
+URxvt.foreground: #FFFFFF
+! URxvt.background: #050708
+! URxvt.foreground: #EFF0F1
 URxvt.color0: #282828
 URxvt.color1: #cc241d
 URxvt.color2: #98971a

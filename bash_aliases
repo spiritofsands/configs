@@ -138,14 +138,12 @@ _add_git_associations() {
   alias am='git am'
   alias branch='git branch'
   alias checkout='git checkout'
-  alias cherry-pick='git cherry'
   alias clean='git clean'
   alias commit='git commit'
   alias config='git config'
   alias diff='git diff'
   alias difftool='git difftool'
   alias fetch='git fetch'
-  alias format-patch='git format'
   alias log='git log'
   alias merge='git merge'
   alias mergetool='git mergetool'
@@ -156,7 +154,6 @@ _add_git_associations() {
   alias reset='git reset'
   alias revert='git revert'
   alias show='git show'
-  alias show-branch='git show'
   alias stage='git stage'
   alias stash='git stash'
   alias status='git status'
@@ -192,9 +189,4 @@ _remove_git_associations() {
   unset status
   unset s
   unset tag
-
-  # can't unset such aliases
-  alias cherry-pick=''
-  alias format-patch=''
-  alias show-branch=''
 }

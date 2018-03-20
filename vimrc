@@ -15,6 +15,8 @@ Plug 'spiritofsands/MatchTag', { 'for': ['eruby', 'html', 'xml', 'javascript'] }
 Plug 'leafgarland/typescript-vim', { 'for': 'typescript' }
 " Linter
 Plug 'w0rp/ale'
+" Fzf
+Plug '~/.fzf'
 
 " SHELL linters
 " sudo apt install shellcheck
@@ -89,10 +91,7 @@ noremap <leader>9 :bprevious<CR>
 noremap <leader>- :bp <BAR> bd #<CR>
 
 " Ctrl-P
-noremap <Leader>p :CtrlP<CR>
-let g:ctrlp_custom_ignore = {
-  \ 'dir':  'node_modules$',
-  \ }
+noremap <leader>p :FZF<CR>
 
 " Disable arrow keys
 inoremap <Up> <NOP>

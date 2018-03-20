@@ -114,3 +114,20 @@ eval "$(rbenv init -)"
 
 # My path
 PATH="$HOME/bin:$PATH"
+
+# FZF
+if [[ -f ~/.fzf.bash ]]; then
+  source ~/.fzf.bash
+
+  export FZF_DEFAULT_COMMAND='fd --type f --exclude .git'
+  export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
+  # Use fd for listing path candidates.
+  _fzf_compgen_path() {
+    fd --follow --exclude ".git" . "$1"
+  }
+
+  # Use fd to generate the list for directory completion
+  _fzf_compgen_dir() {
+    fd --type d --follow --exclude ".git" . "$1"
+  }
+fi
