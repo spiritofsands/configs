@@ -25,9 +25,9 @@
 
     show_age_threshold = 600
 
-    word_wrap = no
+    word_wrap = yes
 
-    ignore_newline = yes
+    ignore_newline = no
 
     # geometry [{width}]x{height}][+/-{x}+/-{y}]
     # The height is measured in number of notifications everything else in pixels. If the width
