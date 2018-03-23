@@ -112,15 +112,16 @@ stty -ixon
 export PATH="$HOME/.rbenv/bin:$PATH"
 eval "$(rbenv init -)"
 
-# My path
-PATH="$HOME/bin:$PATH"
+# Path
+PATH="$HOME/bin:$HOME/.fzf/bin:$PATH"
 
 # FZF
-if [[ -f ~/.fzf.bash ]]; then
-  source ~/.fzf.bash
+if [[ -d ~/.fzf ]]; then
+  source "$HOME/.fzf/shell/key-bindings.bash"
 
   export FZF_DEFAULT_COMMAND='fd --type f --exclude .git'
   export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
+
   # Use fd for listing path candidates.
   _fzf_compgen_path() {
     fd --follow --exclude ".git" . "$1"
