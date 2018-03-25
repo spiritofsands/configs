@@ -17,6 +17,8 @@ Plug 'leafgarland/typescript-vim', { 'for': 'typescript' }
 Plug 'w0rp/ale'
 " Fzf
 Plug '~/.fzf'
+" MatchIT
+packadd! matchit
 
 " SHELL linters
 " sudo apt install shellcheck
@@ -89,6 +91,7 @@ noremap <leader>= :enew<cr>
 noremap <leader>0 :bnext<CR>
 noremap <leader>9 :bprevious<CR>
 noremap <leader>- :bp <BAR> bd #<CR>
+noremap <leader>l :buffers<CR>:buffer<Space>
 
 " Ctrl-P
 noremap <leader>p :FZF<CR>
@@ -164,10 +167,12 @@ let g:UltiSnipsExpandTrigger="<leader><tab>"
 let g:UltiSnipsJumpForwardTrigger="<tab>"
 let g:UltiSnipsJumpBackwardTrigger="<S-tab>"
 
-inoremap <special> <expr> <Esc>[200~ XTermPasteBegin()
+" Undo file
+set undofile
+set undodir=~/.vim/undo
+set undolevels=1000
+set undoreload=1000
 
-function! XTermPasteBegin()
-    set pastetoggle=<Esc>[201~
-    set paste
-    return ""
-endfunction
+" Quickly add empty lines
+nnoremap [<space>  :<c-u>put! =repeat(nr2char(10), v:count1)<cr>
+nnoremap ]<space>  :<c-u>put =repeat(nr2char(10), v:count1)<cr>
