@@ -15,6 +15,8 @@ Plug 'spiritofsands/MatchTag', { 'for': ['eruby', 'html', 'xml', 'javascript'] }
 Plug 'leafgarland/typescript-vim', { 'for': 'typescript' }
 " Linter
 Plug 'w0rp/ale'
+" Show colors
+Plug 'chrisbra/Colorizer', { 'for': ['xdefaults', 'css'] }
 " Fzf
 Plug '~/.fzf'
 " MatchIT
@@ -149,6 +151,10 @@ let g:ale_lint_on_insert_leave = 1
 let g:ale_c_gcc_options = '-I./sources/include'
 let g:ale_c_clang_options = '-I./sources/include'
 let g:ale_lint_delay = 0
+let g:ale_fixers = {
+  \   'javascript': ['eslint'],
+  \   'ruby': ['rubocop']
+  \}
 
 " Completer settings
 inoremap <expr> <Tab> pumvisible() ? "\<C-n>" : "\<Tab>"
