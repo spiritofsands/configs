@@ -33,7 +33,7 @@ packadd! matchit
 " sudo npm install -g csslint prettier stylelint htmlhint eslint eslint-plugin-react babel-eslint babel-cli babel-preset-flow flow-bin
 "
 " BACKEND linters
-" gem install rails_best_practices brakeman reek rubocop
+" gem install rails_best_practices brakeman reek rubocop fasterer
 "
 " C linters
 " sudo apt install cppcheck cpplint clang clangtidy clang-format flawfinder gcc
