@@ -258,11 +258,16 @@
     </keybind>
     <!-- Keybindings for window switching -->
     <keybind key="A-Tab">
-      <action name="Execute">
-        <command>~/bin/app_switcher.sh</command>
+      <action name="NextWindow">
+        <dialog>icons</dialog>
+        <finalactions>
+          <action name="Focus"/>
+          <action name="Raise"/>
+          <action name="Unshade"/>
+        </finalactions>
       </action>
     </keybind>
-    <!-- <keybind key="A-S-Tab">
+    <keybind key="A-S-Tab">
       <action name="PreviousWindow">
         <dialog>icons</dialog>
         <finalactions>
@@ -271,7 +276,7 @@
           <action name="Unshade"/>
         </finalactions>
       </action>
-    </keybind> -->
+    </keybind>
     <!-- Tiling -->
     <keybind key="W-j">
       <action name="Lower"/>
@@ -720,9 +725,6 @@
     <!-- show the manage desktops section in the client-list-(combined-)menu -->
   </menu>
   <applications>
-    <application name="Pomodoro timer">
-      <desktop>1</desktop>
-    </application>
     <application name="slack">
       <decor>no</decor>
       <desktop>2</desktop>
