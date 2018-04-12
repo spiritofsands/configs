@@ -113,7 +113,7 @@ export PATH="$HOME/.rbenv/bin:$PATH"
 eval "$(rbenv init -)"
 
 # Path
-PATH="$HOME/bin:$HOME/.fzf/bin:$PATH"
+PATH="$HOME/bin:$HOME/.fzf/bin:$HOME/.n/bin:$PATH"
 
 # FZF
 if [[ -d ~/.fzf ]]; then
@@ -132,3 +132,6 @@ if [[ -d ~/.fzf ]]; then
     fd --type d --follow --exclude ".git" . "$1"
   }
 fi
+
+# NPM N
+export N_PREFIX=/home/kos/.n
