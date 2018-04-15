@@ -16,7 +16,7 @@ Plug 'leafgarland/typescript-vim', { 'for': 'typescript' }
 " Linter
 Plug 'w0rp/ale'
 " Show colors
-Plug 'chrisbra/Colorizer', { 'for': ['xdefaults', 'css'] }
+Plug 'chrisbra/Colorizer', { 'for': ['xdefaults', 'css', 'scss'] }
 " Fzf
 Plug '~/.fzf'
 " MatchIT
@@ -26,17 +26,20 @@ packadd! matchit
 " sudo apt install shellcheck
 "
 " TEXT linters
-" sudo npm install -g alex proselint
+" npm install -g alex proselint
 "
 " FRONTEND linters
 " sudo apt install tidy
-" sudo npm install -g csslint prettier stylelint htmlhint eslint eslint-plugin-react babel-eslint babel-cli babel-preset-flow flow-bin
+" npm install -g csslint prettier stylelint htmlhint eslint eslint-plugin-react babel-eslint babel-cli babel-preset-flow flow-bin
 "
 " BACKEND linters
 " gem install rails_best_practices brakeman reek rubocop fasterer
 "
 " C linters
-" sudo apt install cppcheck cpplint clang clangtidy clang-format flawfinder gcc
+" sudo apt install cppcheck clang clangtidy clang-format flawfinder gcc
+" sudo apt install --no-install-recommends python-pip python3-setuptools
+" pip install wheel
+" pip install cpplint
 
 " Autocompletion
 Plug 'maralla/completor.vim'
@@ -131,7 +134,7 @@ highlight TabLineSel   ctermfg=white  ctermbg=25  cterm=NONE
 " Buff tab line settings
 let g:buftabline_numbers=2
 let g:buftabline_indicators=1
-let g:buftabline_plug_max=9
+let g:buftabline_plug_max=12
 nmap <leader>1 <Plug>BufTabLine.Go(1)
 nmap <leader>2 <Plug>BufTabLine.Go(2)
 nmap <leader>3 <Plug>BufTabLine.Go(3)
