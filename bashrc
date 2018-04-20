@@ -100,8 +100,10 @@ set -o ignoreeof
 shopt -s cdspell
 
 # VI mode
-set -o vi
 bind -m vi-insert "\C-l":clear-screen
+
+export VISUAL=vim
+export EDITOR="$VISUAL"
 
 bind "set completion-ignore-case on"
 
