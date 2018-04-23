@@ -1,1 +1,12 @@
 set editing-mode vi
+set show-mode-in-prompt on
+$if mode=vi
+  "\eOD":""
+  "\e[D":""
+  "\eOC":""
+  "\e[C":""
+  "\eOA":""
+  "\e[A":""
+  "\eOB":""
+  "\e[B":""
+$endif
