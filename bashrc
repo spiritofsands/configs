@@ -64,7 +64,7 @@ __prompt_command() {
     # local Pur='\[\e[0;35m\]'
 
 
-    PS1="${Cyan}\w${RCol}"
+    PS1=" ${Cyan}\w${RCol}"
 
 
     if [ $EXIT -ne 0 ]; then
@@ -110,14 +110,16 @@ bind "set completion-ignore-case on"
 # Disable ctrl-s
 stty -ixon
 
+# my bin
+export PATH="$PATH:$HOME/bin"
+
 # Rbenv
-export PATH="$HOME/.rbenv/bin:$PATH"
+export PATH="$PATH:$HOME/.rbenv/bin"
 eval "$(rbenv init -)"
 
-# Path
-PATH="$HOME/bin:$HOME/.fzf/bin:$HOME/.n/bin:$PATH"
+# fzf
+export PATH="$PATH:$HOME/.fzf/bin"
 
-# FZF
 if [[ -d ~/.fzf ]]; then
   source "$HOME/.fzf/shell/key-bindings.bash"
 
@@ -135,5 +137,9 @@ if [[ -d ~/.fzf ]]; then
   }
 fi
 
+# yarn
+export PATH="$PATH:$HOME/bin/yarn-v1.6.0/bin"
+
 # NPM N
+export PATH="$PATH:$HOME/.n/bin"
 export N_PREFIX=/home/kos/.n
