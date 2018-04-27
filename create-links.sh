@@ -24,10 +24,10 @@ git config --global core.excludesfile ~/.gitignore
 ln -s /home/kos/.config/reek /home/kos/.reek
 ln -s /home/kos/config/clang-format /home/kos/.clang-format
 ln -s /home/kos/.config/reek /home/kos/.reek
+ln -s ~/.config/inputrc ~/.inputrc
 
 echo
 echo 'sudo cp Xresources-xdm /etc/X11/xdm/Xresources'
 echo 'sudo cp slock@.service /etc/systemd/system/slock@.service'
 echo 'sudo systemctl daemon-reload'
 echo 'sudo systemctl enable slock@'
-ln -s ~/.config/inputrc ~/.inputrc

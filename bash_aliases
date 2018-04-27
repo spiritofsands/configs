@@ -151,7 +151,6 @@ _add_git_associations() {
   alias push='git push'
   alias rebase='git rebase'
   alias remote='git remote'
-  alias reset='git reset'
   alias revert='git revert'
   alias show='git show'
   alias stage='git stage'
