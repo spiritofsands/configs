@@ -6,5 +6,3 @@ redshift &
 /home/kos/bin/touchpad-setup.sh &
 /home/kos/bin/kbl.sh ru &
 kbdd &
-
-[ "$hostname" == 'kos-Inspiron-5565' ] && slack & hubstaff &

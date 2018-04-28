@@ -64,7 +64,7 @@ __prompt_command() {
     # local Pur='\[\e[0;35m\]'
 
 
-    PS1=" ${Cyan}\w${RCol}"
+    PS1="${Cyan}\w${RCol}"
 
 
     if [ $EXIT -ne 0 ]; then

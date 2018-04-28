@@ -1,5 +1,4 @@
 set editing-mode vi
-set show-mode-in-prompt on
 $if mode=vi
   "\eOD":""
   "\e[D":""
