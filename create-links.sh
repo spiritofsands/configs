@@ -20,11 +20,12 @@ ln -s /home/kos/.config/moc/ /home/kos/.moc
 ln -s /home/kos/.config/babelrc /home/kos/.babelrc
 ln -s /home/kos/.config/jshintrc /home/kos/.jshintrc
 ln -s /home/kos/.config/gitignore /home/kos/.gitignore
-git config --global core.excludesfile ~/.gitignore
 ln -s /home/kos/.config/reek /home/kos/.reek
 ln -s /home/kos/.config/clang-format /home/kos/.clang-format
 ln -s /home/kos/.config/reek /home/kos/.reek
 ln -s ~/.config/inputrc ~/.inputrc
+ln -s ~/.config/stylelintrc ~/.stylelintrc
+git config --global core.excludesfile ~/.gitignore
 
 echo
 echo 'sudo cp Xresources-xdm /etc/X11/xdm/Xresources'
