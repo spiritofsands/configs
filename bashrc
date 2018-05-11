@@ -53,42 +53,48 @@ fi
 PROMPT_COMMAND=__prompt_command
 
 __prompt_command() {
-    local EXIT="$?"
+  local EXIT="$?"
 
-    local RCol='\[\e[0m\]'
-    local Red='\[\e[0;31m\]'
-    local Cyan='\[\e[36m\]'
-    local Yel='\[\e[0;33m\]'
-    # local Gre='\[\e[0;32m\]'
-    # local BBlu='\[\e[1;34m\]'
-    # local Pur='\[\e[0;35m\]'
-
-
-    PS1="${Cyan}\w${RCol}"
+  local RCol='\[\e[0m\]'
+  local Red='\[\e[0;31m\]'
+  local Cyan='\[\e[36m\]'
+  local Yel='\[\e[0;33m\]'
+  # local Gre='\[\e[0;32m\]'
+  # local BBlu='\[\e[1;34m\]'
+  # local Pur='\[\e[0;35m\]'
 
 
-    if [ $EXIT -ne 0 ]; then
-        PS1+="${Red}\$${RCol} "
-    else
-        PS1+="${Cyan}\$${RCol} "
-    fi
+  PS1="${Cyan}\w${RCol}"
 
-    if is_git; then
-      _add_git_associations
 
-      git_status="$(git status --porcelain=2 2>/dev/null)"
-      if [[ $? -eq 0  ]]; then
-        if [[ ! -z "$git_status" ]]; then
-          PS1+="${Red}"
-        else
-          PS1+="${Yel}"
-        fi
-      fi
-      PS1+="git> ${RCol}"
-    else
-      _remove_git_associations
-    fi
-  }
+  if [ $EXIT -ne 0 ]; then
+    PS1+="${Red}\$${RCol} "
+  else
+    PS1+="${Cyan}\$${RCol} "
+  fi
+
+  #if is_git; then
+  #  _add_git_associations
+
+  #  git_status="$(git status --porcelain=2 2>/dev/null)"
+  #  if [[ $? -eq 0  ]]; then
+  #    if [[ ! -z "$git_status" ]]; then
+  #      PS1+="${Red}"
+  #    else
+  #      PS1+="${Yel}"
+  #    fi
+  #  fi
+  #  PS1+="git> ${RCol}"
+  #else
+  #  _remove_git_associations
+  #fi
+}
+
+if is_git; then
+  _add_git_associations
+else
+  _remove_git_associations
+fi
 
 # Get immediate notification of background job termination
 set -o notify
