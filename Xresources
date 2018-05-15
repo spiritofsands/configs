@@ -11,6 +11,9 @@ URxvt.reverseVideo: false
 ! Disable Ctrl+Shift mode
 URxvt.iso14755 : false
 
+! Fix UTF8 issues
+URxvt.letterSpace: 0
+
 ! Fix meta keys: http://www.netswarm.net/misc/urxvt-xtermcompat.txt
 ! URxvt.keysym.M-Page_Up:     \033[5;3~
 ! URxvt.keysym.M-Page_Down:   \033[6;3~
