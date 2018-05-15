@@ -149,3 +149,11 @@ export PATH="$PATH:$HOME/bin/yarn-v1.6.0/bin"
 # NPM N
 export PATH="$PATH:$HOME/.n/bin"
 export N_PREFIX=/home/kos/.n
+
+# Cargo
+export PATH="$PATH:$HOME/.cargo/bin"
+
+# Android platform tools
+export PATH="$PATH:$HOME/bin/android-platform-tools"
+export USE_CCACHE=1
+export ANDROID_JACK_VM_ARGS="-Dfile.encoding=UTF-8 -XX:+TieredCompilation -Xmx5G"
