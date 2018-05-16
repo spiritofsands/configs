@@ -25,6 +25,7 @@ ln -s /home/kos/.config/clang-format /home/kos/.clang-format
 ln -s /home/kos/.config/reek /home/kos/.reek
 ln -s ~/.config/inputrc ~/.inputrc
 ln -s ~/.config/stylelintrc ~/.stylelintrc
+ln -s ~/.config/editrc ~/.editrc
 git config --global core.excludesfile ~/.gitignore
 
 echo
