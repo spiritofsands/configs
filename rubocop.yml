@@ -4,5 +4,14 @@ Metrics/LineLength:
 Style/EmptyMethod:
   EnforcedStyle: expanded
 
-Style/AlignHash:
-    Enabled: false
+Layout/AlignHash:
+  Enabled: false
+
+Style/TrailingCommaInHashLiteral:
+  EnforcedStyleForMultiline: comma
+
+Style/TrailingCommaInArrayLiteral:
+  EnforcedStyleForMultiline: comma
+
+Style/TrailingCommaInArguments:
+  EnforcedStyleForMultiline: comma
