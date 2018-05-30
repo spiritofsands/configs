@@ -8,17 +8,18 @@ call plug#begin('~/.vim/plugged')
 " whitespace highlight
 Plug 'ntpeters/vim-better-whitespace'
 " Coffee-script
-Plug 'kchmck/vim-coffee-script', { 'for': 'coffee' }
+"Plug 'kchmck/vim-coffee-script', { 'for': 'coffee' }
 " highlight XML tags
 Plug 'spiritofsands/MatchTag', { 'for': ['eruby', 'html', 'xml', 'javascript'] }
 " Typescript
-Plug 'leafgarland/typescript-vim', { 'for': 'typescript' }
+"Plug 'leafgarland/typescript-vim', { 'for': 'typescript' }
 " Linter
 Plug 'w0rp/ale'
 " Show colors
-Plug 'chrisbra/Colorizer', { 'for': ['xdefaults', 'css', 'scss'] }
+"Plug 'chrisbra/Colorizer', { 'for': ['xdefaults', 'css', 'scss'] }
 " Fzf
 Plug '~/.fzf'
+Plug 'junegunn/fzf.vim'
 " MatchIT
 packadd! matchit
 
@@ -44,12 +45,12 @@ packadd! matchit
 " Autocompletion
 Plug 'maralla/completor.vim'
 " Buffers as tabs
-Plug 'ap/vim-buftabline'
+"Plug 'ap/vim-buftabline'
 " Remember last position
 Plug 'farmergreg/vim-lastplace'
 " Snippets
-Plug 'SirVer/ultisnips', { 'for': ['c', 'cpp'] }
-Plug 'honza/vim-snippets', { 'for': ['c', 'cpp'] }
+"Plug 'SirVer/ultisnips', { 'for': ['c', 'cpp'] }
+"Plug 'honza/vim-snippets', { 'for': ['c', 'cpp'] }
 
 call plug#end()
 
@@ -98,8 +99,10 @@ noremap <leader>9 :bprevious<CR>
 noremap <leader>- :bp <BAR> bd #<CR>
 noremap <leader>l :buffers<CR>:buffer<Space>
 
-" Ctrl-P
+" FZF
 noremap <leader>p :FZF<CR>
+noremap <leader>b :Buffers<CR>
+noremap <leader>h :History<CR>
 
 " Disable arrow keys
 inoremap <Up> <NOP>
@@ -116,12 +119,6 @@ map q: <Nop>
 nnoremap Q <Nop>
 nnoremap <F1> <Nop>
 
-" avoid misspelling
-nnoremap Q exit
-nnoremap W write
-nnoremap X xit
-
-
 " Colours
 set t_Co=256
 "highlight! Visual term=reverse ctermbg=246
@@ -130,23 +127,6 @@ highlight Search term=reverse cterm=NONE ctermfg=white ctermbg=172
 highlight TabLine      ctermfg=white  ctermbg=241     cterm=NONE
 highlight TabLineFill  ctermfg=white  ctermbg=241     cterm=NONE
 highlight TabLineSel   ctermfg=white  ctermbg=25  cterm=NONE
-
-" Buff tab line settings
-let g:buftabline_numbers=2
-let g:buftabline_indicators=1
-let g:buftabline_plug_max=12
-nmap <leader>1 <Plug>BufTabLine.Go(1)
-nmap <leader>2 <Plug>BufTabLine.Go(2)
-nmap <leader>3 <Plug>BufTabLine.Go(3)
-nmap <leader>q <Plug>BufTabLine.Go(4)
-nmap <leader>w <Plug>BufTabLine.Go(5)
-nmap <leader>e <Plug>BufTabLine.Go(6)
-nmap <leader>a <Plug>BufTabLine.Go(7)
-nmap <leader>s <Plug>BufTabLine.Go(8)
-nmap <leader>d <Plug>BufTabLine.Go(9)
-nmap <leader>z <Plug>BufTabLine.Go(10)
-nmap <leader>x <Plug>BufTabLine.Go(11)
-nmap <leader>c <Plug>BufTabLine.Go(12)
 
 " Linter settings
 let g:ale_lint_on_text_changed = 'normal'
