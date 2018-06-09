@@ -89,7 +89,8 @@ noremap <leader>r :Explore<cr>
 noremap <leader><S-r> :Rexplore<cr>
 
 " Shortcuts
-noremap <F12> :update<CR>
+noremap <C-S> :update<CR>
+noremap <F10> :ALEFix<CR>
 
 " Buffers
 set hidden
@@ -133,11 +134,12 @@ let g:ale_lint_on_text_changed = 'normal'
 let g:ale_lint_on_insert_leave = 1
 let g:ale_c_gcc_options = '-I./sources/include'
 let g:ale_c_clang_options = '-I./sources/include'
-let g:ale_lint_delay = 0
+let g:ale_lint_delay = 100
 let g:ale_fixers = {
   \   'javascript': ['eslint'],
   \   'ruby': ['rubocop']
   \}
+let g:ale_ruby_rubocop_options = '--parallel'
 
 " Completer settings
 inoremap <expr> <Tab> pumvisible() ? "\<C-n>" : "\<Tab>"
