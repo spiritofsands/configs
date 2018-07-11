@@ -113,8 +113,11 @@ export EDITOR="$VISUAL"
 
 bind "set completion-ignore-case on"
 
-# Disable ctrl-s
+# Disable ctrl-s, ctrl-q
+stty stop ''
+stty start ''
 stty -ixon
+stty -ixoff
 
 # my bin
 export PATH="$PATH:$HOME/bin"
