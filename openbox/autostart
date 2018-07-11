@@ -6,3 +6,6 @@ redshift &
 /home/kos/bin/touchpad-setup.sh &
 /home/kos/bin/kbl.sh ru &
 kbdd &
+tint2 &
+unclutter &
+ssh-add $HOME/.ssh/id_ed25519 </dev/null &

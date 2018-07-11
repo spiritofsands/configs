@@ -1,5 +1,5 @@
 [global]
-    font = Terminus 14
+    font = Terminus 12
     markup = no
     show_indicators = no
 
@@ -62,7 +62,7 @@
 
     startup_notification = false
 
-    frame_width = 2
+    frame_width = 1
     frame_color = "#b8bb26"
 
 [shortcuts]

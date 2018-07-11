@@ -7,19 +7,26 @@ call plug#begin('~/.vim/plugged')
 
 " whitespace highlight
 Plug 'ntpeters/vim-better-whitespace'
+
 " Coffee-script
 "Plug 'kchmck/vim-coffee-script', { 'for': 'coffee' }
+
 " highlight XML tags
 Plug 'spiritofsands/MatchTag', { 'for': ['eruby', 'html', 'xml', 'javascript'] }
+
 " Typescript
 "Plug 'leafgarland/typescript-vim', { 'for': 'typescript' }
+
 " Linter
 Plug 'w0rp/ale'
+
 " Show colors
 "Plug 'chrisbra/Colorizer', { 'for': ['xdefaults', 'css', 'scss'] }
+
 " Fzf
 Plug '~/.fzf'
 Plug 'junegunn/fzf.vim'
+
 " MatchIT
 packadd! matchit
 
@@ -44,13 +51,18 @@ packadd! matchit
 
 " Autocompletion
 Plug 'maralla/completor.vim'
-" Buffers as tabs
-"Plug 'ap/vim-buftabline'
+
 " Remember last position
 Plug 'farmergreg/vim-lastplace'
+
 " Snippets
 "Plug 'SirVer/ultisnips', { 'for': ['c', 'cpp'] }
 "Plug 'honza/vim-snippets', { 'for': ['c', 'cpp'] }
+
+" Kernel coding
+Plug 'chazy/cscope_maps', { 'for': ['c', 'cpp'] }
+Plug 'vivien/vim-linux-coding-style', { 'for': ['c', 'cpp'] }
+Plug 'majutsushi/tagbar'
 
 call plug#end()
 
@@ -132,8 +144,8 @@ highlight TabLineSel   ctermfg=white  ctermbg=25  cterm=NONE
 " Linter settings
 let g:ale_lint_on_text_changed = 'normal'
 let g:ale_lint_on_insert_leave = 1
-let g:ale_c_gcc_options = '-I./sources/include'
-let g:ale_c_clang_options = '-I./sources/include'
+let g:ale_c_gcc_options = '-O1 -Wall -Wextra -Wfloat-equal -Wundef -Wshadow -Wpointer-arith -Wcast-align -Wstrict-prototypes -Wstrict-overflow=5 -Wwrite-strings -Waggregate-return -Wcast-qual -Wswitch-default -Wswitch-enum -Wconversion -Wunreachable-code -Wformat=2 -Werror-implicit-function-declaration -fsanitize=address -fsanitize=signed-integer-overflow'
+let g:ale_c_parse_makefile = 1
 let g:ale_lint_delay = 100
 let g:ale_fixers = {
   \   'javascript': ['eslint'],
@@ -163,3 +175,8 @@ set undoreload=1000
 " Quickly add empty lines
 nnoremap [<space>  :<c-u>put! =repeat(nr2char(10), v:count1)<cr>
 nnoremap ]<space>  :<c-u>put =repeat(nr2char(10), v:count1)<cr>
+
+" Tagbar
+let g:tagbar_compact = 1
+autocmd FileType c,cpp nested :call tagbar#autoopen(0)
+nnoremap <silent> <F10> :TagbarToggle<CR>
