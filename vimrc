@@ -56,8 +56,8 @@ Plug 'maralla/completor.vim'
 Plug 'farmergreg/vim-lastplace'
 
 " Snippets
-"Plug 'SirVer/ultisnips', { 'for': ['c', 'cpp'] }
-"Plug 'honza/vim-snippets', { 'for': ['c', 'cpp'] }
+Plug 'SirVer/ultisnips'
+Plug 'honza/vim-snippets'
 
 " Kernel coding
 Plug 'chazy/cscope_maps', { 'for': ['c', 'cpp'] }
@@ -161,14 +161,9 @@ inoremap <expr> <cr> pumvisible() ? "\<C-y>\<cr>" : "\<cr>"
 " Disable bell
 set visualbell
 
-" Snippets engine config
-let g:UltiSnipsExpandTrigger="<leader><tab>"
-let g:UltiSnipsJumpForwardTrigger="<tab>"
-let g:UltiSnipsJumpBackwardTrigger="<S-tab>"
-
 " Undo file
 set undofile
-set undodir=~/.vim/undo
+set undodir=/home/kos/.vim/undo
 set undolevels=1000
 set undoreload=1000
 
@@ -179,4 +174,4 @@ nnoremap ]<space>  :<c-u>put =repeat(nr2char(10), v:count1)<cr>
 " Tagbar
 let g:tagbar_compact = 1
 autocmd FileType c,cpp nested :call tagbar#autoopen(0)
-nnoremap <silent> <F10> :TagbarToggle<CR>
+nnoremap <silent> <F12> :TagbarToggle<CR>
