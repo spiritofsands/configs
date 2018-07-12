@@ -1,6 +1,5 @@
 # ~/.bashrc: executed by bash(1) for non-login shells.
-# see /usr/share/doc/bash/examples/startup-files (in the package bash-doc)
-# for examples
+# see /usr/share/doc/bash/examples/startup-files (in the package bash-doc) for examples
 
 # If not running interactively, don't do anything
 case $- in
@@ -9,39 +8,27 @@ case $- in
 esac
 
 # don't put duplicate lines or lines starting with space in the history.
-# See bash(1) for more options
 HISTCONTROL=ignoreboth
 
 # append to the history file, don't overwrite it
 shopt -s histappend
 
-# for setting history length see HISTSIZE and HISTFILESIZE in bash(1)
+# history length
 HISTSIZE=1000
 HISTFILESIZE=2000
 
-# check the window size after each command and, if necessary,
-# update the values of LINES and COLUMNS.
+# check the window size after each command and update if necessary
 shopt -s checkwinsize
 
-# If set, the pattern "**" used in a pathname expansion context will
-# match all files and zero or more directories and subdirectories.
-#shopt -s globstar
-
-# make less more friendly for non-text input files, see lesspipe(1)
+# make less more friendly for non-text input files
 [ -x /usr/bin/lesspipe ] && eval "$(SHELL=/bin/sh lesspipe)"
 
-# Alias definitions.
-# You may want to put all your additions into a separate file like
-# ~/.bash_aliases, instead of adding them here directly.
-# See /usr/share/doc/bash-doc/examples in the bash-doc package.
-
+# alias definitions.
 if [ -f ~/.bash_aliases ]; then
     . ~/.bash_aliases
 fi
 
-# enable programmable completion features (you don't need to enable
-# this, if it's already enabled in /etc/bash.bashrc and /etc/profile
-# sources /etc/bash.bashrc).
+# enable programmable completion features
 if ! shopt -oq posix; then
     if [ -f /usr/share/bash-completion/bash_completion ]; then
         . /usr/share/bash-completion/bash_completion
@@ -50,22 +37,16 @@ if ! shopt -oq posix; then
     fi
 fi
 
+# prompt
 PROMPT_COMMAND=__prompt_command
-
 __prompt_command() {
   local EXIT="$?"
-
   local RCol='\[\e[0m\]'
   local Red='\[\e[0;31m\]'
   local Cyan='\[\e[36m\]'
   local Yel='\[\e[0;33m\]'
-  # local Gre='\[\e[0;32m\]'
-  # local BBlu='\[\e[1;34m\]'
-  # local Pur='\[\e[0;35m\]'
-
 
   PS1="${Cyan}\w${RCol}"
-
 
   if [ $EXIT -ne 0 ]; then
     PS1+="${Red}\$${RCol} "
@@ -73,56 +54,43 @@ __prompt_command() {
     PS1+="${Cyan}\$${RCol} "
   fi
 
-  #if is_git; then
-  #  _add_git_associations
-
-  #  git_status="$(git status --porcelain=2 2>/dev/null)"
-  #  if [[ $? -eq 0  ]]; then
-  #    if [[ ! -z "$git_status" ]]; then
-  #      PS1+="${Red}"
-  #    else
-  #      PS1+="${Yel}"
-  #    fi
-  #  fi
-  #  PS1+="git> ${RCol}"
-  #else
-  #  _remove_git_associations
-  #fi
+  # git shortcuts where possible
+  if is_git; then
+    _add_git_associations
+  else
+    _remove_git_associations
+  fi
 }
 
-if is_git; then
-  _add_git_associations
-else
-  _remove_git_associations
-fi
-
-# Get immediate notification of background job termination
+# get immediate notification of background job termination
 set -o notify
 
-# Disable ctrl+d (10 times)
+# disable ctrl+d
 set -o ignoreeof
 
-# Fix small typos
+# fix small typos
 shopt -s cdspell
 
-# VI mode
+# ctrl+l in vi mode
 bind -m vi-insert "\C-l":clear-screen
 
+# editor
 export VISUAL=vim
 export EDITOR="$VISUAL"
 
+# ignore case completion
 bind "set completion-ignore-case on"
 
-# Disable ctrl-s, ctrl-q
+# disable ctrl-s, ctrl-q
 stty stop ''
 stty start ''
 stty -ixon
 stty -ixoff
 
-# my bin
+# add user's bin
 export PATH="$PATH:$HOME/bin"
 
-# Rbenv
+# rbenv
 export PATH="$PATH:$HOME/.rbenv/bin"
 eval "$(rbenv init -)"
 
@@ -135,12 +103,10 @@ if [[ -d ~/.fzf ]]; then
   export FZF_DEFAULT_COMMAND='fd --type f --exclude .git'
   export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
 
-  # Use fd for listing path candidates.
+  # Use fd
   _fzf_compgen_path() {
     fd --follow --exclude ".git" . "$1"
   }
-
-  # Use fd to generate the list for directory completion
   _fzf_compgen_dir() {
     fd --type d --follow --exclude ".git" . "$1"
   }
@@ -149,14 +115,14 @@ fi
 # yarn
 export PATH="$PATH:$HOME/bin/yarn-v1.6.0/bin"
 
-# NPM N
+# npm n
 export PATH="$PATH:$HOME/.n/bin"
 export N_PREFIX=/home/kos/.n
 
-# Cargo
+# cargo
 export PATH="$PATH:$HOME/.cargo/bin"
 
-# Android platform tools
+# android platform tools
 export PATH="$PATH:$HOME/bin/android-platform-tools"
 export USE_CCACHE=1
 export ANDROID_JACK_VM_ARGS="-Dfile.encoding=UTF-8 -XX:+TieredCompilation -Xmx5G"

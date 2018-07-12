@@ -1,0 +1,46 @@
+xlogin*login.translations: #override \
+	<Key>Delete: delete-character()\n\
+	<Key>Left: move-backward-character()\n\
+	<Key>Right: move-forward-character()\n\
+	<Key>Home: move-to-begining()\n\
+	<Key>End: move-to-end()\n\
+	<Key>KP_Enter: set-session-argument() finish-field()\n\
+	<Key>Return: set-session-argument() finish-field()
+
+xlogin*greeting:
+xlogin.Login.namePrompt: \040\040\040Login:
+xlogin*fail: Login incorrect or forbidden by policy
+
+xlogingreetFont:  -xos4-terminus-medium-r-normal--12-120-72-72-c-60-iso10646-1
+xloginfont:       -xos4-terminus-medium-r-normal--12-120-72-72-c-60-iso10646-1
+xloginpromptFont: -xos4-terminus-medium-r-normal--12-120-72-72-c-60-iso10646-1
+xloginfailFont:   -xos4-terminus-medium-r-normal--12-120-72-72-c-60-iso10646-1
+xlogin*greetFace:	Terminus-12
+xlogin*face: 		Terminus-12
+xlogin*promptFace: 	Terminus-12:bold
+xlogin*failFace: 	Terminus-12:bold
+
+xlogin*shdColor: black
+xlogin*hiColor: black
+xlogin*background: black
+xlogin*foreground: white
+xlogin*greetColor: white
+xlogin*failColor: red
+*Foreground: white
+*Background: black
+xlogin*borderWidth: 0
+xlogin*frameWidth: 0
+xlogin*innerFramesWidth: 0
+
+XConsole.text.geometry:	480x130
+XConsole.verbose:	true
+XConsole*iconic:	true
+XConsole*font:		fixed
+
+Chooser*geometry:		700x500+300+200
+Chooser*allowShellResize:	false
+Chooser*viewport.forceBars:	true
+Chooser*label.font:		-xos4-terminus-medium-r-normal--12-120-72-72-c-60-iso10646-1
+Chooser*label.label:		Host Menu
+Chooser*list.font:		-xos4-terminus-medium-r-normal--12-120-72-72-c-60-iso10646-1
+Chooser*Command.font:		-xos4-terminus-medium-r-normal--12-120-72-72-c-60-iso10646-1

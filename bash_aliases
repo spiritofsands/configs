@@ -67,11 +67,6 @@ _alias_completion() {
     source "$tmp_file" && rm -f "$tmp_file"
 }
 
-# make json requests easier
-curl-json() {
-  curl -H "Accept:application/json" "$@" | python -m json.tool
-}
-
 # enable color support of ls and also add handy aliases
 if [ -x /usr/bin/dircolors ]; then
   if [[ -r ~/.dircolors ]]; then
@@ -85,7 +80,6 @@ if [ -x /usr/bin/dircolors ]; then
   alias rgrep='rgrep --color=auto'
 fi
 
-
 # some more ls aliases
 alias ll='ls -alhF'
 alias l='ls -CF'
@@ -93,17 +87,7 @@ alias l='ls -CF'
 # exit alias
 alias :q='exit'
 
-# Add an "alert" alias for long running commands.  Use like so:
-#   sleep 10; alert
-alias alert='notify-send --urgency=low -i "$([ $? = 0 ] && echo terminal || echo error)" "$(history|tail -n1|sed -e '\''s/^\s*[0-9]\+\s*//;s/[;&|]\s*alert$//'\'')"'
-
-alias find='find-ext.sh'
-alias findf='find -type f -name'
-alias findd='find -type d -name'
-alias ssh-support-server='ssh warrior109@104.197.82.185'
-alias :q='exit'
-
-# usage:  cd.. 10   cd.. dir
+# extended cd. usage:  cd.. 10   cd.. dir
 cd..() {
   case $1 in
     *[!0-9]*)
@@ -113,20 +97,6 @@ cd..() {
       cd "$(printf "%0.0s../" $(seq 1 "$1"))" || return
       ;;
   esac
-}
-
-cap-update-production() {
-  cap production git:create_release
-  cap production deploy:set_current_revision
-  cap production deploy:symlink:linked_files
-  cap production deploy:symlink:linked_dirs
-  cap production bundler:install
-  cap production deploy:assets:precompile
-  cap production deploy:assets:backup_manifest
-  cap production deploy:migrate
-  cap production passenger:restart
-  cap production sidekiq:start
-  cap production deploy:log_revision
 }
 
 is_git() {
@@ -163,29 +133,33 @@ _add_git_associations() {
 }
 
 _remove_git_associations() {
-  unset add
-  unset am
-  unset branch
-  unset checkout
-  unset clean
-  unset commit
-  unset config
-  unset diff
-  unset difftool
-  unset fetch
-  unset log
-  unset merge
-  unset mergetool
-  unset pull
-  unset push
-  unset rebase
-  unset remote
-  unset reset
-  unset revert
-  unset show
-  unset stage
-  unset stash
-  unset status
-  unset s
-  unset tag
+  if alias | rg -Fq 'alias s='; then
+    unalias add
+    unalias am
+    unalias branch
+    unalias checkout
+    unalias clean
+    unalias commit
+    unalias config
+    unalias diff
+    unalias difftool
+    unalias fetch
+    unalias log
+    unalias merge
+    unalias mergetool
+    unalias pull
+    unalias push
+    unalias rebase
+    unalias remote
+    unalias revert
+    unalias show
+    unalias stage
+    unalias stash
+    unalias status
+    unalias s
+    unalias tag
+  fi
 }
+
+# add an "alert" alias for long running commands. use like:  sleep 10; alert
+alias alert='notify-send --urgency=low -i "$([ $? = 0 ] && echo terminal || echo error)" "$(history|tail -n1|sed -e '\''s/^\s*[0-9]\+\s*//;s/[;&|]\s*alert$//'\'')"'
