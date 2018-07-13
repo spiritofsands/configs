@@ -26,6 +26,7 @@ ln -s /home/kos/.config/reek /home/kos/.reek
 ln -s ~/.config/inputrc ~/.inputrc
 ln -s ~/.config/stylelintrc ~/.stylelintrc
 ln -s ~/.config/editrc ~/.editrc
+ln -s ~/.config/xsession ~/.xsession
 git config --global core.excludesfile ~/.gitignore
 
 echo
