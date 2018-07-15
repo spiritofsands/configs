@@ -41,6 +41,7 @@ packadd! matchit
 
 " autocompletion
 Plug 'maralla/completor.vim'
+
 " remember last position
 Plug 'farmergreg/vim-lastplace'
 
