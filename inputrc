@@ -8,4 +8,12 @@ $if mode=vi
   "\e[A":""
   "\eOB":""
   "\e[B":""
+
+  set keymap vi-command
+  Control-l: clear-screen
+  v: ""
+
+  set keymap vi-insert
+  Control-l: clear-screen 
 $endif
+
