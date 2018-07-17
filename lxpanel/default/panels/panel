@@ -39,7 +39,7 @@ Plugin {
     HideIfNoBattery=1
     AlarmCommand=notify-send "Battery low" --icon=battery-caution
     AlarmTime=20
-    BorderWidth=1
+    BorderWidth=2
     Size=10
     ShowExtendedInformation=0
     BatteryNumber=0
@@ -81,6 +81,7 @@ Plugin {
     BoldFont=0
     IconOnly=0
     CenterText=0
+    TooltipFmt=%A %x
   }
 }
 Plugin {
