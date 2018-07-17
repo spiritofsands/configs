@@ -589,6 +589,14 @@
         </action>
       </mousebind>
     </context>
+  <context name="Frame">
+    <mousebind button="A-Left" action="Drag">
+      <action name="Move"/>
+    </mousebind>
+    <mousebind button="A-Right" action="Drag">
+      <action name="Resize"/>
+    </mousebind>
+	</context>
   </mouse>
   <menu>
     <file>/var/lib/openbox/debian-menu.xml</file>
