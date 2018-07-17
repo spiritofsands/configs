@@ -615,7 +615,11 @@
     <application name="urxvt">
       <maximized>yes</maximized>
     </application>
-    <application class="*">
+    <application name="panel">
+      <layer>above</layer>
+      <fullscreen>yes</fullscreen>
+    </application>
+     <application class="*">
       <decor>no</decor>
     </application>
   </applications>
