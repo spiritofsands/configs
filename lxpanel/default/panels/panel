@@ -33,13 +33,13 @@ Plugin {
   Config {
     BackgroundColor=black
     ChargingColor1=#5faf87
-    ChargingColor2=#5faf87
+    ChargingColor2=black
     DischargingColor1=#ffee00
-    DischargingColor2=#d9ca00
+    DischargingColor2=black
     HideIfNoBattery=1
     AlarmCommand=notify-send "Battery low" --icon=battery-caution
     AlarmTime=20
-    BorderWidth=2
+    BorderWidth=1
     Size=10
     ShowExtendedInformation=0
     BatteryNumber=0
@@ -62,8 +62,8 @@ Plugin {
     Warning1Color=#fff000
     Warning2Color=#ff0000
     AutomaticLevels=1
-    Warning1Temp=94
-    Warning2Temp=99
+    Warning1Temp=90
+    Warning2Temp=95
     AutomaticSensor=1
   }
 }
