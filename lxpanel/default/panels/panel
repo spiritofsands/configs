@@ -1,0 +1,91 @@
+# lxpanel <profile> config file. Manually editing is not recommended.
+# Use preference dialog in lxpanel to adjust config when you can.
+
+Global {
+  edge=top
+  allign=left
+  margin=0
+  widthtype=request
+  width=30
+  height=18
+  transparent=1
+  tintcolor=#000000
+  alpha=255
+  setdocktype=1
+  setpartialstrut=0
+  usefontcolor=1
+  fontcolor=#ffffff
+  usefontsize=1
+  fontsize=10
+  background=0
+  backgroundfile=/usr/share/lxpanel/images/background.png
+  align=center
+  iconsize=16
+}
+Plugin {
+  type=space
+  Config {
+    Size=8
+  }
+}
+Plugin {
+  type=batt
+  Config {
+    BackgroundColor=black
+    ChargingColor1=#5faf87
+    ChargingColor2=#5faf87
+    DischargingColor1=#ffee00
+    DischargingColor2=#d9ca00
+    HideIfNoBattery=1
+    AlarmCommand=notify-send "Battery low" --icon=battery-caution
+    AlarmTime=20
+    BorderWidth=1
+    Size=10
+    ShowExtendedInformation=0
+    BatteryNumber=0
+  }
+}
+Plugin {
+  type=tray
+  Config {
+  }
+}
+Plugin {
+  type=volume
+  Config {
+  }
+}
+Plugin {
+  type=thermal
+  Config {
+    NormalColor=#5faf87
+    Warning1Color=#fff000
+    Warning2Color=#ff0000
+    AutomaticLevels=1
+    Warning1Temp=94
+    Warning2Temp=99
+    AutomaticSensor=1
+  }
+}
+Plugin {
+  type=space
+  Config {
+    Size=12
+  }
+  expand=0
+}
+Plugin {
+  type=dclock
+  Config {
+    ClockFmt=%R, %A %x
+    BoldFont=0
+    IconOnly=0
+    CenterText=0
+  }
+}
+Plugin {
+  type=space
+  Config {
+    Size=4
+  }
+}
