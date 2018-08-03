@@ -23,8 +23,8 @@ URxvt.letterSpace: 0
 ! URxvt.keysym.M-Left:        \033[1;3D
 
 ! Font
-URxvt*font:            xft:Terminus:size=13:autohint=false:antialias=false:hinting=false
-URxvt*boldFont:        xft:Terminus:size=13:bold:autohint=false:antialias=false:hinting=false
+URxvt*font:            xft:Terminus:size=12:autohint=false:antialias=false:hinting=false
+URxvt*boldFont:        xft:Terminus:size=12:bold:autohint=false:antialias=false:hinting=false
 ! URxvt*font: -misc-fixed-medium-r-normal--14-130-75-75-c-70-iso10646-1
 ! URxvt*font: xft:Ubuntu Mono:size=12:antialias=false
 

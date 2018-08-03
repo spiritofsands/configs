@@ -136,11 +136,15 @@ augroup CursorLineOnlyInActiveWindow
 augroup END
 
 " undo file
+set nobackup
+set noswapfile
 set undofile
-set undodir=/home/kos/.vim/undo
+set undodir=/home/kos/.vim/undo//
 set undolevels=1000
 set undoreload=1000
 
+" clean shell
+set shell=~/bin/clean-shell-wrapper.sh
 
 "
 " Mappings

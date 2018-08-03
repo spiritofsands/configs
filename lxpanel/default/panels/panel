@@ -29,6 +29,24 @@ Plugin {
   }
 }
 Plugin {
+  type=xkb
+  Config {
+    Model=pc105
+    LayoutsList=us,ru,ua
+    VariantsList=,,
+    ToggleOpt=grp:caps_toggle,grp_led:caps
+    KeepSysLayouts=0
+    PerWinLayout=1
+    DisplayType=1
+    FlagSize=3
+  }
+}
+Plugin {
+  type=space
+  Config {
+  }
+}
+Plugin {
   type=batt
   Config {
     BackgroundColor=black

@@ -4,9 +4,14 @@ keynav &
 redshift &
 /home/kos/.fehbg &
 /home/kos/bin/touchpad-setup.sh &
-/home/kos/bin/kbl.sh ru &
-kbdd &
 unclutter &
-#ssh-add $HOME/.ssh/id_ed25519 </dev/null &
 udiskie &
-lxpanel  &
+lxpanel &
+hubstaff &
+telegram-desktop &
+firefox &
+start-solr.sh &
+nmcli connection up Wired\ connection\ 1 &
+tmux new-session -d -s test &
+urxvt -e tmux a -t test &
+wmctrl -r urxvt -t 5 &
