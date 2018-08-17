@@ -3,7 +3,7 @@ parcellite -n &
 keynav &
 redshift &
 /home/kos/.fehbg &
-/home/kos/bin/touchpad-setup.sh &
+touchpad-setup.sh &
 unclutter &
 udiskie &
 lxpanel &
@@ -13,5 +13,4 @@ firefox &
 start-solr.sh &
 nmcli connection up Wired\ connection\ 1 &
 tmux new-session -d -s test &
-urxvt -e tmux a -t test &
-wmctrl -r urxvt -t 5 &
+start-terminal.sh &

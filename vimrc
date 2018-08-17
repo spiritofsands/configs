@@ -50,6 +50,9 @@ Plug 'chazy/cscope_maps', { 'for': ['c', 'cpp'] }
 Plug 'vivien/vim-linux-coding-style', { 'for': ['c', 'cpp'] }
 Plug 'majutsushi/tagbar'
 
+" camelcase spellcheck
+Plug 'kmszk/CCSpellCheck.vim'
+
 " TODO: snippets
 " Plug 'SirVer/ultisnips'
 " Plug 'honza/vim-snippets'
@@ -63,22 +66,26 @@ call plug#end()
 " linter
 let g:ale_lint_on_text_changed = 'normal'
 let g:ale_lint_on_insert_leave = 1
-let kdir = ' -I/home/kos/dev/GL-kernel-lectures/sources/linux/include -I/home/kos/dev/GL-kernel-lectures/sources/linux/arch/arm/include'
-let compiler_options = '-O1 -Wall -Wextra -Wfloat-equal -Wundef -Wshadow -Wpointer-arith -Wcast-align -Wstrict-prototypes -Wstrict-overflow=5 -Wwrite-strings -Waggregate-return -Wcast-qual -Wswitch-default -Wswitch-enum -Wconversion -Wunreachable-code -Wformat=2 -Werror-implicit-function-declaration -fsanitize=address -fsanitize=signed-integer-overflow'
-let g:ale_c_gcc_options = compiler_options . kdir
-let g:ale_c_clang_options = g:ale_c_gcc_options . kdir
-let g:ale_c_clangtidy_options = g:ale_c_clang_options
-let g:ale_c_clangcheck_options = g:ale_c_clang_options
-let g:ale_c_cppcheck_options = kdir
+" let kdir = ' -I/home/kos/kernel_dev/src/linux-stable/include -I/home/kos/kernel_dev/src/linux-stable/arch/arm/include'
+" let compiler_options = '-O1 -Wall -Wextra -Wfloat-equal -Wundef -Wshadow -Wpointer-arith -Wcast-align -Wstrict-prototypes -Wstrict-overflow=5 -Wwrite-strings -Waggregate-return -Wcast-qual -Wswitch-default -Wswitch-enum -Wconversion -Wunreachable-code -Wformat=2 -Werror-implicit-function-declaration -fsanitize=address -fsanitize=signed-integer-overflow'
+" let g:ale_c_gcc_options = compiler_options . kdir
+" let g:ale_c_clang_options = g:ale_c_gcc_options . kdir
+" let g:ale_c_clangtidy_options = g:ale_c_clang_options
+" let g:ale_c_clangcheck_options = g:ale_c_clang_options
+" let g:ale_c_cppcheck_options = kdir
 let g:ale_c_parse_makefile = 1
 let g:ale_lint_delay = 100
+" fixme
+let g:ale_linters = {
+  \   'c': []
+  \}
 let g:ale_fixers = {
   \   'javascript': ['eslint'],
   \   'ruby': ['rubocop'],
   \   'cpp': ['clang-format']
   \}
 let g:ale_pattern_options = {
-  \   'sources/linux/': {
+  \   'src/linux/': {
   \     'ale_linters': ['']
   \   },
   \}
@@ -146,6 +153,11 @@ set undoreload=1000
 " clean shell
 set shell=~/bin/clean-shell-wrapper.sh
 
+" spellcheck goodOne
+syntax spell toplevel
+set spell spelllang=en_us
+
+
 "
 " Mappings
 "
@@ -164,7 +176,6 @@ noremap <leader><S-r> :Rexplore<cr>
 noremap <C-S> :update<CR>
 inoremap <C-S> <Esc>:update<CR>
 noremap <F10> :ALEFix<CR>
-noremap <F12> :TagbarToggle<CR>
 
 " buffers and splits
 noremap <leader>= :enew<cr>
@@ -211,3 +222,5 @@ highlight Visual       ctermfg=NONE   ctermbg=20      cterm=NONE
 highlight Search       ctermfg=16     ctermbg=172     cterm=NONE
 highlight StatusLineNC ctermfg=249    ctermbg=237     cterm=none
 highlight VertSplit    ctermfg=237    ctermbg=249
+highlight SpellBad     ctermfg=black  ctermbg=147    cterm=underline
+"highlight CCSpellBad   ctermfg=black  ctermbg=147    cterm=underline

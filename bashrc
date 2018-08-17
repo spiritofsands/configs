@@ -126,3 +126,6 @@ export PATH="$PATH:$HOME/.cargo/bin"
 export PATH="$PATH:$HOME/bin/android-platform-tools"
 export USE_CCACHE=1
 export ANDROID_JACK_VM_ARGS="-Dfile.encoding=UTF-8 -XX:+TieredCompilation -Xmx5G"
+
+# added by travis gem
+[ -f /home/kos/.travis/travis.sh ] && source /home/kos/.travis/travis.sh
