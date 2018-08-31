@@ -23,10 +23,8 @@ URxvt.letterSpace: 0
 ! URxvt.keysym.M-Left:        \033[1;3D
 
 ! Font
-URxvt*font:            xft:Terminus:size=13:autohint=false:antialias=false:hinting=false
-URxvt*boldFont:        xft:Terminus:size=13:bold:autohint=false:antialias=false:hinting=false
-! URxvt*font: -misc-fixed-medium-r-normal--14-130-75-75-c-70-iso10646-1
-! URxvt*font: xft:Ubuntu Mono:size=12:antialias=false
+URxvt*font:            xft:Terminus:size=12:autohint=false:antialias=false:hinting=false
+URxvt*boldFont:        xft:Terminus:size=12:bold:autohint=false:antialias=false:hinting=false
 
 URxvt*allowBoldFonts: true
 
@@ -36,8 +34,6 @@ URxvt.internalBorder: 0
 ! Dark color scheme
 URxvt.background: #000000
 URxvt.foreground: #FFFFFF
-! URxvt.background: #050708
-! URxvt.foreground: #EFF0F1
 URxvt.color0: #282828
 URxvt.color1: #cc241d
 URxvt.color2: #98971a

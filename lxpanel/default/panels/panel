@@ -74,21 +74,9 @@ Plugin {
   }
 }
 Plugin {
-  type=thermal
-  Config {
-    NormalColor=#5faf87
-    Warning1Color=#fff000
-    Warning2Color=#ff0000
-    AutomaticLevels=1
-    Warning1Temp=90
-    Warning2Temp=95
-    AutomaticSensor=1
-  }
-}
-Plugin {
   type=space
   Config {
-    Size=12
+    Size=8
   }
   expand=0
 }
