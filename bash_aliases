@@ -1,3 +1,9 @@
+if type rg &> /dev/null; then
+  GREP='rg'
+else
+  GREP='grep'
+fi
+
 # Automatically add completion for all aliases to commands having completion functions
 _alias_completion() {
     local namespace="alias_completion"
@@ -133,7 +139,7 @@ _add_git_associations() {
 }
 
 _remove_git_associations() {
-  if alias | rg -Fq 'alias s='; then
+  if alias | ${GREP} -Fq 'alias s='; then
     unalias add
     unalias am
     unalias branch

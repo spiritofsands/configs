@@ -87,17 +87,28 @@ stty start ''
 stty -ixon
 stty -ixoff
 
+
+#
+# PATH ADDITIONS
+#
+
 # add user's bin
-export PATH="$PATH:$HOME/bin"
+if [[ -d ~/bin ]]; then
+  export PATH="$PATH:$HOME/bin"
+fi
 
 # rbenv
-export PATH="$PATH:$HOME/.rbenv/bin"
-eval "$(rbenv init -)"
+if [[ -d ~/.rbenv/bin ]]; then
+  export PATH="$PATH:$HOME/.rbenv/bin"
+  eval "$(rbenv init -)"
+fi
 
 # fzf
-export PATH="$PATH:$HOME/.fzf/bin"
-
 if [[ -d ~/.fzf ]]; then
+  if [[ -d ~/.fzf/bin ]]; then
+    export PATH="$PATH:$HOME/.fzf/bin"
+  fi
+
   source "$HOME/.fzf/shell/key-bindings.bash"
 
   export FZF_DEFAULT_COMMAND='fd --type f --exclude .git'
@@ -113,19 +124,29 @@ if [[ -d ~/.fzf ]]; then
 fi
 
 # yarn
-export PATH="$PATH:$HOME/bin/yarn-v1.6.0/bin"
+if [[ -d ~/bin/yarn-v1.6.0/bin ]]; then
+  export PATH="$PATH:$HOME/bin/yarn-v1.6.0/bin"
+fi
 
 # npm n
-export PATH="$PATH:$HOME/.n/bin"
-export N_PREFIX=/home/kos/.n
+if [[ -d ~/.n/bin ]]; then
+  export PATH="$PATH:$HOME/.n/bin"
+  export N_PREFIX="$HOME/.n"
+fi
 
 # cargo
-export PATH="$PATH:$HOME/.cargo/bin"
+if [[ -d ~/.cargo/bin ]]; then
+  export PATH="$PATH:$HOME/.cargo/bin"
+fi
 
 # android platform tools
-export PATH="$PATH:$HOME/bin/android-platform-tools"
-export USE_CCACHE=1
-export ANDROID_JACK_VM_ARGS="-Dfile.encoding=UTF-8 -XX:+TieredCompilation -Xmx5G"
+if [[ -d ~/bin/android-platform-tools ]]; then
+  export PATH="$PATH:$HOME/bin/android-platform-tools"
+  export USE_CCACHE=1
+  export ANDROID_JACK_VM_ARGS="-Dfile.encoding=UTF-8 -XX:+TieredCompilation -Xmx5G"
+fi
 
 # added by travis gem
-[ -f /home/kos/.travis/travis.sh ] && source /home/kos/.travis/travis.sh
+if [[ -f /home/kos/.travis/travis.sh ]]; then
+  source /home/kos/.travis/travis.sh
+fi

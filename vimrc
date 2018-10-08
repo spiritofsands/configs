@@ -28,7 +28,8 @@ call plug#begin('~/.vim/plugged')
 Plug 'ntpeters/vim-better-whitespace'
 
 " highlight XML tags
-Plug 'spiritofsands/MatchTag', { 'for': ['eruby', 'html', 'xml', 'javascript'] }
+" Plug 'spiritofsands/MatchTag', { 'for': ['eruby', 'html', 'xml', 'javascript'] }
+
 " linter
 Plug 'w0rp/ale'
 
@@ -37,7 +38,7 @@ Plug '~/.fzf'
 Plug 'junegunn/fzf.vim'
 
 " matchIT
-packadd! matchit
+" packadd! matchit
 
 " autocompletion
 Plug 'maralla/completor.vim'
@@ -47,11 +48,10 @@ Plug 'farmergreg/vim-lastplace'
 
 " kernel coding
 Plug 'chazy/cscope_maps', { 'for': ['c', 'cpp'] }
-Plug 'vivien/vim-linux-coding-style', { 'for': ['c', 'cpp'] }
 Plug 'majutsushi/tagbar'
 
 " camelcase spellcheck
-Plug 'kmszk/CCSpellCheck.vim'
+"Plug 'kmszk/CCSpellCheck.vim'
 
 " TODO: snippets
 " Plug 'SirVer/ultisnips'
@@ -76,9 +76,6 @@ let g:ale_lint_on_insert_leave = 1
 let g:ale_c_parse_makefile = 1
 let g:ale_lint_delay = 100
 " fixme
-let g:ale_linters = {
-  \   'c': []
-  \}
 let g:ale_fixers = {
   \   'javascript': ['eslint'],
   \   'ruby': ['rubocop'],
@@ -93,6 +90,8 @@ let g:ale_ruby_rubocop_options = '--parallel'
 
 " tagbar
 let g:tagbar_compact = 1
+nmap <F8> :TagbarToggle<CR>
+autocmd FileType * nested :call tagbar#autoopen(0)
 
 
 "
@@ -155,7 +154,7 @@ set shell=~/bin/clean-shell-wrapper.sh
 
 " spellcheck goodOne
 syntax spell toplevel
-set spell spelllang=en_us
+"set spell spelllang=en_us
 
 
 "
@@ -195,8 +194,7 @@ inoremap <expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<S-Tab>"
 inoremap <expr> <cr> pumvisible() ? "\<C-y>\<cr>" : "\<cr>"
 
 " quickly add empty lines
-noremap [<space> :<c-u>put! =repeat(nr2char(10), v:count1)<cr>
-noremap ]<space> :<c-u>put =repeat(nr2char(10), v:count1)<cr>
+noremap <space><space> o<Esc>
 
 " disabled bindings
 noremap <Up> <NOP>
@@ -212,6 +210,8 @@ noremap Q <Nop>
 noremap <F1> <Nop>
 inoremap <F1> <Nop>
 
+" spellchack
+inoremap <F5> :setlocal spell! spell?<CR>
 
 "
 " Colours
