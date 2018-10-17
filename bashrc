@@ -150,3 +150,11 @@ fi
 if [[ -f /home/kos/.travis/travis.sh ]]; then
   source /home/kos/.travis/travis.sh
 fi
+
+if [[ -d ~/.local/bin ]]; then
+  export PATH="$PATH:$HOME/.local/lib/oclint-0.13.1/bin"
+fi
+
+  if [[ -d ~/.local/bin ]]; then
+    export PATH="$PATH:$HOME/.local/bin"
+  fi
