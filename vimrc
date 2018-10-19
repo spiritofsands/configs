@@ -3,7 +3,7 @@
 "
 
 " SHELL
-"   sudo apt install shellcheck
+"   sudo apt install language-server, shell -n flag, shellcheck, shfmt
 " TEXT
 "   npm install -g alex proselint
 " FRONTEND
@@ -74,11 +74,14 @@ let g:ale_cpp_clangcheck_options = g:ale_cpp_clang_options
 let g:ale_cpp_cppcheck_options = '--enable=all --std=c++14 --std=posix --inconclusive'
 let g:ale_cpp_parse_makefile = 1
 let g:ale_lint_delay = 100
-" fixme
+"let g:ale_linters = {
+"    '\ 'sh': ['language_server'],
+"    \ }
 let g:ale_fixers = {
   \   'javascript': ['eslint'],
   \   'ruby': ['rubocop'],
-  \   'cpp': ['clang-format']
+  \   'cpp': ['clang-format'],
+  \   'sh': ['shfmt'],
   \}
 let g:ale_pattern_options = {
   \   'src/linux/': {
@@ -89,7 +92,6 @@ let g:ale_ruby_rubocop_options = '--parallel'
 
 " tagbar
 let g:tagbar_compact = 1
-nmap <F8> :TagbarToggle<CR>
 
 "
 " Autocmds
@@ -181,6 +183,7 @@ noremap <leader><S-r> :Rexplore<cr>
 noremap <C-S> :update<CR>
 inoremap <C-S> <Esc>:update<CR>
 noremap <F10> :ALEFix<CR>
+nmap <F8> :TagbarToggle<CR>
 
 " buffers and splits
 noremap <leader>= :enew<cr>
