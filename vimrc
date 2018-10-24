@@ -51,7 +51,7 @@ Plug 'chazy/cscope_maps', { 'for': ['c', 'cpp'] }
 Plug 'majutsushi/tagbar'
 
 " camelcase spellcheck
-"Plug 'kmszk/CCSpellCheck.vim'
+Plug 'kmszk/CCSpellCheck.vim'
 
 " TODO: snippets
 " Plug 'SirVer/ultisnips'
@@ -64,41 +64,29 @@ call plug#end()
 "
 
 " linter
+let g:ale_echo_msg_format = '%linter%: %code: %%s'
 let g:ale_lint_on_text_changed = 'normal'
 let g:ale_lint_on_insert_leave = 1
-let compiler_options = '-pedantic -Wall -Wextra -Wcast-align -Wcast-qual -Wctor-dtor-privacy -Wdisabled-optimization -Wformat=2 -Winit-self -Wlogical-op -Wmissing-declarations -Wmissing-include-dirs -Wnoexcept -Wold-style-cast -Woverloaded-virtual   -Wredundant-decls -Wshadow -Wsign-conversion -Wsign-promo -Wstrict-null-sentinel -Wstrict-overflow=5 -Wswitch-default -Wundef -Werror -Wno-unused'
+let compiler_options = '-pedantic -Wall -Wextra -Wcast-align -Wcast-qual -Wctor-dtor-privacy -Wdisabled-optimization -Wformat=2 -Winit-self -Wmissing-declarations -Wmissing-include-dirs -Wold-style-cast -Woverloaded-virtual -Wredundant-decls -Wshadow -Wsign-conversion -Wsign-promo -Wstrict-overflow=5 -Wswitch-default -Wundef -Werror -Wno-unused -Wno-deprecated-register'
 let g:ale_cpp_gcc_options = compiler_options
-let g:ale_cpp_clang_options = g:ale_cpp_gcc_options
-let g:ale_cpp_clangtidy_options = g:ale_cpp_clang_options
-let g:ale_cpp_clangcheck_options = g:ale_cpp_clang_options
+let g:ale_cpp_clang_options = compiler_options
+let g:ale_cpp_clangtidy_checks = ['-android-*', '-abseil-*', '-fuschia-*', '-llvm-*', '-mpi*', '-objc-*', '-zircon-*']
 let g:ale_cpp_cppcheck_options = '--enable=all --std=c++14 --std=posix --inconclusive'
-let g:ale_cpp_parse_makefile = 1
+let g:ale_cpp_parse_makefile = 2
 let g:ale_lint_delay = 100
-"let g:ale_linters = {
-"    '\ 'sh': ['language_server'],
-"    \ }
 let g:ale_fixers = {
   \   'javascript': ['eslint'],
   \   'ruby': ['rubocop'],
   \   'cpp': ['clang-format'],
   \   'sh': ['shfmt'],
   \}
-let g:ale_pattern_options = {
-  \   'src/linux/': {
-  \     'ale_linters': ['']
-  \   },
-  \}
 let g:ale_ruby_rubocop_options = '--parallel'
 
 " tagbar
 let g:tagbar_compact = 1
-
-"
-" Autocmds
-"
-augroup vimrc_autocmds
-  autocmd FileType *.cc nested :call tagbar#autoopen(0)
-  autocmd bufreadpre *.sh setlocal textwidth=80
+" autooopen
+augroup vim_tagbar
+  autocmd FileType c,cpp nested :call tagbar#autoopen(0)
 augroup END
 
 
@@ -113,13 +101,13 @@ set nocompatible
 set backspace=2
 
 " columns in tab (display mode)
-set tabstop=2
+set tabstop=4
 
 " tab inserts spaces
 set expandtab
 
 " autoindent width
-set shiftwidth=2
+set shiftwidth=4
 
 " syntax highlighting
 syntax on
@@ -135,6 +123,10 @@ set visualbell
 
 " allow hidden modified buffers
 set hidden
+
+" Wrap words at 80
+set textwidth=80
+set wrapmargin=2
 
 " splits
 set splitbelow
@@ -197,10 +189,11 @@ noremap <leader>p :FZF<CR>
 noremap <leader>b :Buffers<CR>
 noremap <leader>h :History<CR>
 
-" completer
+" ale
 inoremap <expr> <Tab> pumvisible() ? "\<C-n>" : "\<Tab>"
 inoremap <expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<S-Tab>"
 inoremap <expr> <cr> pumvisible() ? "\<C-y>\<cr>" : "\<cr>"
+noremap <F1> :ALEDetail<CR>
 
 " quickly add empty lines
 noremap <space><space> o<Esc>
@@ -216,11 +209,11 @@ inoremap <Left> <NOP>
 inoremap <Right> <NOP>
 noremap q: <Nop>
 noremap Q <Nop>
-noremap <F1> <Nop>
-inoremap <F1> <Nop>
+"noremap <F1> <Nop>
+"inoremap <F1> <Nop>
 
 " spellchack
-inoremap <F5> :setlocal spell! spell?<CR>
+noremap <F5> :setlocal spell! spell?<CR>
 
 "
 " Colours
