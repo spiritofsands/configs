@@ -46,8 +46,8 @@ Plug 'maralla/completor.vim'
 " remember last position
 Plug 'farmergreg/vim-lastplace'
 
-" kernel coding
-Plug 'chazy/cscope_maps', { 'for': ['c', 'cpp'] }
+" c coding
+"Plug 'chazy/cscope_maps', { 'for': ['c', 'cpp'] }
 Plug 'majutsushi/tagbar'
 
 " camelcase spellcheck
@@ -56,6 +56,12 @@ Plug 'kmszk/CCSpellCheck.vim'
 " TODO: snippets
 " Plug 'SirVer/ultisnips'
 " Plug 'honza/vim-snippets'
+
+" ctags
+"   sudo apt inserts universal-ctags global
+Plug 'ludovicchabant/vim-gutentags'
+Plug 'skywind3000/gutentags_plus'
+
 call plug#end()
 
 
@@ -84,11 +90,19 @@ let g:ale_ruby_rubocop_options = '--parallel'
 
 " tagbar
 let g:tagbar_compact = 1
-" autooopen
 augroup vim_tagbar
+  " autooopen
   autocmd FileType c,cpp nested :call tagbar#autoopen(0)
 augroup END
 
+" gtags
+let g:gutentags_modules = []
+if executable('ctags')
+    let g:gutentags_modules += ['ctags']
+endif
+if executable('gtags-cscope') && executable('gtags')
+    let g:gutentags_modules += ['gtags_cscope']
+endif
 
 "
 " Config options
@@ -152,7 +166,7 @@ set undoreload=1000
 " clean shell
 set shell=~/bin/clean-shell-wrapper.sh
 
-" spellcheck goodOne
+" spellcheck
 syntax spell toplevel
 "set spell spelllang=en_us
 
@@ -225,4 +239,4 @@ highlight Search       ctermfg=16     ctermbg=172     cterm=NONE
 highlight StatusLineNC ctermfg=249    ctermbg=237     cterm=none
 highlight VertSplit    ctermfg=237    ctermbg=249
 highlight SpellBad     ctermfg=black  ctermbg=147    cterm=underline
-"highlight CCSpellBad   ctermfg=black  ctermbg=147    cterm=underline
+highlight CCSpellBad   ctermfg=black  ctermbg=147    cterm=underline
