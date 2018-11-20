@@ -1,28 +1,35 @@
 #!/bin/bash
-ln -sv mozilla-chrome-tweaks mozilla/firefox/*/chrome
-ln -sv /home/kos/.config/bash_aliases /home/kos/.bash_aliases
-ln -sv /home/kos/.config/bashrc /home/kos/.bashrc
-ln -sv /home/kos/.config/coffeelint.json /home/kos/coffeelint.json
-ln -sv /home/kos/.config/eslintrc.yml /home/kos/.eslintrc.yml
-ln -sv /home/kos/.config/keynavrc /home/kos/.keynavrc
-ln -sv /home/kos/.config/mozilla /home/kos/.mozilla
-ln -sv /home/kos/.config/redshift.conf /home/kos/.redshift.conf
-ln -sv /home/kos/.config/rubocop.yml /home/kos/.rubocop.yml
-ln -sv /home/kos/.config/tmux /home/kos/.tmux
-ln -sv /home/kos/.config/tmux.conf /home/kos/.tmux.conf
-ln -sv /home/kos/.config/toprc /home/kos/.toprc
-ln -sv /home/kos/.config/vim /home/kos/.vim
-ln -sv /home/kos/.config/vimrc /home/kos/.vimrc
-ln -sv /home/kos/.config/profile /home/kos/.profile
-ln -sv /home/kos/.config/mozilla-chrome-tweaks/ /home/kos/.config/mozilla/firefox/*/chrome
-ln -sv /home/kos/.config/babelrc /home/kos/.babelrc
-ln -sv /home/kos/.config/jshintrc /home/kos/.jshintrc
-ln -sv /home/kos/.config/gitignore /home/kos/.gitignore
-ln -sv /home/kos/.config/reek /home/kos/.reek
-ln -sv /home/kos/.config/clang-format /home/kos/.clang-format
-ln -sv /home/kos/.config/reek /home/kos/.reek
+ln -sv ~/.config/mozilla-chrome-tweaks ~/.config/mozilla/firefox/*/chrome
+ln -sv ~/.config/bash_aliases ~/.bash_aliases
+ln -sv ~/.config/bashrc ~/.bashrc
+ln -sv ~/.config/coffeelint.json ~/coffeelint.json
+ln -sv ~/.config/eslintrc.yml ~/.eslintrc.yml
+ln -sv ~/.config/keynavrc ~/.keynavrc
+ln -sv ~/.config/mozilla ~/.mozilla
+ln -sv ~/.config/redshift.conf ~/.redshift.conf
+ln -sv ~/.config/rubocop.yml ~/.rubocop.yml
+ln -sv ~/.config/tmux ~/.tmux
+ln -sv ~/.config/tmux.conf ~/.tmux.conf
+ln -sv ~/.config/toprc ~/.toprc
+ln -sv ~/.config/vim ~/.vim
+ln -sv ~/.config/vimrc ~/.vimrc
+ln -sv ~/.config/profile ~/.profile
+ln -sv ~/.config/mozilla-chrome-tweaks/ ~/.config/mozilla/firefox/*/chrome
+ln -sv ~/.config/babelrc ~/.babelrc
+ln -sv ~/.config/jshintrc ~/.jshintrc
+ln -sv ~/.config/gitignore ~/.gitignore
+ln -sv ~/.config/reek ~/.reek
+ln -sv ~/.config/clang-format ~/.clang-format
+ln -sv ~/.config/reek ~/.reek
 ln -sv ~/.config/inputrc ~/.inputrc
 ln -sv ~/.config/stylelintrc ~/.stylelintrc
+
+mkdir -pv ~/.config/autostart-scripts
+ln -sv "$(command -v birdtray)" ~/.config/autostart-scripts/
+ln -sv "$(command -v keynav)" ~/.config/autostart-scripts/
+ln -sv "$(command -v redshift)" ~/.config/autostart-scripts/
+ln -sv "$(command -v ssh-add.sh)" ~/.config/autostart-scripts/
+ln -sv "$(command -v unclutter)" ~/.config/autostart-scripts/
 
 git config --global pull.rebase true
 git config --global alias.review 'git push origin @:refs/for/master'

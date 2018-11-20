@@ -1,0 +1,7 @@
+[Actions]
+EnableMagicMimeActions=false
+StripWhiteSpace=false
+
+[General]
+MaxClipItems=30
+Version=5.13.5

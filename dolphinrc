@@ -1,0 +1,40 @@
+[CompactMode]
+FontWeight=50
+
+[Desktop Entry]
+DefaultProfile=Profile 2.profile
+
+[DetailsMode]
+FontWeight=50
+
+[Favorite Profiles]
+Favorites=
+
+[General]
+BrowseThroughArchives=true
+UseTabForSwitchingSplitView=true
+Version=200
+ViewPropsTimestamp=2018,9,21,16,19,56
+
+[IconsMode]
+FontWeight=50
+
+[MainWindow]
+Height 1080=480
+Height 1920=469
+MenuBar=Disabled
+State=AAAA/wAAAAD9AAAAAwAAAAAAAAC4AAAHPfwCAAAAAvsAAAAWAGYAbwBsAGQAZQByAHMARABvAGMAawAAAAAA/////wAAAAoBAAAD+wAAABQAcABsAGEAYwBlAHMARABvAGMAawEAAAAmAAAHPQAAAFoBAAADAAAAAQAAAAAAAAAA/AIAAAAB+wAAABAAaQBuAGYAbwBEAG8AYwBrAAAAAAD/////AAAACgEAAAMAAAADAAACgAAAAL78AQAAAAH7AAAAGAB0AGUAcgBtAGkAbgBhAGwARABvAGMAawAAAAAAAAACgAAAAAoBAAADAAADfwAABz0AAAAEAAAABAAAAAgAAAAI/AAAAAEAAAACAAAAAQAAABYAbQBhAGkAbgBUAG8AbwBsAEIAYQByAQAAAAD/////AAAAAAAAAAA=
+ToolBarsMovable=Disabled
+Width 1080=632
+Width 1920=640
+Window-Maximized 1920x1080=true
+Window-Maximized 900x1600=true
+
+[PreviewSettings]
+Plugins=comicbookthumbnail,djvuthumbnail,fontthumbnail,directorythumbnail,windowsexethumbnail,imagethumbnail,svgthumbnail,audiothumbnail,kraorathumbnail,htmlthumbnail,exrthumbnail,jpegthumbnail,windowsimagethumbnail
+
+[SettingsDialog]
+Height 1080=431
+Height 1920=430
+Width 1080=632
+Width 1920=540
