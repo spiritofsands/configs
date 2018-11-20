@@ -182,3 +182,5 @@ alias local_android_show='virt-viewer -c qemu:///system Android'
 alias local_ubuntu16_suspend='virsh -c qemu:///system suspend ubuntu16.04'
 alias local_ubuntu16_resume='virsh -c qemu:///system resume ubuntu16.04'
 alias local_ubuntu16_show='virt-viewer -c qemu:///system ubuntu16.04'
+
+alias firefox-esr='firefox-esr-52 --P ESR --no-remote'
