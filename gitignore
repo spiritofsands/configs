@@ -4,3 +4,9 @@
 
 # Tern
 .tern-project
+
+# index files
+GPATH
+GRTAGS
+GTAGS
+tags

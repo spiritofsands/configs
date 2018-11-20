@@ -153,10 +153,14 @@ if [[ -f /home/kos/.travis/travis.sh ]]; then
   source /home/kos/.travis/travis.sh
 fi
 
-if [[ -d ~/.local/bin ]]; then
+if [[ -d ~/.local/lib/oclint-0.13.1/bin ]]; then
   export PATH="$PATH:$HOME/.local/lib/oclint-0.13.1/bin"
 fi
 
-  if [[ -d ~/.local/bin ]]; then
-    export PATH="$PATH:$HOME/.local/bin"
-  fi
+#if [[ -d ~/.local/lib/cmake-3.5.1-Linux-x86_64/bin ]]; then
+#  export PATH="$PATH:$HOME/.local/lib/cmake-3.5.1-Linux-x86_64/bin"
+#fi
+
+if [[ -d ~/.local/bin ]]; then
+export PATH="$PATH:$HOME/.local/bin"
+fi

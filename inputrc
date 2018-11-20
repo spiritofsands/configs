@@ -1,14 +1,5 @@
 set editing-mode vi
 $if mode=vi
-  "\eOD":""
-  "\e[D":""
-  "\eOC":""
-  "\e[C":""
-  "\eOA":""
-  "\e[A":""
-  "\eOB":""
-  "\e[B":""
-
   set keymap vi-command
   Control-l: clear-screen
   v: ""

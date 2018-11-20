@@ -134,6 +134,7 @@ _add_git_associations() {
   alias status='git status'
   alias s='git status'
   alias tag='git tag'
+  alias review='git review'
 
   _alias_completion
 }
@@ -164,6 +165,7 @@ _remove_git_associations() {
     unalias status
     unalias s
     unalias tag
+    unalias review
   fi
 }
 
@@ -173,3 +175,10 @@ alias alert='notify-send --urgency=low -i "$([ $? = 0 ] && echo terminal || echo
 wine32() {
   INEPREFIX=~/.wine WINEARCH=win32 wine "$@"
 }
+
+alias local_android_suspend='virsh -c qemu:///system suspend Android'
+alias local_android_resume='virsh -c qemu:///system resume Android'
+alias local_android_show='virt-viewer -c qemu:///system Android'
+alias local_ubuntu16_suspend='virsh -c qemu:///system suspend ubuntu16.04'
+alias local_ubuntu16_resume='virsh -c qemu:///system resume ubuntu16.04'
+alias local_ubuntu16_show='virt-viewer -c qemu:///system ubuntu16.04'
