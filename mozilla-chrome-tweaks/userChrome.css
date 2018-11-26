@@ -1,6 +1,6 @@
 .tabbrowser-tab:not([pinned]) {
   flex-grow:1;
-  min-width:150px;
+  min-width:300px;
 }
 .tabbrowser-tab,.tab-background {
   height:var(--tab-min-height);

@@ -176,11 +176,20 @@ wine32() {
   INEPREFIX=~/.wine WINEARCH=win32 wine "$@"
 }
 
-alias local_android_suspend='virsh -c qemu:///system suspend Android'
-alias local_android_resume='virsh -c qemu:///system resume Android'
-alias local_android_show='virt-viewer -c qemu:///system Android'
-alias local_ubuntu16_suspend='virsh -c qemu:///system suspend ubuntu16.04'
-alias local_ubuntu16_resume='virsh -c qemu:///system resume ubuntu16.04'
-alias local_ubuntu16_show='virt-viewer -c qemu:///system ubuntu16.04'
+local_android() {
+    if [[ "$1" == 'show' ]]; then
+        virt-viewer -c qemu:///system Android
+    else
+        virsh -c qemu:///system "$1" Android
+    fi
+}
+
+local_ubuntu16() {
+    if [[ "$1" == 'show' ]]; then
+        virt-viewer -c qemu:///system ubuntu16.04
+    else
+        virsh -c qemu:///system "$1" ubuntu16.04
+    fi
+}
 
 alias firefox-esr='firefox-esr-52 --P ESR --no-remote'

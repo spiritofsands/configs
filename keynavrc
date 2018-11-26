@@ -34,8 +34,8 @@ semicolon warp,end
 Shift+1 warp,click 1
 Shift+2 warp,click 2
 Shift+3 warp,click 3
-Shift+j warp,click 4
-Shift+k warp,click 5
+Shift+k warp,click 4
+Shift+j warp,click 5
 
 # Zoom to the current window
 w windowzoom
