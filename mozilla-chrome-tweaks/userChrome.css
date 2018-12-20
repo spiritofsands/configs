@@ -37,3 +37,18 @@
 #tabbrowser-tabs .scrollbutton-up,#tabbrowser-tabs .scrollbutton-down,#alltabs-button,.tabbrowser-tab:not([fadein]){
   display: none;
 }
+
+#PlacesToolbarItems,
+#sidebar-search-container #search-box,
+.sidebar-placesTree .tabbrowser-tab .tab-label {
+    font-size: 18px !important;
+}
+
+label.tab-text {
+    font-size: 16px !important;
+}
+
+/* exception for badge on adblocker */
+.toolbarbutton-badge {
+    font-size: 12px !important;
+}

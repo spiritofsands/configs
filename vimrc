@@ -3,7 +3,9 @@
 "
 
 " SHELL
-"   sudo apt install language-server, shell -n flag, shellcheck, shfmt
+"   npm i -g bash-language-server
+"   sudo apt install shellcheck golang
+"   shfmt
 " TEXT
 "   npm install -g alex proselint
 " FRONTEND
@@ -12,10 +14,17 @@
 " BACKEND
 "   gem install rails_best_practices brakeman reek rubocop fasterer
 " C linters
-"   sudo apt install cppcheck clang clangtidy clang-format flawfinder gcc
-"   sudo apt install --no-install-recommends python-pip python3-setuptools
-"   pip install wheel
-"   pip install cpplint
+"   sudo apt install cppcheck clang clang-tidy clang-format flawfinder gcc
+"   cquery:
+"       https://github.com/cquery-project/cquery/wiki/Building-cquery
+"   cpplint:
+"       sudo apt install --no-install-recommends python3-pip python3-setuptools
+"       pip3 install wheel && pip3 install cpplint
+" C++ specific linters
+" sudo apt install clazy
+"
+" Cmake
+"   pip3 install cmakelint
 
 
 "
@@ -34,7 +43,7 @@ Plug 'ntpeters/vim-better-whitespace'
 Plug 'w0rp/ale'
 
 " fzf
-Plug '~/.fzf'
+Plug '~/.local/lib/fzf'
 Plug 'junegunn/fzf.vim'
 
 " matchIT

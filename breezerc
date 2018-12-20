@@ -1,7 +1,0 @@
-[Common]
-ShadowColor=19,47,80
-ShadowStrength=166
-
-[Windeco]
-DrawTitleBarSeparator=false
-TitleAlignment=AlignLeft

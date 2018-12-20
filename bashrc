@@ -104,13 +104,13 @@ if [[ -d ~/.rbenv/bin ]]; then
 fi
 
 # fzf
-if [[ -d ~/.fzf ]]; then
-  if [[ -d ~/.fzf/bin ]]; then
-    export PATH="$PATH:$HOME/.fzf/bin"
+if [[ -d ~/.local/lib/fzf ]]; then
+  if [[ -d ~/.local/lib/fzf/bin ]]; then
+    export PATH="$PATH:$HOME/.local/lib/fzf/bin"
   fi
 
-  if [[ -f ~/.fzf/shell/key-bindings.bash ]]; then
-    source ~/.fzf/shell/key-bindings.bash
+  if [[ -f ~/.local/lib/fzf/shell/key-bindings.bash ]]; then
+    source ~/.local/lib/fzf/shell/key-bindings.bash
   fi
 
   export FZF_DEFAULT_COMMAND='fd --type f --exclude .git'
@@ -131,14 +131,21 @@ if [[ -d ~/bin/yarn-v1.6.0/bin ]]; then
 fi
 
 # npm n
-if [[ -d ~/.n/bin ]]; then
-  export PATH="$PATH:$HOME/.n/bin"
-  export N_PREFIX="$HOME/.n"
+if [[ -d ~/.local/lib/n/bin ]]; then
+  # git clone https://github.com/tj/n ~/.local/lib/n
+  export PATH="$PATH:$HOME/.local/lib/n/bin"
+  export N_PREFIX="$HOME/.local/lib/n"
 fi
 
 # cargo
 if [[ -d ~/.cargo/bin ]]; then
   export PATH="$PATH:$HOME/.cargo/bin"
+fi
+
+# golang
+export GOPATH="$HOME/.local/lib/go"
+if [[ -d "$GOPATH/bin" ]]; then
+  export PATH="$PATH:$GOPATH/bin"
 fi
 
 # android platform tools
