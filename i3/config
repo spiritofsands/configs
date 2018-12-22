@@ -32,7 +32,7 @@ font pango:DejaVu Sans Mono 18
 floating_modifier $mod
 
 # lock screen
-bindsym $ctrl+$alt+l exec i3lock --no-unlock-indicator --image ~/.local/share/lockscreen.png --pointer=default
+bindsym $ctrl+$alt+l exec i3lock --color=000000
 
 # kill focused window
 bindsym $mod+Shift+q kill
@@ -142,7 +142,8 @@ bindsym $mod+Shift+Delete exec pactl set-sink-mute $(pactl list short sinks | he
 exec xrandr --output eDP-1 --off
 exec keynav
 exec redshift
-exec setxkbmap -layout us,ru -option grp:caps_toggle
+exec_always setxkbmap -layout us,ru -option grp:caps_toggle
 exec kbdd
 #exec nm-applet
 exec parcellite --no-icon
+exec feh --randomize --bg-fill ~/wall/*

@@ -5,7 +5,7 @@
 " SHELL
 "   npm i -g bash-language-server
 "   sudo apt install shellcheck golang
-"   shfmt
+"   go get -u mvdan.cc/sh/cmd/shfmt
 " TEXT
 "   npm install -g alex proselint
 " FRONTEND
@@ -21,7 +21,7 @@
 "       sudo apt install --no-install-recommends python3-pip python3-setuptools
 "       pip3 install wheel && pip3 install cpplint
 " C++ specific linters
-" sudo apt install clazy
+    " sudo apt install clazy
 "
 " Cmake
 "   pip3 install cmakelint
@@ -56,7 +56,8 @@ Plug 'maralla/completor.vim'
 Plug 'farmergreg/vim-lastplace'
 
 " c coding
-"Plug 'chazy/cscope_maps', { 'for': ['c', 'cpp'] }
+"Plug 'chazy/cscope_maps'
+"Plug 'joereynolds/gtags-scope'
 Plug 'majutsushi/tagbar'
 
 " camelcase spellcheck
@@ -67,7 +68,7 @@ Plug 'kmszk/CCSpellCheck.vim'
 " Plug 'honza/vim-snippets'
 
 " ctags
-"   sudo apt inserts universal-ctags global
+"   sudo apt install universal-ctags global
 Plug 'ludovicchabant/vim-gutentags'
 Plug 'skywind3000/gutentags_plus'
 
@@ -105,13 +106,17 @@ augroup vim_tagbar
 augroup END
 
 " gtags
-let g:gutentags_modules = []
-if executable('ctags')
-    let g:gutentags_modules += ['ctags']
-endif
-if executable('gtags-cscope') && executable('gtags')
-    let g:gutentags_modules += ['gtags_cscope']
-endif
+let g:gutentags_modules = ['ctags', 'gtags_cscope']
+let g:gutentags_cache_dir = expand('~/.vim/gutentags/tags-cache')
+let g:gutentags_plus_switch = 1
+"let g:gutentags_modules = []
+"if executable('ctags')
+"    let g:gutentags_modules += ['ctags']
+"endif
+"if executable('gtags-cscope') && executable('gtags')
+"    let g:gutentags_modules += ['gtags_cscope']
+"endif
+let g:gutentags_cache_dir = expand('~/.vim/gutentags')
 
 "
 " Config options

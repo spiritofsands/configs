@@ -33,6 +33,7 @@ for link in "${links[@]}"; do
 done
 
 ln -sv ~/.config/mozilla-chrome-tweaks ~/.config/mozilla/firefox/*/chrome
+ln -sv ~/.config/CPPLINT.cfg ~/CPPLINT.cfg
 
 echo 'sudo cp ~/.config/lock-before-sleep@.service /etc/systemd/system/lock-before-sleep@.service'
 echo 'sudo systemctl daemon-reload'
