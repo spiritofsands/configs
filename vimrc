@@ -97,6 +97,7 @@ let g:ale_fixers = {
   \   'sh': ['shfmt'],
   \}
 let g:ale_ruby_rubocop_options = '--parallel'
+let g:ale_c_parse_makefile = 1
 
 " tagbar
 let g:tagbar_compact = 1
