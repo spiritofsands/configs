@@ -140,10 +140,9 @@ bindsym $mod+Shift+Delete exec pactl set-sink-mute $(pactl list short sinks | he
 
 # autostart
 exec xrandr --output eDP-1 --off
-exec keynav
 exec redshift
-exec_always setxkbmap -layout us,ru -option grp:caps_toggle
 exec kbdd
 #exec nm-applet
 exec parcellite --no-icon
-exec feh --randomize --bg-fill ~/wall/*
+exec sh -c 'sleep 1s && feh --randomize --bg-fill ~/wall/*'
+exec sh -c 'sleep 1s && keynav'
