@@ -1,6 +1,6 @@
 .tabbrowser-tab:not([pinned]) {
   flex-grow:1;
-  min-width:300px;
+  min-width:400px;
 }
 .tabbrowser-tab,.tab-background {
   height:var(--tab-min-height);
@@ -41,14 +41,11 @@
 #PlacesToolbarItems,
 #sidebar-search-container #search-box,
 .sidebar-placesTree .tabbrowser-tab .tab-label {
+    font-family: DejaVu Sans Mono;
     font-size: 18px !important;
 }
 
 label.tab-text {
-    font-size: 16px !important;
-}
-
-/* exception for badge on adblocker */
-.toolbarbutton-badge {
-    font-size: 12px !important;
+    font-family: DejaVu Sans Mono;
+    font-size: 18px !important;
 }

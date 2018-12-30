@@ -15,8 +15,8 @@ URxvt.iso14755 : false
 URxvt.letterSpace: 0
 
 ! Font
-URxvt*font:            xft:DejaVu Sans Mono:size=18
-!URxvt*boldFont:        xft:Terminus:size=12:bold:autohint=false:antialias=false:hinting=false
+!@@hidpi@@
+URxvt*font: xft:DejaVu Sans Mono:size=12
 
 URxvt*allowBoldFonts: true
 

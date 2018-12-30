@@ -8,7 +8,7 @@
 
 general {
         colors = true
-        interval = 1
+        interval = 5
 }
 
 order += "disk /"
@@ -19,30 +19,35 @@ order += "volume master"
 order += "tztime local"
 
 wireless _first_ {
-        format_up = "%essid%quality"
+        format_up = "%essid %quality %ip"
         format_down = "Wifi"
+        color_good = "#FFFFFF"
 }
 
 ethernet _first_ {
         format_up = "Eth"
-        format_down = "Eth"
+        format_down = "No eth"
+        color_bad = "#FFFFFF"
 }
 
 battery all {
-        format = "🔋 %percentage %remaining"
+        format = "Bat: %percentage %remaining"
 }
 
 volume master {
-        format = "♪ %volume"
-        format_muted = "♪ muted"
+        format = "♪: %volume"
+        format_muted = "♪: muted"
         device = "pulse"
         mixer = "Master"
         mixer_idx = 0
 }
+
 tztime local {
         format = "%A, %B %e, %H:%M"
 }
 
 disk "/" {
-        format = "%avail"
+        format = "/: %avail"
+        low_threshold =  5
+        format_below_threshold = "Low space: %percentage_avail"
 }

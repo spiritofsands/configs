@@ -15,18 +15,12 @@ set $ctrl Control
 
 # Font for window titles. Will also be used by the bar unless a different font
 # is used in the bar {} block below.
-font pango:DejaVu Sans Mono 18
+#@@hidpi@@
+font pango:DejaVu Sans Mono 12
 
-# This font is widely installed, provides lots of unicode glyphs, right-to-left
-# text rendering and scalability on retina/hidpi displays (thanks to pango).
-#font pango:DejaVu Sans Mono 8
-
-# Before i3 v4.8, we used to recommend this one as the default:
-# font -misc-fixed-medium-r-normal--13-120-75-75-C-70-iso10646-1
-# The font above is very space-efficient, that is, it looks good, sharp and
-# clear in small sizes. However, its unicode glyph coverage is limited, the old
-# X core fonts rendering does not support right-to-left and this being a bitmap
-# font, it doesn’t scale on retina/hidpi displays.
+# disable frames
+default_border none
+hide_edge_borders smart
 
 # Use Mouse+$mod to drag floating windows to their wanted position
 floating_modifier $mod
@@ -38,11 +32,8 @@ bindsym $ctrl+$alt+l exec i3lock --color=000000
 bindsym $mod+Shift+q kill
 
 # start dmenu (a program launcher)
-bindsym $mod+space exec dmenu_run -fn 'DejaVu Sans Mono-18'
-# There also is the (new) i3-dmenu-desktop which only displays applications
-# shipping a .desktop file. It is a wrapper around dmenu, so you need that
-# installed.
-# bindsym $mod+d exec --no-startup-id i3-dmenu-desktop
+#@@hidpi@@
+bindsym $mod+space exec dmenu_run -fn 'DejaVu Sans Mono-12'
 
 # change focus
 bindsym $mod+h focus left
@@ -101,18 +92,12 @@ bindsym $ctrl+$alt+e move container to workspace 6
 # reload the configuration file
 bindsym $mod+Shift+c reload
 # restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
-bindsym $mod+$alt+Shift+r restart
+bindsym $mod+Shift+Escape restart
 # exit i3 (logs you out of your X session)
 bindsym $ctrl+$alt+Delete exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -b 'Yes, exit i3' 'i3-msg exit'"
 
 # resize window (you can also use the mouse for that)
 mode "resize" {
-        # These bindings trigger as soon as you enter the resize mode
-
-        # Pressing left will shrink the window’s width.
-        # Pressing right will grow the window’s width.
-        # Pressing up will shrink the window’s height.
-        # Pressing down will grow the window’s height.
         bindsym h resize shrink width 1 px or 1 ppt
         bindsym j resize grow height 1 px or 1 ppt
         bindsym k resize shrink height 1 px or 1 ppt
@@ -122,13 +107,12 @@ mode "resize" {
         bindsym Return mode "default"
         bindsym Escape mode "default"
 }
-
 bindsym $mod+Shift+r mode "resize"
 
 # Start i3bar to display a workspace bar (plus the system information i3status
 # finds out, if available)
 bar {
-        status_command py3status
+        status_command i3status
         separator_symbol " | "
         workspace_buttons no
 }
@@ -137,12 +121,21 @@ bar {
 bindsym $mod+Up exec pactl set-sink-volume $(pactl list short sinks | head -c1) +5%
 bindsym $mod+Down exec pactl set-sink-volume $(pactl list short sinks | head -c1) -5%
 bindsym $mod+Shift+Delete exec pactl set-sink-mute $(pactl list short sinks | head -c1) toggle
+bindsym XF86AudioRaiseVolume exec pactl set-sink-volume $(pactl list short sinks | head -c1) +5%
+bindsym XF86AudioLowerVolume exec exec pactl set-sink-volume $(pactl list short sinks | head -c1) -5%
+bindsym XF86AudioMute exec pactl set-sink-mute $(pactl list short sinks | head -c1) toggle
+
+#brightness
+bindsym $mod+Left exec xbacklight -dec 5 -fps 30
+bindsym $mod+Right exec xbacklight -inc 5 -fps 30
+bindsym XF86MonBrightnessDown exec xbacklight -dec 5 -fps 30
+bindsym XF86MonBrightnessUp exec xbacklight -inc 5 -fps 30
 
 # autostart
-exec xrandr --output eDP-1 --off
+#exec xrandr --output eDP-1 --off
+#exec nm-applet
 exec redshift
 exec kbdd
-#exec nm-applet
 exec parcellite --no-icon
 exec sh -c 'sleep 1s && feh --randomize --bg-fill ~/wall/*'
 exec sh -c 'sleep 1s && keynav'

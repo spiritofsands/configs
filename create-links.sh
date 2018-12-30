@@ -26,6 +26,7 @@ stylelintrc
 Xresources
 moc
 thunderbird
+grkrc-2.0
 )
 
 for link in "${links[@]}"; do
@@ -43,6 +44,7 @@ echo 'sudo cp pcspkr-blacklist.conf /etc/modprobe.d/'
 
 git config --global pull.rebase true
 git config --global alias.review 'push origin @:refs/for/master'
+git config --global alias.s 'status'
 git config --global color.ui auto
 git config --global core.excludesfile ~/.gitignore
 
