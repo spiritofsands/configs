@@ -452,7 +452,7 @@ ResampleMethod = SincBestQuality
 #TagsCacheSize = 256
 
 # Number items in the playlist.
-#PlaylistNumbering = yes
+PlaylistNumbering = no
 
 # Main window layouts can be configured.  You can change the position and
 # size of the menus (directory and playlist).  You have three layouts and

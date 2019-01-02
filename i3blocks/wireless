@@ -1,0 +1,30 @@
+#!/bin/bash
+
+INTERFACE="${instance:-_first_}"
+FORMAT_UP="${format_up:-WIFI: %essid}"
+FORMAT_DOWN="${format_down:-WIFI}"
+
+if [ "$INTERFACE" = "_first_" ]
+then
+  INTERFACE="$(cat /proc/net/wireless | sed -n 3p | cut -d: -f1)"
+fi
+
+essid () {
+  SSID="$(nmcli | grep "^$INTERFACE")"
+  echo "${SSID##*to }"
+}
+
+if grep -wq up "/sys/class/net/$INTERFACE/operstate"
+then
+  echo "$FORMAT_UP" | sed \
+    -e "s,%essid,$(essid),g" \
+    -e q
+  echo
+  echo '#00FF00'
+else
+  echo "$FORMAT_DOWN"
+  echo
+  echo '#FF0000'
+fi
+
+exit

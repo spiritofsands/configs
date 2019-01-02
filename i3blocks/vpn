@@ -1,0 +1,30 @@
+#!/bin/bash
+
+FORMAT_UP="${format_up:-VPN: %vpn_name}"
+FORMAT_DOWN="${format_down:-VPN}"
+MAX_LENGTH=10
+
+vpn_name () {
+  NAME="$(nmcli connection show --active | grep vpn)"
+  NAME="${NAME%% *}"
+  if [ "${#NAME}" -gt "$MAX_LENGTH" ]; then
+      echo "${NAME::$MAX_LENGTH}…"
+  else
+      echo "$NAME"
+  fi
+}
+
+if nmcli connection show --active | grep -wq vpn
+then
+  echo "$FORMAT_UP" | sed \
+    -e "s,%vpn_name,$(vpn_name),g" \
+    -e q
+  echo
+  echo '#00FF00'
+else
+  echo "$FORMAT_DOWN"
+  echo
+  echo '#FF0000'
+fi
+
+exit
