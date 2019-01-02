@@ -1,7 +1,14 @@
-
 mozilla/
 pulse/
 tmux/
 vim/
 qBittorrent/
-moc
+moc/
+GIMP/
+VirtualBox/
+configstore/
+gtk-2.0/
+thunderbird/
+virt-viewer/
+user-dirs.locale
+sdkmanager/
