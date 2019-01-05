@@ -137,5 +137,7 @@ bindsym XF86MonBrightnessUp exec --no-startup-id xbacklight -inc 5 -fps 30
 exec --no-startup-id redshift
 exec --no-startup-id kbdd
 exec --no-startup-id parcellite --no-icon
+exec --no-startup-id reconnect-vpn.sh
+exec --no-startup-id compton
 exec --no-startup-id sh -c 'sleep 1s && feh --randomize --bg-fill ~/wall/*'
 exec --no-startup-id sh -c 'sleep 1s && keynav'
