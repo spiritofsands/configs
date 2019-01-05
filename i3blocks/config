@@ -6,6 +6,12 @@ command=/usr/share/i3blocks/$BLOCK_NAME
 separator_block_width=15
 markup=none
 
+# Changes indicator
+#
+[changes]
+command=~/.config/i3blocks/check-for-unpushed-configs.sh
+interval=30
+
 # Volume indicator
 #
 [volume]
