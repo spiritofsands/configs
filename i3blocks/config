@@ -15,10 +15,9 @@ interval=30
 # Volume indicator
 #
 [volume]
+command=/usr/share/i3blocks/volume 1% pulse
 label=VOL
-#label=♪
 instance=Master
-#instance=PCM
 interval=5
 #interval=once
 #signal=10
@@ -29,28 +28,15 @@ interval=5
 label=/
 instance=/
 interval=30
-separator=false
 
-[disk]
-label=HOME
-instance=/home/kos
-interval=30
-
-# Network interface monitoring
+# Network
 #
-#[iface]
-#color=#00FF00
-#interval=10
-#separator=false
-
 [wireless]
 command=~/.config/i3blocks/wireless
 interval=10
-separator=false
 
 #[ethernet]
 #interval=10
-#separator=false
 
 [vpn]
 command=~/.config/i3blocks/vpn
@@ -61,7 +47,6 @@ interval=10
 [load_average]
 label=LOAD
 interval=10
-separator=false
 
 #
 # Temperature

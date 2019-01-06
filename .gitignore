@@ -16,3 +16,10 @@ MomodoraRUtM/
 QtProject.conf
 pavucontrol.ini
 vlc/
+dconf/
+Xresources
+dunst/
+gtk-3.0/
+gtkrc-2.0
+i3/
+mimeapps.list

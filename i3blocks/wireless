@@ -6,12 +6,12 @@ FORMAT_DOWN="${format_down:-WIFI}"
 
 if [ "$INTERFACE" = "_first_" ]
 then
-  INTERFACE="$(cat /proc/net/wireless | sed -n 3p | cut -d: -f1)"
+  INTERFACE="$(nmcli connection show --active | grep wifi | sed -e 's/ *$//' -e 's/.* //')"
 fi
 
 essid () {
-  SSID="$(nmcli | grep "^$INTERFACE")"
-  echo "${SSID##*to }"
+  SSID="$(nmcli connection show --active | grep "$INTERFACE")"
+  echo "${SSID%% *}"
 }
 
 if grep -wq up "/sys/class/net/$INTERFACE/operstate"
