@@ -2,6 +2,7 @@
 
 config_flag=0
 cd ~/.config || exit
+git fetch
 if [[ -n $(git status -s) ]]; then
     config_flag=1
 fi
@@ -14,6 +15,7 @@ fi
 
 bin_flag=0
 cd ~/bin || exit
+git fetch
 if [[ -n $(git status -s) ]]; then
     bin_flag=1
 fi
