@@ -10,7 +10,7 @@ then
 fi
 
 essid () {
-  SSID="$(nmcli connection show --active | grep "$INTERFACE")"
+  SSID="$(nmcli connection show --active | grep "wifi *$INTERFACE")"
   echo "${SSID%% *}"
 }
 
