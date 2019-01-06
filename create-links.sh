@@ -124,6 +124,6 @@ setup_font_size() {
     done
 }
 
+setup_font_size "$1"
 setup_symlinks
 setup_services
-setup_font_size "$1"
