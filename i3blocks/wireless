@@ -1,16 +1,17 @@
 #!/bin/bash
 
+TYPE="${1:?Provide a network type}"
 INTERFACE="${instance:-_first_}"
-FORMAT_UP="${format_up:-WIFI: %essid}"
-FORMAT_DOWN="${format_down:-WIFI}"
+FORMAT_UP="${format_up:-${TYPE^^} %essid}"
+FORMAT_DOWN="${format_down:-${TYPE^^}}"
 
 if [ "$INTERFACE" = "_first_" ]
 then
-  INTERFACE="$(nmcli connection show --active | grep wifi | sed -e 's/ *$//' -e 's/.* //')"
+  INTERFACE="$(nmcli connection show --active | grep "$TYPE" | sed -e 's/ *$//' -e 's/.* //')"
 fi
 
 essid () {
-  SSID="$(nmcli connection show --active | grep "wifi *$INTERFACE")"
+  SSID="$(nmcli connection show --active | grep "$TYPE *$INTERFACE")"
   echo "${SSID%% *}"
 }
 

@@ -101,10 +101,6 @@ let g:ale_c_parse_makefile = 1
 
 " tagbar
 let g:tagbar_compact = 1
-augroup vim_tagbar
-  " autooopen
-  autocmd FileType c,cpp nested :call tagbar#autoopen(0)
-augroup END
 
 " gtags
 let g:gutentags_modules = ['ctags', 'gtags_cscope']

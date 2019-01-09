@@ -32,11 +32,12 @@ interval=30
 # Network
 #
 [wireless]
-command=~/.config/i3blocks/wireless
+command=~/.config/i3blocks/wireless wifi
 interval=10
 
-#[ethernet]
-#interval=10
+[ethernet]
+command=~/.config/i3blocks/wireless ethernet
+interval=10
 
 [vpn]
 command=~/.config/i3blocks/vpn
