@@ -105,10 +105,6 @@ fi
 
 # fzf
 if [[ -d ~/.local/lib/fzf ]]; then
-  if [[ -d ~/.local/lib/fzf/bin ]]; then
-    export PATH="$PATH:$HOME/.local/lib/fzf/bin"
-  fi
-
   if [[ -f ~/.local/lib/fzf/shell/key-bindings.bash ]]; then
     source ~/.local/lib/fzf/shell/key-bindings.bash
   fi

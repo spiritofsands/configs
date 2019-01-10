@@ -124,6 +124,36 @@ setup_font_size() {
     done
 }
 
+setup_external_tools() {
+    local -r tools=(
+        clipnotify
+        clipmenu
+        fzf
+    )
+    local -r lib_path="$HOME/.local/lib"
+    local -r bin_path="$HOME/.local/bin"
+
+    for tool in "${tools[@]}"; do
+        if [[ ! -d "$lib_path/$tool" ]]; then
+            echo "$tool is not installed at $lib_path"
+            continue;
+        fi
+
+        local search_path="$lib_path/$tool"
+        if [[ -d "$search_path/bin" ]]; then
+            search_path="$search_path/bin"
+        fi
+
+        for file in "$search_path"/*; do
+            if [[ ! -d "$file" && -x "$file" ]]; then
+                ln -sv "$file" "$bin_path"
+            fi
+        done
+    done
+
+}
+
 setup_font_size "$1"
 setup_symlinks
 setup_services
+setup_external_tools
