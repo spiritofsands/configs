@@ -15,7 +15,7 @@ case "$TYPE" in
 esac
 
 INTERFACE="${instance:-_first_}"
-FORMAT_UP="${format_up:-$TYPE_NAME %essid}"
+FORMAT_UP="${format_up:-$TYPE_NAME %conn_name}"
 FORMAT_DOWN="${format_down:-$TYPE_NAME}"
 
 if [ "$INTERFACE" = "_first_" ]
@@ -23,18 +23,17 @@ then
   INTERFACE="$(nmcli connection show --active | grep "$TYPE" | sed -e 's/ *$//' -e 's/.* //')"
 fi
 
-essid () {
-  SSID="$(nmcli connection show --active | grep "$TYPE *$INTERFACE")"
-  echo "${SSID%% *}"
+conn_name () {
+  NAME="$(nmcli connection show --active | grep "$TYPE *$INTERFACE")"
+  echo "${NAME%% *}"
 }
 
-if grep -wq up "/sys/class/net/$INTERFACE/operstate"
-then
+if [[ ! -z "$(conn_name)" ]]; then
   echo "$FORMAT_UP" | sed \
-    -e "s,%essid,$(essid),g" \
+    -e "s,%conn_name,$(conn_name),g" \
     -e q
   echo
-  echo '#00FF00'
+  echo '#FFFFFF'
 else
   echo "$FORMAT_DOWN"
   echo

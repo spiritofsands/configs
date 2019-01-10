@@ -1,6 +1,6 @@
 #!/bin/bash
 
-FORMAT_UP="${format_up:-VPN: %vpn_name}"
+FORMAT_UP="${format_up:-VPN %vpn_name}"
 FORMAT_DOWN="${format_down:-VPN}"
 MAX_LENGTH=10
 
