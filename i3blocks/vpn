@@ -1,26 +1,43 @@
 #!/bin/bash
 
-FORMAT_UP="${format_up:-VPN %vpn_name}"
+FORMAT_UP="${format_up:-VPN %vpn_names}"
 FORMAT_DOWN="${format_down:-VPN}"
-MAX_LENGTH=10
+VPNS=''
+IS_WORK=0
 
-vpn_name () {
-  NAME="$(nmcli connection show --active | grep vpn)"
-  NAME="${NAME%% *}"
-  if [ "${#NAME}" -gt "$MAX_LENGTH" ]; then
-      echo "${NAME::$MAX_LENGTH}…"
-  else
-      echo "$NAME"
-  fi
+get_vpn_names() {
+  local -r NAMES=(
+    $(nmcli connection show --active | grep '\bvpn\b' | cut -f1 -d ' ')
+  )
+
+  local -r last_i="$(( ${#NAMES[@]} -1 ))"
+  for i in $(seq 0 "$last_i"); do
+    if [[ "${NAMES[i]}" =~ WRK ]]; then
+        IS_WORK=1
+    fi
+
+    VPNS+="${NAMES[i]}"
+
+    if [[ "$i" -ne "$last_i" ]]; then
+      VPNS+=', '
+    fi
+  done
 }
+
+get_vpn_names
 
 if nmcli connection show --active | grep -wq vpn
 then
   echo "$FORMAT_UP" | sed \
-    -e "s,%vpn_name,$(vpn_name),g" \
+    -e "s/%vpn_names/${VPNS}/g" \
     -e q
   echo
-  echo '#00FF00'
+
+  if [[ "$IS_WORK" -eq 1 ]]; then
+    echo '#FFFF00'
+  else
+    echo '#00FF00'
+  fi
 else
   echo "$FORMAT_DOWN"
   echo
