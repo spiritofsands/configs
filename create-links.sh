@@ -146,7 +146,10 @@ setup_external_tools() {
 
         for file in "$search_path"/*; do
             if [[ ! -d "$file" && -x "$file" ]]; then
-                ln -sv "$file" "$bin_path"
+                # TODO: update broken links
+                if [[ ! -f "$bin_path/$(basename "$file")" ]]; then
+                    ln -sv "$file" "$bin_path/"
+                fi
             fi
         done
     done

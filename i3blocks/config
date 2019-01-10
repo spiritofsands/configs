@@ -10,7 +10,7 @@ markup=none
 #
 [changes]
 command=~/.config/i3blocks/check-for-unpushed-configs.sh
-interval=10800 # 3 hours
+interval=600 # 3 hours
 
 # Volume indicator
 #

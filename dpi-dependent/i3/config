@@ -31,7 +31,9 @@ bindsym $ctrl+$alt+l exec --no-startup-id ~/bin/lock.sh
 bindsym $mod+Shift+q kill
 
 # start dmenu (a program launcher)
-bindsym $mod+space exec --no-startup-id dmenu_run -fn 'DejaVu Sans Mono-%FONT_SIZE%'
+bindsym $mod+space exec --no-startup-id dmenu_run -fn "DejaVu Sans Mono-%FONT_SIZE%"
+#FIXME path
+bindsym $mod+v exec --no-startup-id ~/.local/bin/clipmenu -fn "DejaVu Sans Mono-%FONT_SIZE%"
 
 # change focus
 bindsym $mod+h focus left
@@ -138,5 +140,7 @@ exec --no-startup-id reconnect-vpn.sh
 exec --no-startup-id compton
 exec --no-startup-id thunderbird
 exec --no-startup-id udiskie -q -C -N -T -F
+exec --no-startup-id clipnotify
+exec --no-startup-id clipmenud
 exec --no-startup-id sh -c 'sleep 1s && feh --randomize --bg-fill ~/wall/*'
 exec --no-startup-id sh -c 'sleep 1s && keynav'
