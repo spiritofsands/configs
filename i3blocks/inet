@@ -1,9 +1,22 @@
 #!/bin/bash
 
 TYPE="${1:?Provide a network type}"
+case "$TYPE" in
+    "wifi")
+        TYPE_NAME='WIFI'
+        ;;
+    "ethernet")
+        TYPE_NAME='ETH'
+        ;;
+    *)
+    echo 'Wrong type'
+        exit 1
+        ;;
+esac
+
 INTERFACE="${instance:-_first_}"
-FORMAT_UP="${format_up:-${TYPE^^} %essid}"
-FORMAT_DOWN="${format_down:-${TYPE^^}}"
+FORMAT_UP="${format_up:-$TYPE_NAME %essid}"
+FORMAT_DOWN="${format_down:-$TYPE_NAME}"
 
 if [ "$INTERFACE" = "_first_" ]
 then
