@@ -45,8 +45,8 @@ interval=10
 
 
 
-[load_average]
-label=LOAD
+[resource_eaters]
+command=~/.config/i3blocks/resource-eaters.sh
 interval=10
 
 #

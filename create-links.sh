@@ -82,6 +82,11 @@ setup_services() {
         echo 'sudo cp ~/.config/pcspkr-blacklist.conf /etc/modprobe.d/'
     fi
 
+    local sysctl_config='/etc/sysctl.d/99-sysctl.conf'
+    if ! grep -q '^kernel.sysrq=502' "$sysctl_config"; then
+        echo "echo \"kernel.sysrq=502\" | sudo tee $sysctl_config"
+    fi
+
     git config --global pull.rebase true
     git config --global alias.review 'push origin @:refs/for/master'
     git config --global alias.s 'status'
