@@ -3,17 +3,14 @@
 # The top properties below are applied to every block, but can be overridden.
 # Each block command defaults to the script name to avoid boilerplate.
 command=/usr/share/i3blocks/$BLOCK_NAME
-separator_block_width=15
+separator_block_width=31
 markup=none
 
-# Changes indicator
-#
+
 [changes]
 command=~/.config/i3blocks/check-for-unpushed-configs.sh
 interval=600 # 3 hours
 
-# Volume indicator
-#
 [volume]
 command=/usr/share/i3blocks/volume 1% pulse
 label=VOL
@@ -22,15 +19,11 @@ interval=5
 #interval=once
 #signal=10
 
-# Memory usage
-#
 [disk]
 label=/
 instance=/
 interval=30
 
-# Network
-#
 [wireless]
 command=~/.config/i3blocks/inet wifi
 interval=10
@@ -43,18 +36,14 @@ interval=10
 command=~/.config/i3blocks/vpn
 interval=10
 
-
+[load_average]
+label=LOAD
+interval=10
 
 [resource_eaters]
 command=~/.config/i3blocks/resource-eaters.sh
 interval=10
 
-#
-# Temperature
-#
-# Support multiple chips, though lm-sensors.
-# The script may be called with -w and -c switches to specify thresholds,
-# see the script for details.
 [temperature]
 label=CPU
 interval=10

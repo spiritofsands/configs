@@ -131,13 +131,10 @@ bindsym XF86MonBrightnessDown exec --no-startup-id xbacklight -dec 5 -fps 30
 bindsym XF86MonBrightnessUp exec --no-startup-id xbacklight -inc 5 -fps 30
 
 # autostart
-#exec --no-startup-id xrandr --output eDP-1 --off
-#exec --no-startup-id nm-applet
+exec --no-startup-id autostart.sh
 exec --no-startup-id redshift
 exec --no-startup-id kbdd
-exec --no-startup-id reconnect-vpn.sh
 exec --no-startup-id compton
-exec --no-startup-id thunderbird
 exec --no-startup-id udiskie -q -C -N -T -F
 exec --no-startup-id clipnotify
 exec --no-startup-id clipmenud
