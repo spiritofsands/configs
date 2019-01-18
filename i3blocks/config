@@ -44,8 +44,12 @@ interval=10
 label=LOAD
 interval=10
 
-[resource_eaters]
-command=~/.config/i3blocks/resource-eaters.sh
+[cpu_eater]
+command=~/.config/i3blocks/resource-eaters.sh cpu
+interval=10
+
+[mem_eater]
+command=~/.config/i3blocks/resource-eaters.sh mem
 interval=10
 
 [temperature]
