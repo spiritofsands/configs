@@ -7,9 +7,13 @@ separator_block_width=31
 markup=none
 
 
+[apt_updates]
+command=~/.config/i3blocks/update-check.sh
+interval=600
+
 [changes]
 command=~/.config/i3blocks/check-for-unpushed-configs.sh
-interval=600 # 3 hours
+interval=600
 
 [volume]
 command=/usr/share/i3blocks/volume 1% pulse
