@@ -156,7 +156,6 @@ set wrapmargin=2
 " splits
 set splitbelow
 set splitright
-set statusline=─
 set fillchars=stl:─
 set fillchars+=stlnc:─
 set fillchars+=vert:│
