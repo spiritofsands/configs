@@ -28,6 +28,7 @@ setup_symlinks() {
     thunderbird
     gtkrc-2.0
     CPPLINT.cfg
+    xsessionrc
     )
 
     for link in "${links[@]}"; do

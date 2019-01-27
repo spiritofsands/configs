@@ -117,12 +117,12 @@ bar {
 }
 
 # volume
-bindsym $mod+Up exec --no-startup-id pactl set-sink-volume $(pactl list short sinks | head -c1) +5%
-bindsym $mod+Down exec --no-startup-id pactl set-sink-volume $(pactl list short sinks | head -c1) -5%
-bindsym $mod+Shift+Delete exec --no-startup-id pactl set-sink-mute $(pactl list short sinks | head -c1) toggle
-bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume $(pactl list short sinks | head -c1) +5%
-bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume $(pactl list short sinks | head -c1) -5%
-bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute $(pactl list short sinks | head -c1) toggle
+bindsym $mod+Up exec --no-startup-id volume.sh --inc
+bindsym $mod+Down exec --no-startup-id volume.sh --dec
+bindsym $mod+Shift+Delete exec --no-startup-id volume.sh --mute
+bindsym XF86AudioRaiseVolume exec --no-startup-id volume.sh --inc
+bindsym XF86AudioLowerVolume exec --no-startup-id volume.sh --dec
+bindsym XF86AudioMute exec --no-startup-id volume.sh --mute
 
 #brightness
 bindsym $mod+Left exec --no-startup-id xbacklight -dec 5 -fps 30
