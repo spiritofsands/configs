@@ -25,7 +25,7 @@ hide_edge_borders smart
 floating_modifier $mod
 
 # lock screen
-bindsym $ctrl+$alt+l exec --no-startup-id ~/bin/lock.sh
+bindsym $ctrl+$alt+l exec --no-startup-id physlock
 
 # kill focused window
 bindsym $mod+Shift+q kill
@@ -138,5 +138,6 @@ exec --no-startup-id compton
 exec --no-startup-id udiskie -q -C -N -T -F
 exec --no-startup-id clipnotify
 exec --no-startup-id clipmenud
+exec --no-startup-id unclutter
 exec --no-startup-id sh -c 'sleep 1s && feh --randomize --bg-fill ~/wall/*'
 exec --no-startup-id sh -c 'sleep 1s && keynav'
