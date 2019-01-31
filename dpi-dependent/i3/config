@@ -25,7 +25,7 @@ hide_edge_borders smart
 floating_modifier $mod
 
 # lock screen
-bindsym $ctrl+$alt+l exec --no-startup-id physlock
+bindsym --release $ctrl+$alt+l exec --no-startup-id slock
 
 # kill focused window
 bindsym $mod+Shift+q kill
@@ -131,7 +131,7 @@ bindsym XF86MonBrightnessDown exec --no-startup-id xbacklight -dec 5 -fps 30
 bindsym XF86MonBrightnessUp exec --no-startup-id xbacklight -inc 5 -fps 30
 
 # autostart
-exec --no-startup-id autostart.sh
+exec --no-startup-id ~/.local/bin/autostart.sh
 exec --no-startup-id redshift
 exec --no-startup-id kbdd
 exec --no-startup-id compton

@@ -4,9 +4,8 @@ Before=sleep.target
 
 [Service]
 User=%I
-Type=forking
 Environment=DISPLAY=:0
-ExecStart=/home/%USER%/bin/lock.sh
+ExecStart=slock
 
 [Install]
 WantedBy=sleep.target
