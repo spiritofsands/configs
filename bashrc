@@ -40,22 +40,29 @@ fi
 # prompt
 PROMPT_COMMAND=__prompt_command
 __prompt_command() {
-  local EXIT="$?"
-  local RCol='\[\e[0m\]'
-  local Red='\[\e[0;31m\]'
-  local Cyan='\[\e[36m\]'
-  local Yel='\[\e[0;33m\]'
+  local -r exit="$?"
+  local -r reset_color='\[\e[0m\]'
+  local -r red='\[\e[0;31m\]'
+  local -r cyan='\[\e[36m\]'
+  local -r yellow='\[\e[0;33m\]'
+  local -r path="$cyan\\w$reset_color"
 
-  PS1="${Cyan}\w${RCol}"
-
-  if [ $EXIT -ne 0 ]; then
-    PS1+="${Red}\$${RCol} "
+  local error_hl=''
+  if [ "$exit" -ne 0 ]; then
+    error_hl="$red\$$reset_color "
   else
-    PS1+="${Cyan}\$${RCol} "
+    error_hl="$cyan\$$reset_color "
   fi
 
+  local hostname=''
+  if _is_ssh; then
+      hostname="$yellow\\h$reset_color "
+  fi
+
+  PS1="$hostname$path$error_hl"
+
   # git shortcuts where possible
-  if is_git; then
+  if _is_git; then
     _add_git_associations
   else
     _remove_git_associations
