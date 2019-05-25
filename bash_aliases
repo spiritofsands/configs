@@ -26,14 +26,18 @@ alias l='ls'
 # exit alias
 alias ':q'='exit'
 
-alias alert='notify-send --urgency=low -i \
-    "$([ $? = 0 ] && echo terminal || echo error)" \
+alias alert='notify-send --urgency=low -i
+    "$([ $? = 0 ] && echo terminal || echo error)"
     "$(history|tail -n1|sed -e '\''s/^\s*[0-9]\+\s*//;s/[;&|]\s*alert$//'\'')"'
 
 if _is_installed wine; then
-    alias wine32='INEPREFIX=~/.wine WINEARCH=win32 wine'
+    wine32() {
+        WINEPREFIX=~/.wine WINEARCH=win32 wine
+    }
 fi
 
 alias vm_ubuntu='_vm ubuntu16.04'
 
 alias firefox-esr='firefox-esr-52 --P ESR --no-remote'
+
+alias tmux='TERM=xterm-256color tmux'

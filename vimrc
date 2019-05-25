@@ -3,9 +3,9 @@
 "
 
 " SHELL
-"   npm i -g bash-language-server
-"   sudo apt install shellcheck golang
-"   go get -u mvdan.cc/sh/cmd/shfmt
+"   bash-language-server: npm i -g bash-language-server
+"   shellcheck: https://storage.googleapis.com/shellcheck/shellcheck-stable.linux.x86_64.tar.xz
+"   shfmt: sudo apt install golang && go get -u mvdan.cc/sh/cmd/shfmt
 " TEXT
 "   npm install -g alex proselint
 " FRONTEND
@@ -14,7 +14,9 @@
 " BACKEND
 "   gem install rails_best_practices brakeman reek rubocop fasterer
 " C linters
-"   sudo apt install cppcheck clang clang-tidy clang-format flawfinder gcc
+"   cppcheck: https://github.com/danmar/cppcheck/
+"   flawfinder: https://dwheeler.com/flawfinder/
+"   sudo apt install clang clang-tidy clang-format gcc
 "   cquery:
 "       https://github.com/cquery-project/cquery/wiki/Building-cquery
 "   cpplint:
@@ -72,6 +74,9 @@ Plug 'kmszk/CCSpellCheck.vim'
 Plug 'ludovicchabant/vim-gutentags'
 Plug 'skywind3000/gutentags_plus'
 
+" ranger
+Plug 'francoiscabrol/ranger.vim'
+
 call plug#end()
 
 
@@ -83,19 +88,15 @@ call plug#end()
 let g:ale_echo_msg_format = '%linter%: %code: %%s'
 let g:ale_lint_on_text_changed = 'normal'
 let g:ale_lint_on_insert_leave = 1
-let compiler_options = '-pedantic -Wall -Wextra -Wcast-align -Wcast-qual -Wctor-dtor-privacy -Wdisabled-optimization -Wformat=2 -Winit-self -Wmissing-declarations -Wmissing-include-dirs -Wold-style-cast -Woverloaded-virtual -Wredundant-decls -Wshadow -Wsign-conversion -Wsign-promo -Wstrict-overflow=5 -Wswitch-default -Wundef -Werror -Wno-unused -Wno-deprecated-register'
+let compiler_options = '--std=c++14 -pedantic -Wall -Wextra -Wcast-align -Wcast-qual -Wctor-dtor-privacy -Wdisabled-optimization -Wformat=2 -Winit-self -Wmissing-declarations -Wmissing-include-dirs -Wold-style-cast -Woverloaded-virtual -Wredundant-decls -Wshadow -Wsign-conversion -Wsign-promo -Wstrict-overflow=5 -Wswitch-default -Wundef -Werror -Wno-unused -Wno-deprecated-register'
 let g:ale_cpp_gcc_options = compiler_options
 let g:ale_cpp_clang_options = compiler_options
 let g:ale_cpp_clangtidy_checks = ['-android-*', '-abseil-*', '-fuschia-*', '-llvm-*', '-mpi*', '-objc-*', '-zircon-*']
 let g:ale_cpp_cppcheck_options = '--enable=all --std=c++14 --std=posix --inconclusive'
 let g:ale_cpp_parse_makefile = 2
 let g:ale_lint_delay = 100
-let g:ale_fixers = {
-  \   'javascript': ['eslint'],
-  \   'ruby': ['rubocop'],
-  \   'cpp': ['clang-format'],
-  \   'sh': ['shfmt'],
-  \}
+let g:ale_fixers = {'*': ['remove_trailing_lines', 'trim_whitespace'], 'c*': ['clang-format'], 'py': ['yapf'] }
+let g:ale_fix_on_save = 1
 let g:ale_ruby_rubocop_options = '--parallel'
 let g:ale_c_parse_makefile = 1
 
@@ -121,6 +122,12 @@ let g:gutentags_cache_dir = expand('~/.vim/gutentags')
 
 " be improved
 set nocompatible
+
+" make subst global
+set gdefault
+
+" display current symbol
+set ruler
 
 " make backspace work like most other apps
 set backspace=2
@@ -180,6 +187,10 @@ set shell=~/bin/clean-shell-wrapper.sh
 syntax spell toplevel
 "set spell spelllang=en_us
 
+" ranger
+let g:ranger_map_keys = 0
+let g:ranger_replace_netrw = 1
+let g:ranger_command_override = 'python2.7 ranger'
 
 "
 " Mappings
@@ -190,10 +201,6 @@ let mapleader = "\<Space>"
 
 " subst mapping
 noremap <Leader><S-s> :%s/\<<C-r><C-w>\>/<C-r><C-w>
-
-" vim explorer mappings
-noremap <leader>r :Explore<cr>
-noremap <leader><S-r> :Rexplore<cr>
 
 " shortcuts
 noremap <C-S> :update<CR>
@@ -233,11 +240,12 @@ inoremap <Left> <NOP>
 inoremap <Right> <NOP>
 noremap q: <Nop>
 noremap Q <Nop>
-"noremap <F1> <Nop>
-"inoremap <F1> <Nop>
 
 " spellchack
 noremap <F5> :setlocal spell! spell?<CR>
+
+" ranger
+noremap <leader>r :Ranger<CR>
 
 "
 " Colours
