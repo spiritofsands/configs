@@ -28,17 +28,6 @@ length=1129
 expanding=false
 length=31
 
-[Containments][1][Applets][41]
-immutability=1
-plugin=org.kde.plasma.systemmonitor.diskusage
-
-[Containments][1][Applets][41][Configuration]
-PreloadWeight=0
-
-[Containments][1][Applets][41][Configuration][ConfigDialog]
-DialogHeight=960
-DialogWidth=1280
-
 [Containments][1][Applets][41][Configuration][General]
 sources=partitions%2F%2Ffilllevel
 updateInterval=5000
@@ -136,25 +125,11 @@ extraItems=org.kde.plasma.notifications,org.kde.plasma.networkmanagement,org.kde
 hiddenItems=org.kde.plasma.bluetooth,org.kde.plasma.clipboard
 knownItems=org.kde.plasma.notifications,org.kde.plasma.networkmanagement,org.kde.plasma.battery,org.kde.plasma.clipboard,org.kde.plasma.mediacontroller,org.kde.plasma.devicenotifier,org.kde.plasma.bluetooth,org.kde.plasma.volume,org.kde.ktp-contactlist,org.kde.discovernotifier,org.kde.plasma.printmanager,org.kde.kdeconnect
 
-[Containments][1][Applets][50]
-immutability=1
-plugin=org.kde.thermalMonitor
-
-[Containments][1][Applets][50][Configuration]
-PreloadWeight=0
-
 [Containments][1][Applets][50][Configuration][Appearance]
 aliasFontSize=2
 iconBottomMargin=100
 iconFontSize=19
 temperatureFontSize=100
-
-[Containments][1][Applets][50][Configuration][ConfigDialog]
-DialogHeight=960
-DialogWidth=1280
-
-[Containments][1][Applets][50][Configuration][General]
-resources=[{"alias":"","childSourceObjects":{"lmsensors/acpitz-virtual-0/temp1":{"temperature":0},"lmsensors/acpitz-virtual-0/temp2":{"temperature":0},"lmsensors/acpitz-virtual-0/temp3":{"temperature":0},"lmsensors/acpitz-virtual-0/temp4":{"temperature":0},"lmsensors/acpitz-virtual-0/temp5":{"temperature":0},"lmsensors/acpitz-virtual-0/temp6":{"temperature":0},"lmsensors/coretemp-isa-0000/Core_0":{"temperature":0},"lmsensors/coretemp-isa-0000/Core_1":{"temperature":0},"lmsensors/coretemp-isa-0000/Package_id_0":{"temperature":0}},"meltdownTemperature":90,"overrideLimitTemperatures":false,"sourceName":"lmsensors/coretemp-isa-0000/Core_0","virtual":false,"warningTemperature":70}]
 
 [Containments][1][Applets][6]
 immutability=1
@@ -181,7 +156,7 @@ plugin=org.kde.plasma.panelspacer
 PreloadWeight=0
 
 [Containments][1][Applets][63][Configuration][General]
-length=51
+length=641
 
 [Containments][1][Applets][64][Configuration][General]
 expanding=false
@@ -198,6 +173,91 @@ PreloadWeight=0
 expanding=false
 length=32
 
+[Containments][1][Applets][71]
+immutability=1
+plugin=org.kde.thermalMonitor
+
+[Containments][1][Applets][71][Configuration][ConfigDialog]
+DialogHeight=900
+DialogWidth=1200
+
+[Containments][1][Applets][73]
+immutability=1
+plugin=com.github.burlog.plasmoid-sysmon
+
+[Containments][1][Applets][73][Configuration][ConfigDialog]
+DialogHeight=900
+DialogWidth=1200
+
+[Containments][1][Applets][73][Configuration][config]
+label=mem
+max_value=16330816
+monitor_type=1
+multiplier=1000
+
+[Containments][1][Applets][73][Configuration][sources]
+colors=limegreen,royalblue,chocolate
+labels=,,
+last_filter=mem/physical
+names=sys.mem/physical/application,sys.mem/physical/buf,sys.mem/physical/cached
+
+[Containments][1][Applets][77]
+immutability=1
+plugin=org.kde.plasma.panelspacer
+
+[Containments][1][Applets][77][Configuration][General]
+length=6
+
+[Containments][1][Applets][78]
+immutability=1
+plugin=com.github.burlog.plasmoid-sysmon
+
+[Containments][1][Applets][78][Configuration][ConfigDialog]
+DialogHeight=900
+DialogWidth=1200
+
+[Containments][1][Applets][78][Configuration][config]
+max_value=100
+monitor_type=1
+
+[Containments][1][Applets][78][Configuration][sources]
+colors=limegreen,#ff0000
+labels=\\0
+last_filter=load
+names=sys.acpi/battery/0/batterycharge,sys.cpu/system/loadavg1
+
+[Containments][1][Applets][79]
+immutability=1
+plugin=com.github.burlog.plasmoid-sysmon
+
+[Containments][1][Applets][79][Configuration][ConfigDialog]
+DialogHeight=900
+DialogWidth=1200
+
+[Containments][1][Applets][79][Configuration][config]
+max_value=387002260
+monitor_type=1
+
+[Containments][1][Applets][79][Configuration][sources]
+colors=#0000ff
+labels=free space
+last_filter=space
+names=exe.df | grep '/dev/nvme0n1p6' | cut -d' ' -f3
+
+[Containments][1][Applets][80]
+immutability=1
+plugin=org.kde.plasma.panelspacer
+
+[Containments][1][Applets][80][Configuration][General]
+length=16
+
+[Containments][1][Applets][81]
+immutability=1
+plugin=org.kde.plasma.panelspacer
+
+[Containments][1][Applets][81][Configuration][General]
+length=26
+
 [Containments][1][ConfigDialog]
 DialogHeight=102
 DialogWidth=1920
@@ -206,35 +266,7 @@ DialogWidth=1920
 PreloadWeight=0
 
 [Containments][1][General]
-AppletOrder=63;49;5;41;50;65;6
-
-[Containments][10]
-activityId=4aa178bd-2ec4-4b36-aaa8-4968d1c0089f
-formfactor=0
-immutability=1
-lastScreen=-1
-location=0
-plugin=org.kde.desktopcontainment
-wallpaperplugin=org.kde.image
-
-[Containments][10][Configuration]
-PreloadWeight=0
-
-[Containments][28]
-activityId=d39523aa-eb06-471d-a425-f124f527ecaa
-formfactor=0
-immutability=1
-lastScreen=1
-location=0
-plugin=org.kde.desktopcontainment
-wallpaperplugin=org.kde.image
-
-[Containments][28][Configuration]
-PreloadWeight=0
-
-[Containments][28][Wallpaper][org.kde.image][General]
-height=2160
-width=3840
+AppletOrder=63;49;81;78;73;79;77;71;80;5;65;6
 
 [Containments][30]
 activityId=15b7a3e3-bdc1-452b-a90d-0509d1e13fef
@@ -244,6 +276,12 @@ lastScreen=0
 location=0
 plugin=org.kde.desktopcontainment
 wallpaperplugin=org.kde.slideshow
+
+[Containments][30][Applets][74][Configuration][General]
+sources=mem%2Fphysical%2Fapplication
+
+[Containments][30][Applets][75][Configuration][General]
+sources=cpu%2Fsystem%2FTotalLoad
 
 [Containments][30][ConfigDialog]
 DialogHeight=960
@@ -376,7 +414,7 @@ immutability=1
 plugin=org.kde.plasma.networkmanagement
 
 [Containments][50][Applets][60][Configuration]
-PreloadWeight=31
+PreloadWeight=36
 
 [Containments][50][Applets][61]
 immutability=1
@@ -418,63 +456,43 @@ wallpaperplugin=org.kde.image
 [Containments][66][Configuration]
 PreloadWeight=42
 
-[Containments][7]
-activityId=d39523aa-eb06-471d-a425-f124f527ecaa
-formfactor=0
-immutability=1
-lastScreen=0
-location=0
-plugin=org.kde.desktopcontainment
-wallpaperplugin=org.kde.slideshow
+[Containments1Appletsts][67][Configuration][General]
+sources=cpu%2Fsystem%2FTotalLoad
 
-[Containments][7][ConfigDialog]
-DialogHeight=540
-DialogWidth=720
+[Containments1Appletsts][69][Configuration][General]
+sources=partitions%2F%2Ffilllevel
 
-[Containments][7][Configuration]
-PreloadWeight=0
+[Containments1Appletsts][70][Configuration][General]
+sources=disk%2Fnvme0n1_(259%3A0)%2FRate%2Fwblk
 
-[Containments][7][General]
-pressToMoveHelp=false
-showToolbox=false
+[Containments1Appletsts][71][Configuration][Appearance]
+aliasFontSize=2
+temperatureFontSize=76
+temperatureRightMargin=19
 
-[Containments][7][Wallpaper][General]
-SlideInterval=86400
-SlidePaths=/home/kos/wall
+[Containments1Appletsts][71][Configuration][General]
+resources=[{"alias":"CPU","childSourceObjects":{"acpi/Thermal_Zone/0-acpitz/Temperature":{"temperature":0},"acpi/Thermal_Zone/1-acpitz/Temperature":{"temperature":0},"acpi/Thermal_Zone/10-SEN2/Temperature":{"temperature":0},"acpi/Thermal_Zone/11-pch_skylake/Temperature":{"temperature":0},"acpi/Thermal_Zone/12-x86_pkg_temp/Temperature":{"temperature":0},"acpi/Thermal_Zone/13-B0D4/Temperature":{"temperature":0},"acpi/Thermal_Zone/14-iwlwifi/Temperature":{"temperature":0},"acpi/Thermal_Zone/2-acpitz/Temperature":{"temperature":0},"acpi/Thermal_Zone/3-acpitz/Temperature":{"temperature":0},"acpi/Thermal_Zone/4-acpitz/Temperature":{"temperature":0},"acpi/Thermal_Zone/5-acpitz/Temperature":{"temperature":0},"acpi/Thermal_Zone/6-acpitz/Temperature":{"temperature":0},"acpi/Thermal_Zone/7-acpitz/Temperature":{"temperature":0},"acpi/Thermal_Zone/8-INT3400 Thermal/Temperature":{"temperature":0},"acpi/Thermal_Zone/9-SEN1/Temperature":{"temperature":0},"lmsensors/acpitz-virtual-0/temp1":{"temperature":0},"lmsensors/acpitz-virtual-0/temp2":{"temperature":0},"lmsensors/acpitz-virtual-0/temp3":{"temperature":0},"lmsensors/acpitz-virtual-0/temp4":{"temperature":0},"lmsensors/acpitz-virtual-0/temp5":{"temperature":0},"lmsensors/acpitz-virtual-0/temp6":{"temperature":0},"lmsensors/acpitz-virtual-0/temp7":{"temperature":0},"lmsensors/acpitz-virtual-0/temp8":{"temperature":0},"lmsensors/coretemp-isa-0000/Core_0":{"temperature":0},"lmsensors/coretemp-isa-0000/Core_1":{"temperature":0},"lmsensors/coretemp-isa-0000/Core_2":{"temperature":0},"lmsensors/coretemp-isa-0000/Core_3":{"temperature":0},"lmsensors/coretemp-isa-0000/Package_id_0":{"temperature":0},"lmsensors/iwlwifi-virtual-0/temp1":{"temperature":0},"lmsensors/pch_skylake-virtual-0/temp1":{"temperature":0},"udisks/S3X2NX0M208532":{"temperature":0}},"meltdownTemperature":90,"overrideLimitTemperatures":false,"sourceName":"acpi/Thermal_Zone/11-pch_skylake/Temperature","virtual":false,"warningTemperature":70}]
 
-[Containments][7][Wallpaper][org.kde.image][General]
-height=900
-width=1600
+[Containments1Appletsts][72][Configuration][General]
+sources=mem%2Fphysical%2Fapplication
 
-[Containments][7][Wallpaper][org.kde.slideshow][General]
-SlideInterval=86400
-SlidePaths=/home/kos/wall
-height=900
-width=1600
+[Containments1Appletsts][73][Configuration][config]
+monitor_type=1
 
-[Containments][8]
-activityId=d7caa487-f835-4078-a30a-23727eeb3c7e
-formfactor=0
-immutability=1
-lastScreen=-1
-location=0
-plugin=org.kde.desktopcontainment
-wallpaperplugin=org.kde.image
+[Containments1Appletsts][73][Configuration][sources]
+colors=#ffaa00,#aa5500
+names=sys.mem/physical/used,sys.mem/swap/used
 
-[Containments][8][Configuration]
-PreloadWeight=0
+[Containments1Appletsts][78][Configuration][config]
+max_value=8
 
-[Containments][9]
-activityId=2ee8aa75-170c-4ea6-8376-b68ffb74f724
-formfactor=0
-immutability=1
-lastScreen=-1
-location=0
-plugin=org.kde.desktopcontainment
-wallpaperplugin=org.kde.image
+[Containments1Appletsts][79][Configuration][sources]
+colors=#5500ff
 
-[Containments][9][Configuration]
-PreloadWeight=0
+[Containments30Appletsts][73][Configuration][sources]
+colors=#ff5500,#55aaff
+last_filter=mem/
+names=sys.mem/swap/used,sys.mem/physical/used
 
 [General]
 immutability=2
