@@ -1,0 +1,63 @@
+[Basic Settings]
+Indexing-Enabled=false
+
+[ConfigDialog]
+Height 900=290
+Width 1600=385
+
+[DownloadDialog Settings]
+Height 2160=1018
+Height 900=522
+Width 1600=700
+Width 3840=1831
+
+[FileDialogSize]
+Height 2160=480
+Width 3840=1205
+
+[General]
+exclude folders[$e]=/
+first run=true
+folders[$e]=$HOME/
+
+[KFileDialog Settings]
+Height 900=540
+Recent Files[$e]=
+Recent URLs[$e]=
+Width 1600=864
+
+[KPropertiesDialog]
+Height 1080=592
+Height 2160=592
+Height 900=504
+Width 1600=447
+Width 1920=973
+Width 3840=548
+
+[MainWindow]
+Height 1080=1357
+Height 2160=1328
+Height 900=430
+MenuBar=Disabled
+State=AAAA/wAAAAD9AAAAAAAABw0AAAVNAAAABAAAAAQAAAAIAAAACPwAAAABAAAAAgAAAAEAAAAWAG0AYQBpAG4AVABvAG8AbABCAGEAcgAAAAAA/////wAAAAAAAAAA
+ToolBarsMovable=Disabled
+Width 1600=1586
+Width 1920=1805
+Width 3840=1813
+Window-Maximized 1080x1920=true
+Window-Maximized 900x1600=true
+
+[Notification Messages]
+FontSettingsChanged=false
+FormatSettingsChanged=false
+
+[Open-with settings]
+CompletionMode=5
+History=
+
+[PlasmaRunnerManager]
+LaunchCounts=
+
+[classic_mode]
+autoExpandOneLevel=false
+viewLayout=533,1066

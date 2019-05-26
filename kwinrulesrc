@@ -1,0 +1,35 @@
+[1]
+Description=Application settings for thunderbird
+clientmachine=kos-hp-probook-640-g1
+clientmachinematch=0
+desktop=-1
+desktoprule=4
+screen=0
+screenrule=3
+shortcut=Ctrl+Alt+T
+shortcutrule=2
+wmclass=mail thunderbird
+wmclasscomplete=true
+wmclassmatch=1
+
+[2]
+Description=firefox - skype
+clientmachine=kos-hp-probook-640-g1
+clientmachinematch=0
+desktop=-1
+desktoprule=3
+screen=0
+screenrule=3
+shortcut=Ctrl+Alt+S
+shortcutrule=2
+title=Skype
+titlematch=2
+types=1
+windowrole=browser
+windowrolematch=1
+wmclass=navigator firefox
+wmclasscomplete=true
+wmclassmatch=1
+
+[General]
+count=2

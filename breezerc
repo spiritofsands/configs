@@ -1,0 +1,7 @@
+[Common]
+ShadowColor=255,255,255
+ShadowSize=10
+ShadowStrength=179
+
+[Windeco]
+AnimationsEnabled=false
