@@ -23,8 +23,6 @@ setup_symlinks() {
     reek
     inputrc
     stylelintrc
-    Xresources
-    moc
     thunderbird
     gtkrc-2.0
     CPPLINT.cfg
@@ -67,19 +65,6 @@ setup_symlinks() {
 }
 
 setup_services() {
-    local -r lock_config='/etc/systemd/system/lock-on-suspend@.service'
-    if [[ ! -f "$lock_config" ]]; then
-        echo
-        echo "sed \"s/%USER%/$USER/\" ~/.config/lock-on-suspend@.service | sudo tee $lock_config > /dev/null"
-        echo "sudo systemctl enable lock-on-suspend@$USER"
-    fi
-
-    local -r keyboard_config='/etc/X11/xorg.conf.d/00-keyboard.conf'
-    if [[ ! -f "$keyboard_config" ]]; then
-        echo
-        echo "sudo cp ~/.config/00-keyboard.conf $keyboard_config"
-    fi
-
     local -r pcspkr_config='/etc/modprobe.d/pcspkr-blacklist.conf'
     if [[ ! -f "$pcspkr_config" ]]; then
         echo
@@ -90,13 +75,6 @@ setup_services() {
     if ! grep -q '^kernel.sysrq=502' "$sysctl_config"; then
         echo
         echo "echo \"kernel.sysrq=502\" | sudo tee $sysctl_config"
-    fi
-
-    local -r lightdm_config='/etc/lightdm/lightdm.conf'
-    if ! grep -q "autologin-user = $USER" "$lightdm_config"; then
-        echo
-        echo "echo \"autologin-user = $USER\" | sudo tee $lightdm_config"
-        echo "echo \"autologin-user-timeout = 0\" | sudo tee $lightdm_config"
     fi
 
     git config --global pull.rebase true
@@ -111,40 +89,8 @@ setup_services() {
     fi
 }
 
-setup_font_size() {
-    if [[ "$1" == '--big' ]]; then
-        readonly fontsize=18
-    else
-        readonly fontsize=12
-    fi
-
-    local -r dpi_configs="$HOME/.config/dpi-dependent"
-    cd "$dpi_configs" || exit
-    #TODO: add mozilla CSS as well
-    local configs=( $(find -type f) )
-
-    for config in "${configs[@]}"; do
-        local from="${config#.}"
-        local to="$HOME/.config$from"
-
-        if [[ -e "$to" ]]; then
-            echo "OVERWRITING: $to"
-        fi
-
-        local dir
-        dir="$(dirname "$to")"
-        if [[ ! -d "$dir" ]]; then
-            mkdir -v "$dir"
-        fi
-
-        sed "s/%FONT_SIZE%/$fontsize/" "$dpi_configs$from" > "$to"
-    done
-}
-
 setup_external_tools() {
     local -r tools=(
-        clipnotify
-        clipmenu
         fzf
     )
     local -r lib_path="$HOME/.local/lib"
@@ -173,7 +119,13 @@ setup_external_tools() {
 
 }
 
-setup_font_size "$1"
 setup_symlinks
 setup_services
 setup_external_tools
+
+# Ubuntu 16 case
+#sudo apt-mark hold tmux
+#sudo apt-mark hold vim
+#sudo apt-mark hold vim-common
+#sudo apt-mark hold libevent
+#sudo apt-mark hold libevent-2.1.8
