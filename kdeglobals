@@ -147,7 +147,7 @@ Size=32
 
 [DirSelect Dialog]
 DirSelectDialog Size=640,480
-History Items[$e]=file:$HOME/wall,file:$HOME/wall,file:$HOME/wall,file:///
+History Items[$e]=file:///,file:$HOME/wall,file:$HOME/wall,file:$HOME/wall
 
 [General]
 BrowserApplication[$e]=!/home/kos/.local/bin/firefox

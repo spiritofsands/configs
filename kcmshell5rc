@@ -1,0 +1,6 @@
+[Basic Settings]
+Indexing-Enabled=false
+
+[General]
+first run=true
+folders[$e]=$HOME/

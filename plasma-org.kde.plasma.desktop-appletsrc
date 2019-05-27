@@ -177,9 +177,15 @@ length=32
 immutability=1
 plugin=org.kde.thermalMonitor
 
+[Containments][1][Applets][71][Configuration][Appearance]
+temperatureFontSize=100
+
 [Containments][1][Applets][71][Configuration][ConfigDialog]
 DialogHeight=900
 DialogWidth=1200
+
+[Containments][1][Applets][71][Configuration][General]
+resources=[{"alias":"","childSourceObjects":{"acpi/Thermal_Zone/0-acpitz/Temperature":{"temperature":0},"acpi/Thermal_Zone/1-acpitz/Temperature":{"temperature":0},"acpi/Thermal_Zone/10-SEN1/Temperature":{"temperature":0},"acpi/Thermal_Zone/11-SEN2/Temperature":{"temperature":0},"acpi/Thermal_Zone/12-B0D4/Temperature":{"temperature":0},"acpi/Thermal_Zone/13-x86_pkg_temp/Temperature":{"temperature":0},"acpi/Thermal_Zone/14-iwlwifi/Temperature":{"temperature":0},"acpi/Thermal_Zone/2-acpitz/Temperature":{"temperature":0},"acpi/Thermal_Zone/3-acpitz/Temperature":{"temperature":0},"acpi/Thermal_Zone/4-acpitz/Temperature":{"temperature":0},"acpi/Thermal_Zone/5-acpitz/Temperature":{"temperature":0},"acpi/Thermal_Zone/6-acpitz/Temperature":{"temperature":0},"acpi/Thermal_Zone/7-acpitz/Temperature":{"temperature":0},"acpi/Thermal_Zone/8-INT3400 Thermal/Temperature":{"temperature":0},"acpi/Thermal_Zone/9-pch_skylake/Temperature":{"temperature":0},"lmsensors/acpitz-virtual-0/temp1":{"temperature":0},"lmsensors/acpitz-virtual-0/temp2":{"temperature":0},"lmsensors/acpitz-virtual-0/temp3":{"temperature":0},"lmsensors/acpitz-virtual-0/temp4":{"temperature":0},"lmsensors/acpitz-virtual-0/temp5":{"temperature":0},"lmsensors/acpitz-virtual-0/temp6":{"temperature":0},"lmsensors/acpitz-virtual-0/temp7":{"temperature":0},"lmsensors/acpitz-virtual-0/temp8":{"temperature":0},"lmsensors/coretemp-isa-0000/Core_0":{"temperature":0},"lmsensors/coretemp-isa-0000/Core_1":{"temperature":0},"lmsensors/coretemp-isa-0000/Core_2":{"temperature":0},"lmsensors/coretemp-isa-0000/Core_3":{"temperature":0},"lmsensors/coretemp-isa-0000/Package_id_0":{"temperature":0},"lmsensors/iwlwifi-virtual-0/temp1":{"temperature":0},"lmsensors/pch_skylake-virtual-0/temp1":{"temperature":0},"udisks/S3X2NX0M208532":{"temperature":0}},"meltdownTemperature":90,"overrideLimitTemperatures":false,"sourceName":"lmsensors/acpitz-virtual-0/temp1","virtual":false,"warningTemperature":70}]
 
 [Containments][1][Applets][73]
 immutability=1
@@ -190,16 +196,15 @@ DialogHeight=900
 DialogWidth=1200
 
 [Containments][1][Applets][73][Configuration][config]
-label=mem
 max_value=16330816
 monitor_type=1
 multiplier=1000
 
 [Containments][1][Applets][73][Configuration][sources]
-colors=limegreen,royalblue,chocolate
+colors=#55aaff
 labels=,,
 last_filter=mem/physical
-names=sys.mem/physical/application,sys.mem/physical/buf,sys.mem/physical/cached
+names=sys.mem/physical/used
 
 [Containments][1][Applets][77]
 immutability=1
@@ -498,5 +503,5 @@ names=sys.mem/swap/used,sys.mem/physical/used
 immutability=2
 
 [ScreenMapping]
-itemsOnDisabledScreens=3,10,desktop:/downloads,desktop:/Desktop,desktop:/nvidia,desktop:/bin,desktop:/music,desktop:/CPPLINT.CFG,desktop:/wall,desktop:/qnx,desktop:/doc,desktop:/dev
-screenMapping=
+itemsOnDisabledScreens=
+screenMapping=desktop:/dev,3,desktop:/CPPLINT.CFG,3,desktop:/Desktop,3,desktop:/journalctl.log,3,desktop:/wall,3,desktop:/bin,3,desktop:/qnx,3,desktop:/doc,3,desktop:/nvidia,3,desktop:/downloads,3,desktop:/music,3

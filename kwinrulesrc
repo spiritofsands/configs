@@ -13,22 +13,17 @@ wmclasscomplete=true
 wmclassmatch=1
 
 [2]
-Description=firefox - skype
-clientmachine=kos-hp-probook-640-g1
+Description=pidgin
+clientmachine=localhost
 clientmachinematch=0
 desktop=-1
 desktoprule=3
-screen=0
-screenrule=3
 shortcut=Ctrl+Alt+S
 shortcutrule=2
-title=Skype
-titlematch=2
-types=1
-windowrole=browser
-windowrolematch=1
-wmclass=navigator firefox
-wmclasscomplete=true
+title=-=Rassol_Volvo_Team=-
+titlematch=0
+wmclass=pidgin
+wmclasscomplete=false
 wmclassmatch=1
 
 [General]
