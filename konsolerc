@@ -18,6 +18,7 @@ ToolBarsMovable=Disabled
 Width 1600=1576
 Width 1920=1920
 Width 3840=1912
+Window-Maximized 1080x1920=true
 Window-Maximized 2160x3840=true
 
 [TabBar]

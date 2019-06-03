@@ -64,7 +64,7 @@ immutability=1
 plugin=org.kde.plasma.systemtray
 
 [Containments][1][Applets][5][Configuration]
-PreloadWeight=92
+PreloadWeight=52
 SystrayContainmentId=50
 
 [Containments][1][Applets][5][Configuration][ConfigDialog]
@@ -136,7 +136,7 @@ immutability=1
 plugin=org.kde.plasma.digitalclock
 
 [Containments][1][Applets][6][Configuration]
-PreloadWeight=1
+PreloadWeight=0
 
 [Containments][1][Applets][6][Configuration][Appearance]
 boldText=true
@@ -177,6 +177,9 @@ length=32
 immutability=1
 plugin=org.kde.thermalMonitor
 
+[Containments][1][Applets][71][Configuration]
+PreloadWeight=0
+
 [Containments][1][Applets][71][Configuration][Appearance]
 temperatureFontSize=100
 
@@ -190,6 +193,9 @@ resources=[{"alias":"","childSourceObjects":{"acpi/Thermal_Zone/0-acpitz/Tempera
 [Containments][1][Applets][73]
 immutability=1
 plugin=com.github.burlog.plasmoid-sysmon
+
+[Containments][1][Applets][73][Configuration]
+PreloadWeight=0
 
 [Containments][1][Applets][73][Configuration][ConfigDialog]
 DialogHeight=900
@@ -210,12 +216,18 @@ names=sys.mem/physical/used
 immutability=1
 plugin=org.kde.plasma.panelspacer
 
+[Containments][1][Applets][77][Configuration]
+PreloadWeight=0
+
 [Containments][1][Applets][77][Configuration][General]
 length=6
 
 [Containments][1][Applets][78]
 immutability=1
 plugin=com.github.burlog.plasmoid-sysmon
+
+[Containments][1][Applets][78][Configuration]
+PreloadWeight=0
 
 [Containments][1][Applets][78][Configuration][ConfigDialog]
 DialogHeight=900
@@ -235,6 +247,9 @@ names=sys.acpi/battery/0/batterycharge,sys.cpu/system/loadavg1
 immutability=1
 plugin=com.github.burlog.plasmoid-sysmon
 
+[Containments][1][Applets][79][Configuration]
+PreloadWeight=0
+
 [Containments][1][Applets][79][Configuration][ConfigDialog]
 DialogHeight=900
 DialogWidth=1200
@@ -253,12 +268,18 @@ names=exe.df | grep '/dev/nvme0n1p6' | cut -d' ' -f3
 immutability=1
 plugin=org.kde.plasma.panelspacer
 
+[Containments][1][Applets][80][Configuration]
+PreloadWeight=0
+
 [Containments][1][Applets][80][Configuration][General]
 length=16
 
 [Containments][1][Applets][81]
 immutability=1
 plugin=org.kde.plasma.panelspacer
+
+[Containments][1][Applets][81][Configuration]
+PreloadWeight=0
 
 [Containments][1][Applets][81][Configuration][General]
 length=26
@@ -370,7 +391,7 @@ immutability=1
 plugin=org.kde.plasma.devicenotifier
 
 [Containments][50][Applets][53][Configuration]
-PreloadWeight=36
+PreloadWeight=0
 
 [Containments][50][Applets][54]
 immutability=1
@@ -419,21 +440,21 @@ immutability=1
 plugin=org.kde.plasma.networkmanagement
 
 [Containments][50][Applets][60][Configuration]
-PreloadWeight=36
+PreloadWeight=0
 
 [Containments][50][Applets][61]
 immutability=1
 plugin=org.kde.plasma.bluetooth
 
 [Containments][50][Applets][61][Configuration]
-PreloadWeight=43
+PreloadWeight=0
 
 [Containments][50][Applets][62]
 immutability=1
 plugin=org.kde.plasma.mediacontroller
 
 [Containments][50][Applets][62][Configuration]
-PreloadWeight=2
+PreloadWeight=0
 
 [Containments][50][Applets][65]
 immutability=1
@@ -459,7 +480,7 @@ plugin=org.kde.plasma.folder
 wallpaperplugin=org.kde.image
 
 [Containments][66][Configuration]
-PreloadWeight=42
+PreloadWeight=0
 
 [Containments1Appletsts][67][Configuration][General]
 sources=cpu%2Fsystem%2FTotalLoad
@@ -504,4 +525,4 @@ immutability=2
 
 [ScreenMapping]
 itemsOnDisabledScreens=
-screenMapping=desktop:/dev,3,desktop:/CPPLINT.CFG,3,desktop:/Desktop,3,desktop:/journalctl.log,3,desktop:/wall,3,desktop:/bin,3,desktop:/qnx,3,desktop:/doc,3,desktop:/nvidia,3,desktop:/downloads,3,desktop:/music,3
+screenMapping=
