@@ -37,7 +37,7 @@ immutability=1
 plugin=org.kde.plasma.systemloadviewer
 
 [Containments][1][Applets][42][Configuration]
-PreloadWeight=26
+PreloadWeight=0
 
 [Containments][1][Applets][42][Configuration][ConfigDialog]
 DialogHeight=960
@@ -64,7 +64,7 @@ immutability=1
 plugin=org.kde.plasma.systemtray
 
 [Containments][1][Applets][5][Configuration]
-PreloadWeight=52
+PreloadWeight=100
 SystrayContainmentId=50
 
 [Containments][1][Applets][5][Configuration][ConfigDialog]
@@ -136,7 +136,7 @@ immutability=1
 plugin=org.kde.plasma.digitalclock
 
 [Containments][1][Applets][6][Configuration]
-PreloadWeight=0
+PreloadWeight=78
 
 [Containments][1][Applets][6][Configuration][Appearance]
 boldText=true
@@ -173,33 +173,11 @@ PreloadWeight=0
 expanding=false
 length=32
 
-[Containments][1][Applets][71]
-immutability=1
-plugin=org.kde.thermalMonitor
-
-[Containments][1][Applets][71][Configuration]
-PreloadWeight=0
-
 [Containments][1][Applets][71][Configuration][Appearance]
 temperatureFontSize=100
 
-[Containments][1][Applets][71][Configuration][ConfigDialog]
-DialogHeight=900
-DialogWidth=1200
-
 [Containments][1][Applets][71][Configuration][General]
 resources=[{"alias":"","childSourceObjects":{"acpi/Thermal_Zone/0-acpitz/Temperature":{"temperature":0},"acpi/Thermal_Zone/1-acpitz/Temperature":{"temperature":0},"acpi/Thermal_Zone/10-SEN1/Temperature":{"temperature":0},"acpi/Thermal_Zone/11-SEN2/Temperature":{"temperature":0},"acpi/Thermal_Zone/12-B0D4/Temperature":{"temperature":0},"acpi/Thermal_Zone/13-x86_pkg_temp/Temperature":{"temperature":0},"acpi/Thermal_Zone/14-iwlwifi/Temperature":{"temperature":0},"acpi/Thermal_Zone/2-acpitz/Temperature":{"temperature":0},"acpi/Thermal_Zone/3-acpitz/Temperature":{"temperature":0},"acpi/Thermal_Zone/4-acpitz/Temperature":{"temperature":0},"acpi/Thermal_Zone/5-acpitz/Temperature":{"temperature":0},"acpi/Thermal_Zone/6-acpitz/Temperature":{"temperature":0},"acpi/Thermal_Zone/7-acpitz/Temperature":{"temperature":0},"acpi/Thermal_Zone/8-INT3400 Thermal/Temperature":{"temperature":0},"acpi/Thermal_Zone/9-pch_skylake/Temperature":{"temperature":0},"lmsensors/acpitz-virtual-0/temp1":{"temperature":0},"lmsensors/acpitz-virtual-0/temp2":{"temperature":0},"lmsensors/acpitz-virtual-0/temp3":{"temperature":0},"lmsensors/acpitz-virtual-0/temp4":{"temperature":0},"lmsensors/acpitz-virtual-0/temp5":{"temperature":0},"lmsensors/acpitz-virtual-0/temp6":{"temperature":0},"lmsensors/acpitz-virtual-0/temp7":{"temperature":0},"lmsensors/acpitz-virtual-0/temp8":{"temperature":0},"lmsensors/coretemp-isa-0000/Core_0":{"temperature":0},"lmsensors/coretemp-isa-0000/Core_1":{"temperature":0},"lmsensors/coretemp-isa-0000/Core_2":{"temperature":0},"lmsensors/coretemp-isa-0000/Core_3":{"temperature":0},"lmsensors/coretemp-isa-0000/Package_id_0":{"temperature":0},"lmsensors/iwlwifi-virtual-0/temp1":{"temperature":0},"lmsensors/pch_skylake-virtual-0/temp1":{"temperature":0},"udisks/S3X2NX0M208532":{"temperature":0}},"meltdownTemperature":90,"overrideLimitTemperatures":false,"sourceName":"lmsensors/acpitz-virtual-0/temp1","virtual":false,"warningTemperature":70}]
-
-[Containments][1][Applets][73]
-immutability=1
-plugin=com.github.burlog.plasmoid-sysmon
-
-[Containments][1][Applets][73][Configuration]
-PreloadWeight=0
-
-[Containments][1][Applets][73][Configuration][ConfigDialog]
-DialogHeight=900
-DialogWidth=1200
 
 [Containments][1][Applets][73][Configuration][config]
 max_value=16330816
@@ -212,26 +190,8 @@ labels=,,
 last_filter=mem/physical
 names=sys.mem/physical/used
 
-[Containments][1][Applets][77]
-immutability=1
-plugin=org.kde.plasma.panelspacer
-
-[Containments][1][Applets][77][Configuration]
-PreloadWeight=0
-
 [Containments][1][Applets][77][Configuration][General]
 length=6
-
-[Containments][1][Applets][78]
-immutability=1
-plugin=com.github.burlog.plasmoid-sysmon
-
-[Containments][1][Applets][78][Configuration]
-PreloadWeight=0
-
-[Containments][1][Applets][78][Configuration][ConfigDialog]
-DialogHeight=900
-DialogWidth=1200
 
 [Containments][1][Applets][78][Configuration][config]
 max_value=100
@@ -242,17 +202,6 @@ colors=limegreen,#ff0000
 labels=\\0
 last_filter=load
 names=sys.acpi/battery/0/batterycharge,sys.cpu/system/loadavg1
-
-[Containments][1][Applets][79]
-immutability=1
-plugin=com.github.burlog.plasmoid-sysmon
-
-[Containments][1][Applets][79][Configuration]
-PreloadWeight=0
-
-[Containments][1][Applets][79][Configuration][ConfigDialog]
-DialogHeight=900
-DialogWidth=1200
 
 [Containments][1][Applets][79][Configuration][config]
 max_value=387002260
@@ -272,27 +221,112 @@ plugin=org.kde.plasma.panelspacer
 PreloadWeight=0
 
 [Containments][1][Applets][80][Configuration][General]
-length=16
+expanding=false
+length=25
 
-[Containments][1][Applets][81]
+[Containments][1][Applets][81][Configuration][General]
+length=33
+
+[Containments][1][Applets][82]
+immutability=1
+plugin=com.github.burlog.plasmoid-sysmon
+
+[Containments][1][Applets][82][Configuration]
+PreloadWeight=18
+
+[Containments][1][Applets][82][Configuration][ConfigDialog]
+DialogHeight=900
+DialogWidth=1200
+
+[Containments][1][Applets][82][Configuration][config]
+default_color=#2773ff
+label=D
+
+[Containments][1][Applets][82][Configuration][sources]
+colors=green,#2773ff,#2773ff,#2773ff
+guessed_max_value=298076221.16
+names=sys.partitions//freespace,sys.lmsensors/coretemp-isa-0000/Core_0,sys.mem/physical/used,sys.cpu/system/loadavg1
+
+[Containments][1][Applets][83]
+immutability=1
+plugin=com.github.burlog.plasmoid-sysmon
+
+[Containments][1][Applets][83][Configuration]
+PreloadWeight=18
+
+[Containments][1][Applets][83][Configuration][ConfigDialog]
+DialogHeight=900
+DialogWidth=1200
+
+[Containments][1][Applets][83][Configuration][config]
+label=M
+update_interval=30
+
+[Containments][1][Applets][83][Configuration][sources]
+colors=#6ad8d8
+guessed_max_value=16118744
+names=sys.mem/physical/used
+
+[Containments][1][Applets][84]
+immutability=1
+plugin=com.github.burlog.plasmoid-sysmon
+
+[Containments][1][Applets][84][Configuration]
+PreloadWeight=18
+
+[Containments][1][Applets][84][Configuration][ConfigDialog]
+DialogHeight=900
+DialogWidth=1200
+
+[Containments][1][Applets][84][Configuration][config]
+label=L
+update_interval=30
+
+[Containments][1][Applets][84][Configuration][sources]
+colors=#ffa378
+guessed_max_value=7.38
+names=sys.cpu/system/loadavg1
+
+[Containments][1][Applets][85]
+immutability=1
+plugin=com.github.burlog.plasmoid-sysmon
+
+[Containments][1][Applets][85][Configuration]
+PreloadWeight=18
+
+[Containments][1][Applets][85][Configuration][ConfigDialog]
+DialogHeight=900
+DialogWidth=1200
+
+[Containments][1][Applets][85][Configuration][config]
+label=T
+max_value=100
+update_interval=30
+
+[Containments][1][Applets][85][Configuration][sources]
+colors=#8bffbf
+names=sys.lmsensors/acpitz-virtual-0/temp1
+
+[Containments][1][Applets][86]
 immutability=1
 plugin=org.kde.plasma.panelspacer
 
-[Containments][1][Applets][81][Configuration]
-PreloadWeight=0
+[Containments][1][Applets][86][Configuration]
+PreloadWeight=18
 
-[Containments][1][Applets][81][Configuration][General]
-length=26
+[Containments][1][Applets][86][Configuration][General]
+expanding=false
+length=28
 
 [Containments][1][ConfigDialog]
 DialogHeight=102
-DialogWidth=1920
+DialogWidth=3840
 
 [Containments][1][Configuration]
 PreloadWeight=0
 
 [Containments][1][General]
-AppletOrder=63;49;81;78;73;79;77;71;80;5;65;6
+AppletOrder=63;49;86;82;83;84;85;80;5;65;6
 
 [Containments][30]
 activityId=15b7a3e3-bdc1-452b-a90d-0509d1e13fef
@@ -330,7 +364,7 @@ width=3840
 
 [Containments][30][Wallpaper][org.kde.slideshow][General]
 SlideInterval=86400
-SlidePaths=/home/kfursenko/wall
+SlidePaths=$HOME/wall
 height=2160
 width=3840
 
@@ -344,7 +378,7 @@ plugin=org.kde.desktopcontainment
 wallpaperplugin=org.kde.slideshow
 
 [Containments][31][ConfigDialog]
-DialogHeight=1052
+DialogHeight=1031
 DialogWidth=1680
 
 [Containments][31][Configuration]
@@ -361,7 +395,7 @@ width=3840
 
 [Containments][31][Wallpaper][org.kde.slideshow][General]
 SlideInterval=87300
-SlidePaths=/home/kfursenko/wall
+SlidePaths=$HOME/wall
 
 [Containments][50]
 activityId=
@@ -377,7 +411,11 @@ immutability=1
 plugin=org.kde.plasma.volume
 
 [Containments][50][Applets][51][Configuration]
-PreloadWeight=0
+PreloadWeight=18
+
+[Containments][50][Applets][51][Configuration][ConfigDialog]
+DialogHeight=1192
+DialogWidth=1200
 
 [Containments][50][Applets][52]
 immutability=1
@@ -391,28 +429,28 @@ immutability=1
 plugin=org.kde.plasma.devicenotifier
 
 [Containments][50][Applets][53][Configuration]
-PreloadWeight=0
+PreloadWeight=100
 
 [Containments][50][Applets][54]
 immutability=1
 plugin=org.kde.kdeconnect
 
 [Containments][50][Applets][54][Configuration]
-PreloadWeight=26
+PreloadWeight=0
 
 [Containments][50][Applets][55]
 immutability=1
 plugin=org.kde.plasma.keyboardindicator
 
 [Containments][50][Applets][55][Configuration]
-PreloadWeight=26
+PreloadWeight=0
 
 [Containments][50][Applets][56]
 immutability=1
 plugin=org.kde.plasma.notifications
 
 [Containments][50][Applets][56][Configuration]
-PreloadWeight=0
+PreloadWeight=5
 
 [Containments][50][Applets][57]
 immutability=1
@@ -433,21 +471,21 @@ immutability=1
 plugin=org.kde.plasma.battery
 
 [Containments][50][Applets][59][Configuration]
-PreloadWeight=0
+PreloadWeight=33
 
 [Containments][50][Applets][60]
 immutability=1
 plugin=org.kde.plasma.networkmanagement
 
 [Containments][50][Applets][60][Configuration]
-PreloadWeight=0
+PreloadWeight=100
 
 [Containments][50][Applets][61]
 immutability=1
 plugin=org.kde.plasma.bluetooth
 
 [Containments][50][Applets][61][Configuration]
-PreloadWeight=0
+PreloadWeight=89
 
 [Containments][50][Applets][62]
 immutability=1
@@ -463,12 +501,23 @@ plugin=org.kde.ktp-contactlist
 [Containments][50][Applets][65][Configuration]
 PreloadWeight=31
 
+[Containments][50][Applets][82]
+immutability=1
+plugin=org.kde.plasma.vault
+
+[Containments][50][Applets][82][Configuration]
+PreloadWeight=0
+
+[Containments][50][ConfigDialog]
+DialogHeight=900
+DialogWidth=1200
+
 [Containments][50][Configuration]
 PreloadWeight=0
 
 [Containments][50][General]
-extraItems=org.kde.plasma.notifications,org.kde.plasma.networkmanagement,org.kde.plasma.battery,org.kde.plasma.clipboard,org.kde.plasma.mediacontroller,org.kde.plasma.devicenotifier,org.kde.plasma.bluetooth,org.kde.plasma.volume,org.kde.discovernotifier,org.kde.plasma.keyboardindicator,org.kde.plasma.printmanager,org.kde.kdeconnect,org.kde.ktp-contactlist
-knownItems=org.kde.plasma.notifications,org.kde.plasma.networkmanagement,org.kde.plasma.battery,org.kde.plasma.clipboard,org.kde.plasma.mediacontroller,org.kde.plasma.devicenotifier,org.kde.plasma.bluetooth,org.kde.plasma.volume,org.kde.discovernotifier,org.kde.plasma.keyboardindicator,org.kde.plasma.printmanager,org.kde.kdeconnect,org.kde.ktp-contactlist
+extraItems=org.kde.plasma.notifications,org.kde.plasma.networkmanagement,org.kde.plasma.battery,org.kde.plasma.clipboard,org.kde.plasma.mediacontroller,org.kde.plasma.devicenotifier,org.kde.plasma.bluetooth,org.kde.plasma.volume,org.kde.discovernotifier,org.kde.plasma.keyboardindicator,org.kde.plasma.printmanager,org.kde.kdeconnect,org.kde.ktp-contactlist,org.kde.plasma.vault
+knownItems=org.kde.plasma.notifications,org.kde.plasma.networkmanagement,org.kde.plasma.battery,org.kde.plasma.clipboard,org.kde.plasma.mediacontroller,org.kde.plasma.devicenotifier,org.kde.plasma.bluetooth,org.kde.plasma.volume,org.kde.discovernotifier,org.kde.plasma.keyboardindicator,org.kde.plasma.printmanager,org.kde.kdeconnect,org.kde.ktp-contactlist,org.kde.plasma.vault
 
 [Containments][66]
 activityId=15b7a3e3-bdc1-452b-a90d-0509d1e13fef
@@ -479,8 +528,15 @@ location=0
 plugin=org.kde.plasma.folder
 wallpaperplugin=org.kde.image
 
+[Containments][66][ConfigDialog]
+DialogHeight=900
+DialogWidth=1200
+
 [Containments][66][Configuration]
 PreloadWeight=0
+
+[Containments][66][General]
+url=activities:/current/
 
 [Containments1Appletsts][67][Configuration][General]
 sources=cpu%2Fsystem%2FTotalLoad
@@ -515,10 +571,28 @@ max_value=8
 [Containments1Appletsts][79][Configuration][sources]
 colors=#5500ff
 
+[Containments1Appletsts][82][Configuration][config]
+default_color=#2773ff
+label=D
+update_interval=30
+
+[Containments1Appletsts][82][Configuration][sources]
+colors=#00aaff
+guessed_max_value=290630952
+names=sys.partitions//freespace
+
 [Containments30Appletsts][73][Configuration][sources]
 colors=#ff5500,#55aaff
 last_filter=mem/
 names=sys.mem/swap/used,sys.mem/physical/used
+
+[Containments30Appletsts][82][Configuration][config]
+monitor_type=1
+
+[Containments30Appletsts][82][Configuration][sources]
+colors=green
+guessed_max_value=290630952
+names=sys.partitions//freespace
 
 [General]
 immutability=2

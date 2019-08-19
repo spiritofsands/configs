@@ -41,3 +41,7 @@ alias vm_ubuntu='_vm ubuntu16.04'
 alias firefox-esr='firefox-esr-52 --P ESR --no-remote'
 
 alias tmux='TERM=xterm-256color tmux'
+
+clean_pycache() {
+    fd -I __pycache__ | xargs rm -rf
+}

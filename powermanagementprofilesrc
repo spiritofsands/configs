@@ -22,7 +22,7 @@ idleTime=600
 idleTime=540000
 
 [Battery][HandleButtonEvents]
-lidAction=0
+lidAction=1
 powerButtonAction=1
 triggerLidActionWhenExternalMonitorPresent=false
 
@@ -34,7 +34,7 @@ suspendType=1
 icon=battery-low
 
 [LowBattery][BrightnessControl]
-value=30
+value=1
 
 [LowBattery][DPMSControl]
 idleTime=120
@@ -48,7 +48,7 @@ powerButtonAction=1
 triggerLidActionWhenExternalMonitorPresent=false
 
 [LowBattery][SuspendSession]
-idleTime=300000
+idleTime=600000
 suspendType=1
 
 [migration]

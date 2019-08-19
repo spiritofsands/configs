@@ -59,7 +59,8 @@ __prompt_command() {
       hostname="$yellow\\h$reset_color "
   fi
 
-  PS1="$hostname$path$error_hl"
+  PS1="
+$hostname$path$error_hl"
 
   # git shortcuts where possible
   if _is_git; then

@@ -1,7 +1,11 @@
 [Common]
-ShadowColor=255,255,255
-ShadowSize=10
-ShadowStrength=179
+ShadowColor=0,87,193
+ShadowSize=ShadowVeryLarge
+
+[Style]
+AnimationsEnabled=false
 
 [Windeco]
 AnimationsEnabled=false
+ButtonSize=ButtonSmall
+DrawBackgroundGradient=false

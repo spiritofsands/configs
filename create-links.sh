@@ -24,6 +24,7 @@ setup_symlinks() {
     inputrc
     stylelintrc
     thunderbird
+    gtkrc
     gtkrc-2.0
     CPPLINT.cfg
     xsessionrc
@@ -124,8 +125,10 @@ setup_services
 setup_external_tools
 
 # Ubuntu 16 case
-#sudo apt-mark hold tmux
-#sudo apt-mark hold vim
-#sudo apt-mark hold vim-common
-#sudo apt-mark hold libevent
-#sudo apt-mark hold libevent-2.1.8
+if lsb_release -r | grep -q '16.04'; then
+    echo sudo apt-mark hold tmux
+    echo sudo apt-mark hold vim
+    echo sudo apt-mark hold vim-common
+    #echo sudo apt-mark hold libevent
+    echo sudo apt-mark hold libevent-2.1.8
+fi

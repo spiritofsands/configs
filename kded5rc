@@ -10,6 +10,9 @@ autoload=false
 [Module-bluedevil]
 autoload=true
 
+[Module-browserintegrationreminder]
+autoload=false
+
 [Module-device_automounter]
 autoload=false
 

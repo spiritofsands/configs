@@ -3,9 +3,15 @@
 "
 
 " SHELL
-"   bash-language-server: npm i -g bash-language-server
-"   shellcheck: https://storage.googleapis.com/shellcheck/shellcheck-stable.linux.x86_64.tar.xz
-"   shfmt: sudo apt install golang && go get -u mvdan.cc/sh/cmd/shfmt
+"   bash-language-server: wget https://git.io/n-install -n
+"                         bash n-install -n -y
+"                         npm i -g bash-language-server
+"   shellcheck: wget https://storage.googleapis.com/shellcheck/shellcheck-stable.linux.x86_64.tar.xz
+"   shfmt: sudo add-apt-repository ppa:gophers/archive
+"          sudo apt update
+"          sudo apt install golang-1.11-go
+"          sudo ln -s /usr/lib/go-1.11/bin/go /usr/bin/go
+"          cd $(mktemp -d); go mod init tmp; go get mvdan.cc/sh/cmd/shfmt
 " TEXT
 "   npm install -g alex proselint
 " FRONTEND
@@ -64,6 +70,7 @@ Plug 'majutsushi/tagbar'
 
 " camelcase spellcheck
 Plug 'kmszk/CCSpellCheck.vim'
+Plug 'shinglyu/vim-codespell'
 
 " TODO: snippets
 " Plug 'SirVer/ultisnips'
@@ -76,6 +83,9 @@ Plug 'skywind3000/gutentags_plus'
 
 " ranger
 Plug 'francoiscabrol/ranger.vim'
+
+" vim & tmux navigation
+Plug 'christoomey/vim-tmux-navigator'
 
 call plug#end()
 
@@ -95,8 +105,9 @@ let g:ale_cpp_clangtidy_checks = ['-android-*', '-abseil-*', '-fuschia-*', '-llv
 let g:ale_cpp_cppcheck_options = '--enable=all --std=c++14 --std=posix --inconclusive'
 let g:ale_cpp_parse_makefile = 2
 let g:ale_lint_delay = 100
-let g:ale_fixers = {'*': ['remove_trailing_lines', 'trim_whitespace'], 'c*': ['clang-format'], 'py': ['yapf'] }
-let g:ale_fix_on_save = 1
+let g:ale_fixers = {'*': ['remove_trailing_lines', 'trim_whitespace'], 'c*': ['clang-format'], 'python': ['yapf'] }
+let g:ale_linters = {'python': ['flake8', 'mypy', 'pylint', 'prospector', 'pyflakes', 'pylama']}
+" let g:ale_fix_on_save = 1
 let g:ale_ruby_rubocop_options = '--parallel'
 let g:ale_c_parse_makefile = 1
 
@@ -185,12 +196,21 @@ set shell=~/bin/clean-shell-wrapper.sh
 
 " spellcheck
 syntax spell toplevel
-"set spell spelllang=en_us
+set spell spelllang=en_us
 
 " ranger
 let g:ranger_map_keys = 0
 let g:ranger_replace_netrw = 1
 let g:ranger_command_override = 'ranger'
+
+" vim & tmux navigation
+let g:tmux_navigator_no_mappings = 1
+
+nnoremap <silent> h :TmuxNavigateLeft<cr>
+nnoremap <silent> j :TmuxNavigateDown<cr>
+nnoremap <silent> k :TmuxNavigateUp<cr>
+nnoremap <silent> l :TmuxNavigateRight<cr>
+" nnoremap <silent> {Previous-Mapping} :TmuxNavigatePrevious<cr>
 
 "
 " Mappings
@@ -209,11 +229,8 @@ noremap <F10> :ALEFix<CR>
 nmap <F8> :TagbarToggle<CR>
 
 " buffers and splits
-noremap <leader>= :enew<cr>
-noremap <leader>- :bp <BAR> bd #<CR>
-noremap <leader>l :<CR>:buffer<Space>
-noremap <C-W>- :split
-noremap <C-W>\ :vsplit
+noremap <leader>- :split<CR>
+noremap <leader>\ :vsplit<CR>
 
 " fzf
 noremap <leader>p :FZF<CR>

@@ -25,17 +25,28 @@ display=Display,Display\tMeta+P,Switch Display
 
 [khotkeys]
 _k_friendly_name=KDE Daemon
-{c3a81366-ac1d-48f6-a953-4960c8140467}=Ctrl+Q,none,New Action
+{30fcb8a2-7544-46f0-ae3f-c833f9de8760}=Meta+Touchpad Toggle,none,f8
+{376ac65c-d22a-4a11-89cb-3ce3f9d49359}=Media Play,none,f1
+{55944a3d-a7d8-4a14-a495-cce896867645}=Volume Up,none,f4
+{6095f965-2b4d-4f0d-a141-0502354b160e}=Volume Down,none,f3
+{61a1df26-98d7-4f70-8ebb-3cebf5f6809d}=Meta+Alt+Touchpad On,none,f11
+{82c60533-31dc-40e8-96be-43dc4e73f64b}=Meta+Ctrl+Touchpad Off,none,f12
+{9ecbef8b-c437-4403-990e-d475785b166b}=Meta+Alt+Touchpad Toggle,none,f6
+{a86a6f86-72e4-46c2-8820-caa66c386b72}=Meta+Shift+Touchpad Toggle,none,f5
+{b685976d-300e-475e-a1e7-cc0b90bfe83f}=Meta+Ctrl+Touchpad Toggle,none,f7
+{ba00f714-dbeb-4592-92dd-cbfbfe919b84}=Meta+Ctrl+Tab,none,f10
+{e2eaa702-37e5-486a-a02e-93d913d3d41c}=Meta+Ctrl+Backspace,none,f9
 {e656aabf-75eb-4d6b-8926-7e2730a0e3a2}=Print,none,Start Screenshot Tool
+{e6676d3e-83b7-484b-b5d9-11235a5fdc8c}=Volume Mute,none,f2
 
 [kmix]
 _k_friendly_name=Audio Volume
 decrease_microphone_volume=Microphone Volume Down,Microphone Volume Down,Decrease Microphone Volume
-decrease_volume=Volume Down\tMeta+Down,Volume Down,Decrease Volume
+decrease_volume=\tMeta+Down,Volume Down,Decrease Volume
 increase_microphone_volume=Microphone Volume Up,Microphone Volume Up,Increase Microphone Volume
-increase_volume=Volume Up\tMeta+Up,Volume Up,Increase Volume
+increase_volume=\tMeta+Up,Volume Up,Increase Volume
 mic_mute=Microphone Mute,Microphone Mute,Mute Microphone
-mute=Volume Mute,Volume Mute,Mute
+mute=,Volume Mute,Mute
 
 [krunner]
 _k_friendly_name=Run Command
@@ -99,7 +110,7 @@ Switch to Desktop 7=none,none,Switch to Desktop 7
 Switch to Desktop 8=none,none,Switch to Desktop 8
 Switch to Desktop 9=none,none,Switch to Desktop 9
 Switch to Next Desktop=none,none,Switch to Next Desktop
-Switch to Next Screen=none,none,Switch to Next Screen
+Switch to Next Screen=Meta+`,none,Switch to Next Screen
 Switch to Previous Desktop=none,none,Switch to Previous Desktop
 Switch to Previous Screen=none,none,Switch to Previous Screen
 Switch to Screen 0=none,none,Switch to Screen 0
@@ -203,7 +214,7 @@ _k_friendly_name=Media Controller
 mediavolumedown=none,none,Media volume down
 mediavolumeup=none,none,Media volume up
 nextmedia=Media Next,Media Next,Media playback next
-playpausemedia=Media Play,Media Play,Play/Pause media playback
+playpausemedia=,Media Play,Play/Pause media playback
 previousmedia=Media Previous,Media Previous,Media playback previous
 stopmedia=Media Stop,Media Stop,Stop media playback
 
