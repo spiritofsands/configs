@@ -58,6 +58,7 @@ Plug 'junegunn/fzf.vim'
 " packadd! matchit
 
 " autocompletion
+" python3 -m pip install jedi
 Plug 'maralla/completor.vim'
 
 " remember last position
@@ -202,6 +203,9 @@ set spell spelllang=en_us
 let g:ranger_map_keys = 0
 let g:ranger_replace_netrw = 1
 let g:ranger_command_override = 'ranger'
+
+" completor
+let g:completor_python_binary = "/usr/bin/python3"
 
 " vim & tmux navigation
 let g:tmux_navigator_no_mappings = 1
