@@ -2,15 +2,18 @@
 autoload=true
 
 [Module-appmenu]
-autoload=true
+autoload=false
 
 [Module-baloosearchmodule]
 autoload=false
 
 [Module-bluedevil]
-autoload=true
+autoload=false
 
 [Module-browserintegrationreminder]
+autoload=false
+
+[Module-colorcorrectlocationupdater]
 autoload=false
 
 [Module-device_automounter]
@@ -59,6 +62,9 @@ autoload=false
 autoload=true
 
 [Module-remotedirnotify]
+autoload=false
+
+[Module-remotenotifier]
 autoload=false
 
 [Module-solidautoeject]

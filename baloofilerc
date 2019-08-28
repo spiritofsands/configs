@@ -4,7 +4,7 @@ Indexing-Enabled=false
 [General]
 dbVersion=2
 exclude filters=*
-exclude filters version=3
+exclude filters version=4
 first run=true
 folders[$e]=$HOME/
 only basic indexing=true
