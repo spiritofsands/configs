@@ -136,7 +136,7 @@ immutability=1
 plugin=org.kde.plasma.digitalclock
 
 [Containments][1][Applets][6][Configuration]
-PreloadWeight=78
+PreloadWeight=100
 
 [Containments][1][Applets][6][Configuration][Appearance]
 boldText=true
@@ -244,7 +244,7 @@ label=D
 
 [Containments][1][Applets][82][Configuration][sources]
 colors=green,#2773ff,#2773ff,#2773ff
-guessed_max_value=298076221.16
+guessed_max_value=267238771.95
 names=sys.partitions//freespace,sys.lmsensors/coretemp-isa-0000/Core_0,sys.mem/physical/used,sys.cpu/system/loadavg1
 
 [Containments][1][Applets][83]
@@ -264,7 +264,7 @@ update_interval=30
 
 [Containments][1][Applets][83][Configuration][sources]
 colors=#6ad8d8
-guessed_max_value=16118744
+guessed_max_value=16127516
 names=sys.mem/physical/used
 
 [Containments][1][Applets][84]
@@ -284,7 +284,7 @@ update_interval=30
 
 [Containments][1][Applets][84][Configuration][sources]
 colors=#ffa378
-guessed_max_value=7.38
+guessed_max_value=30.7
 names=sys.cpu/system/loadavg1
 
 [Containments][1][Applets][85]
@@ -411,10 +411,10 @@ immutability=1
 plugin=org.kde.plasma.volume
 
 [Containments][50][Applets][51][Configuration]
-PreloadWeight=18
+PreloadWeight=100
 
 [Containments][50][Applets][51][Configuration][ConfigDialog]
-DialogHeight=1192
+DialogHeight=1013
 DialogWidth=1200
 
 [Containments][50][Applets][52]
@@ -422,7 +422,7 @@ immutability=1
 plugin=org.kde.plasma.clipboard
 
 [Containments][50][Applets][52][Configuration]
-PreloadWeight=0
+PreloadWeight=5
 
 [Containments][50][Applets][53]
 immutability=1
@@ -430,6 +430,13 @@ plugin=org.kde.plasma.devicenotifier
 
 [Containments][50][Applets][53][Configuration]
 PreloadWeight=100
+
+[Containments][50][Applets][53][Configuration][ConfigDialog]
+DialogHeight=900
+DialogWidth=1200
+
+[Containments][50][Applets][53][Configuration][General]
+popupOnNewDevice=false
 
 [Containments][50][Applets][54]
 immutability=1
@@ -485,7 +492,7 @@ immutability=1
 plugin=org.kde.plasma.bluetooth
 
 [Containments][50][Applets][61][Configuration]
-PreloadWeight=89
+PreloadWeight=100
 
 [Containments][50][Applets][62]
 immutability=1

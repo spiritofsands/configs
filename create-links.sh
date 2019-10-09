@@ -28,6 +28,7 @@ setup_symlinks() {
     gtkrc-2.0
     CPPLINT.cfg
     xsessionrc
+    Xresources
     )
 
     for link in "${links[@]}"; do

@@ -1,6 +1,10 @@
 [parameters]
 CircScrollDelta=5.73
 HorizScrollDelta=2.3
+HorizTwoFingerScroll=true
 MaxTapMove=3.7
+OneFingerTapButton=NoButton
 Tapping=false
+TwoFingerTapButton=NoButton
+VertEdgeScroll=false
 VertScrollDelta=2.3

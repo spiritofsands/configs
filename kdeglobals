@@ -158,10 +158,10 @@ XftSubPixel=
 dbfile=/home/kos/.mozilla/firefox/wfc3dcbc.default/places.sqlite
 fixed=Monospace,10,-1,5,50,0,0,0,0,0
 font=Noto Sans,10,-1,5,50,0,0,0,0,0,Regular
-menuFont=Noto Sans,8,-1,5,50,0,0,0,0,0,Regular
+menuFont=Noto Sans,10,-1,5,50,0,0,0,0,0,Regular
 shadeSortColumn=true
-smallestReadableFont=Noto Sans,8,-1,5,50,0,0,0,0,0,Regular
-toolBarFont=Noto Sans,8,-1,5,50,0,0,0,0,0,Regular
+smallestReadableFont=Noto Sans,10,-1,5,50,0,0,0,0,0,Regular
+toolBarFont=Noto Sans,10,-1,5,50,0,0,0,0,0,Regular
 widgetStyle=Breeze
 
 [Icons]
@@ -176,7 +176,7 @@ ShowIconsOnPushButtons=true
 SingleClick=false
 StartDragDist=4
 StartDragTime=500
-WheelScrollLines=12
+WheelScrollLines=3
 contrast=4
 widgetStyle=breeze
 
@@ -288,7 +288,7 @@ Size=22
 [WM]
 activeBackground=0,49,110
 activeBlend=255,255,255
-activeFont=Noto Sans,8,-1,5,50,0,0,0,0,0,Regular
+activeFont=Noto Sans,10,-1,5,50,0,0,0,0,0,Regular
 activeForeground=255,255,255
 inactiveBackground=64,64,64
 inactiveBlend=75,71,67

@@ -88,6 +88,9 @@ Plug 'francoiscabrol/ranger.vim'
 " vim & tmux navigation
 Plug 'christoomey/vim-tmux-navigator'
 
+" python code coverage
+Plug 'mgedmin/coverage-highlight.vim', { 'for': ['python'] }
+
 call plug#end()
 
 
@@ -107,7 +110,7 @@ let g:ale_cpp_cppcheck_options = '--enable=all --std=c++14 --std=posix --inconcl
 let g:ale_cpp_parse_makefile = 2
 let g:ale_lint_delay = 100
 let g:ale_fixers = {'*': ['remove_trailing_lines', 'trim_whitespace'], 'c*': ['clang-format'], 'python': ['yapf'] }
-let g:ale_linters = {'python': ['flake8', 'mypy', 'pylint', 'prospector', 'pyflakes', 'pylama']}
+let g:ale_linters = {'python': ['flake8', 'mypy', 'pylint', 'prospector', 'pyflakes', 'pylama', 'vulture']}
 " let g:ale_fix_on_save = 1
 let g:ale_ruby_rubocop_options = '--parallel'
 let g:ale_c_parse_makefile = 1
@@ -198,6 +201,16 @@ set shell=~/bin/clean-shell-wrapper.sh
 " spellcheck
 syntax spell toplevel
 set spell spelllang=en_us
+hi clear SpellBad
+hi SpellBad cterm=underline
+hi clear SpellRare
+hi SpellRare cterm=underline
+hi clear SpellCap
+hi SpellCap cterm=underline
+hi clear SpellLocal
+hi SpellLocal cterm=underline
+noremap <F5> :setlocal spell! spell?<CR>
+
 
 " ranger
 let g:ranger_map_keys = 0
@@ -207,7 +220,6 @@ let g:ranger_command_override = 'ranger'
 " completor
 let g:completor_python_binary = "/usr/bin/python3"
 
-" vim & tmux navigation
 let g:tmux_navigator_no_mappings = 1
 
 nnoremap <silent> h :TmuxNavigateLeft<cr>
@@ -233,8 +245,8 @@ noremap <F10> :ALEFix<CR>
 nmap <F8> :TagbarToggle<CR>
 
 " buffers and splits
-noremap <leader>- :split<CR>
-noremap <leader>\ :vsplit<CR>
+noremap <leader>- :new<CR>
+noremap <leader>\ :vnew<CR>
 
 " fzf
 noremap <leader>p :FZF<CR>
@@ -262,20 +274,22 @@ inoremap <Right> <NOP>
 noremap q: <Nop>
 noremap Q <Nop>
 
-" spellchack
-noremap <F5> :setlocal spell! spell?<CR>
-
 " ranger
 noremap <leader>r :Ranger<CR>
 
 "
-" Colours
+" Colors
 "
 
 set t_Co=256
-highlight Visual       ctermfg=NONE   ctermbg=20      cterm=NONE
-highlight Search       ctermfg=16     ctermbg=172     cterm=NONE
-highlight StatusLineNC ctermfg=249    ctermbg=237     cterm=none
-highlight VertSplit    ctermfg=237    ctermbg=249
-highlight SpellBad     ctermfg=black  ctermbg=147    cterm=underline
-highlight CCSpellBad   ctermfg=black  ctermbg=147    cterm=underline
+highlight Visual                 ctermfg=NONE   ctermbg=20      cterm=NONE
+highlight Search                 ctermfg=16     ctermbg=172     cterm=NONE
+highlight StatusLineNC           ctermfg=249    ctermbg=237     cterm=none
+highlight VertSplit              ctermfg=237    ctermbg=249
+
+let g:CCSpellCheckMatchGroupName = 'SpellBad'
+highlight SpellBad               cterm=underline
+
+highlight NoCoverage             ctermbg=052
+highlight NoBranchCoverage       ctermbg=052
+highlight NoBranchCoverageTarget ctermbg=052
