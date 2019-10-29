@@ -264,7 +264,7 @@ update_interval=30
 
 [Containments][1][Applets][83][Configuration][sources]
 colors=#6ad8d8
-guessed_max_value=16127516
+guessed_max_value=16130052
 names=sys.mem/physical/used
 
 [Containments][1][Applets][84]
@@ -457,7 +457,7 @@ immutability=1
 plugin=org.kde.plasma.notifications
 
 [Containments][50][Applets][56][Configuration]
-PreloadWeight=5
+PreloadWeight=10
 
 [Containments][50][Applets][57]
 immutability=1

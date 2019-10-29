@@ -110,7 +110,7 @@ let g:ale_cpp_cppcheck_options = '--enable=all --std=c++14 --std=posix --inconcl
 let g:ale_cpp_parse_makefile = 2
 let g:ale_lint_delay = 100
 let g:ale_fixers = {'*': ['remove_trailing_lines', 'trim_whitespace'], 'c*': ['clang-format'], 'python': ['yapf'] }
-let g:ale_linters = {'python': ['flake8', 'mypy', 'pylint', 'prospector', 'pyflakes', 'pylama', 'vulture']}
+let g:ale_linters = {'python': ['flake8', 'mypy', 'pylint', 'prospector', 'pyflakes', 'pylama']}
 " let g:ale_fix_on_save = 1
 let g:ale_ruby_rubocop_options = '--parallel'
 let g:ale_c_parse_makefile = 1
