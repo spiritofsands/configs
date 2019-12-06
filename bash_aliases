@@ -47,3 +47,7 @@ alias tmux='TERM=xterm-256color tmux'
 clean_pycache() {
     fd -I __pycache__ | xargs rm -rf
 }
+
+fd() {
+    fdfind $@
+}

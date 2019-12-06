@@ -24,8 +24,8 @@ shopt -s checkwinsize
 [ -x /usr/bin/lesspipe ] && eval "$(SHELL=/bin/sh lesspipe)"
 
 # alias definitions.
-if [ -f ~/.bash_aliases ]; then
-    . ~/.bash_aliases
+if [ -f ~/.config/bash_aliases ]; then
+    . ~/.config/bash_aliases
 fi
 
 # enable programmable completion features
@@ -117,7 +117,7 @@ if [[ -d ~/.local/lib/fzf ]]; then
     source ~/.local/lib/fzf/shell/key-bindings.bash
   fi
 
-  export FZF_DEFAULT_COMMAND='fd --type f --exclude .git'
+  export FZF_DEFAULT_COMMAND='fdfind --type f --exclude .git'
   export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
 
   # Use fd
@@ -172,6 +172,8 @@ fi
 #  export PATH="$PATH:$HOME/.local/lib/cmake-3.5.1-Linux-x86_64/bin"
 #fi
 
-if [[ -d ~/.local/bin ]]; then
-export PATH="$PATH:$HOME/.local/bin"
+export PYENV_ROOT="$HOME/.pyenv"
+export PATH="$PYENV_ROOT/bin:$PATH"
+if command -v pyenv 1>/dev/null 2>&1; then
+  eval "$(pyenv init -)"
 fi

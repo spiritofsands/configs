@@ -1,7 +1,7 @@
 URxvt.termName: rxvt-unicode-256color
 ! URxvt.termName: xterm-256color
-URxvt.font: -xos4-terminus-*-*-*-*-18-*-*-*-*-*-*-*
-! URxvt.font: xft:terminus
+! URxvt.font: -*-terminus-*-*-*-*-18-*-*-*-*-*-*-*
+URxvt.font: xft:Hack::medium:pixelsize=17
 URxvt.saveLines: 0
 URxvt.skipScroll: true
 URxvt.lineSpace: 3
@@ -9,7 +9,7 @@ URxvt.utf8: 1
 URxvt.metaSendsEscape: true
 URxvt.eightBitInput: false
 URxvt.perl-ext-common: font-size
-URxvt.font-size.step: 5
+URxvt.font-size.step: 1
 URxvt.reverseVideo: false
 URxvt.iso14755 : false
 URxvt.letterSpace: 0

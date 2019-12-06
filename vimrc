@@ -79,8 +79,8 @@ Plug 'shinglyu/vim-codespell'
 
 " ctags
 "   sudo apt install universal-ctags global
-Plug 'ludovicchabant/vim-gutentags'
-Plug 'skywind3000/gutentags_plus'
+"Plug 'ludovicchabant/vim-gutentags'
+"Plug 'skywind3000/gutentags_plus'
 
 " ranger
 Plug 'francoiscabrol/ranger.vim'
@@ -104,6 +104,7 @@ let g:ale_lint_on_text_changed = 'normal'
 let g:ale_lint_on_insert_leave = 1
 let compiler_options = '--std=c++14 -pedantic -Wall -Wextra -Wcast-align -Wcast-qual -Wctor-dtor-privacy -Wdisabled-optimization -Wformat=2 -Winit-self -Wmissing-declarations -Wmissing-include-dirs -Wold-style-cast -Woverloaded-virtual -Wredundant-decls -Wshadow -Wsign-conversion -Wsign-promo -Wstrict-overflow=5 -Wswitch-default -Wundef -Werror -Wno-unused -Wno-deprecated-register'
 let g:ale_cpp_gcc_options = compiler_options
+let g:ale_cpp_clangd_options = '-isystem'
 let g:ale_cpp_clang_options = compiler_options
 let g:ale_cpp_clangtidy_checks = ['-android-*', '-abseil-*', '-fuschia-*', '-llvm-*', '-mpi*', '-objc-*', '-zircon-*']
 let g:ale_cpp_cppcheck_options = '--enable=all --std=c++14 --std=posix --inconclusive'

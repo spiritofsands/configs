@@ -1,8 +1,0 @@
-[Actions]
-EnableMagicMimeActions=false
-StripWhiteSpace=false
-
-[General]
-MaxClipItems=30
-SelectionTextOnly=false
-Version=5.14.0
