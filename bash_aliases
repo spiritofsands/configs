@@ -34,7 +34,7 @@ alert() {
 
 if _is_installed wine; then
     wine32() {
-        WINEPREFIX=~/.wine WINEARCH=win32 wine
+        WINEPREFIX=~/.wine WINEARCH=win32 wine $@
     }
 fi
 
