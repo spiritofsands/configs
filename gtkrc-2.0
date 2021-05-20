@@ -1,8 +1,5 @@
+# created by KDE Plasma, Thu Mar 18 10:20:07 2021
+#
 
-# Created by lxqt-config-appearance (DO NOT EDIT!)
-gtk-theme-name = "Adwaita"
-gtk-icon-theme-name = "Papirus"
-gtk-font-name = "Sans 11"
-gtk-button-images = 0
-gtk-menu-images = 0
-gtk-toolbar-style = GTK_TOOLBAR_TEXT
+gtk-alternative-button-order = 1
+

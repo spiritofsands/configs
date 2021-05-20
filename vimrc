@@ -5,21 +5,25 @@
 " SHELL
 "   bash-language-server: wget https://git.io/n-install -n
 "                         bash n-install -n -y
-"                         npm i -g bash-language-server
+"                         npm i bash-language-server
 "   shellcheck: wget https://storage.googleapis.com/shellcheck/shellcheck-stable.linux.x86_64.tar.xz
 "   shfmt: sudo add-apt-repository ppa:gophers/archive
 "          sudo apt update
 "          sudo apt install golang-1.11-go
 "          sudo ln -s /usr/lib/go-1.11/bin/go /usr/bin/go
 "          cd $(mktemp -d); go mod init tmp; go get mvdan.cc/sh/cmd/shfmt
+"
 " TEXT
-"   npm install -g alex proselint
-" FRONTEND
+"   npm install alex proselint
+"
+" WEB FRONTEND
 "   sudo apt install tidy
-"   npm install -g csslint prettier stylelint htmlhint eslint eslint-plugin-react babel-eslint babel-cli babel-preset-flow flow-bin
-" BACKEND
+"   npm install csslint prettier stylelint htmlhint eslint eslint-plugin-react babel-eslint babel-cli babel-preset-flow flow-bin
+"
+" RUBY
 "   gem install rails_best_practices brakeman reek rubocop fasterer
-" C linters
+"
+" C
 "   cppcheck: https://github.com/danmar/cppcheck/
 "   flawfinder: https://dwheeler.com/flawfinder/
 "   sudo apt install clang clang-tidy clang-format gcc
@@ -28,11 +32,16 @@
 "   cpplint:
 "       sudo apt install --no-install-recommends python3-pip python3-setuptools
 "       pip3 install wheel && pip3 install cpplint
-" C++ specific linters
-    " sudo apt install clazy
 "
-" Cmake
+" C++ specific linters
+" sudo apt install clazy
+"
+" CMAKE
 "   pip3 install cmakelint
+"
+" PYTHON
+"   pip3 install yapf flake8 mypy pylint mccabe pyflakes pylama pycodestyle pydocstyle
+"
 
 
 "
@@ -91,6 +100,9 @@ Plug 'christoomey/vim-tmux-navigator'
 " python code coverage
 Plug 'mgedmin/coverage-highlight.vim', { 'for': ['python'] }
 
+" python indentation
+Plug 'Vimjas/vim-python-pep8-indent', { 'for': ['python'] }
+
 call plug#end()
 
 
@@ -106,12 +118,13 @@ let compiler_options = '--std=c++14 -pedantic -Wall -Wextra -Wcast-align -Wcast-
 let g:ale_cpp_gcc_options = compiler_options
 let g:ale_cpp_clangd_options = '-isystem'
 let g:ale_cpp_clang_options = compiler_options
-let g:ale_cpp_clangtidy_checks = ['-android-*', '-abseil-*', '-fuschia-*', '-llvm-*', '-mpi*', '-objc-*', '-zircon-*']
-let g:ale_cpp_cppcheck_options = '--enable=all --std=c++14 --std=posix --inconclusive'
+let g:ale_cpp_clangtidy_checks = ['-android-*', '-abseil-*', '-fuchsia-*', '-llvm-*', '-mpi*', '-objc-*', '-zircon-*', '-modernize-use-trailing-return-type', '-llvmlibc-*']
+let g:ale_cpp_cppcheck_options = '--enable=all --std=c++14 --std=posix --inconclusive --inline-suppr'
 let g:ale_cpp_parse_makefile = 2
 let g:ale_lint_delay = 100
 let g:ale_fixers = {'*': ['remove_trailing_lines', 'trim_whitespace'], 'c*': ['clang-format'], 'python': ['yapf'] }
-let g:ale_linters = {'python': ['flake8', 'mypy', 'pylint', 'prospector', 'pyflakes', 'pylama']}
+" let g:ale_fix_on_save = 1
+let g:ale_linters = {'python': ['flake8', 'mypy', 'pylint', 'prospector', 'pyflakes', 'pylama', 'pycodestyle', 'pydocstyle']}
 " let g:ale_fix_on_save = 1
 let g:ale_ruby_rubocop_options = '--parallel'
 let g:ale_c_parse_makefile = 1
