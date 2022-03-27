@@ -55,7 +55,7 @@ __prompt_command() {
 
   local hostname=''
   if _is_ssh; then
-      hostname="$yellow\\h$reset_color "
+      hostname="SSH:$yellow\\h$reset_color "
   fi
 
   PS1="
@@ -71,6 +71,9 @@ set -o notify
 
 # disable ctrl+d
 set -o ignoreeof
+
+# set vi mode
+set -o vi
 
 # fix small typos
 shopt -s cdspell
@@ -97,7 +100,10 @@ stty -ixoff
 
 # add user's bin
 if [[ -d "$HOME/bin" ]]; then
-  export PATH="$PATH:$HOME/bin"
+    export PATH="$PATH:$HOME/bin"
+    if [[ -d "$HOME/bin/etc" ]]; then
+        export PATH="$PATH:$HOME/bin/etc"
+    fi
 fi
 
 # rbenv
@@ -125,9 +131,9 @@ if [[ -d "$HOME/.local/lib/fzf" ]]; then
 fi
 
 # npm n
-if [[ -d "$HOME~/.local/lib/n/bin" ]]; then
-  export PATH="$PATH:$HOME/.local/lib/n/bin"
-  export N_PREFIX="$HOME/.local/lib/n"
+if [[ -d "$HOME/n" ]]; then
+    export N_PREFIX="$HOME/n";
+    export PATH="$PATH:$N_PREFIX/bin"
 fi
 
 # cargo
@@ -148,8 +154,14 @@ if [[ -d "$HOME/bin/android-platform-tools" ]]; then
   export ANDROID_JACK_VM_ARGS="-Dfile.encoding=UTF-8 -XX:+TieredCompilation -Xmx5G"
 fi
 
-export PYENV_ROOT="$HOME/.pyenv"
-export PATH="$PYENV_ROOT/bin:$PATH"
-if command -v pyenv 1>/dev/null 2>&1; then
-  eval "$(pyenv init -)"
+if [[ -d "$HOME/.pyenv" ]]; then
+    export PYENV_ROOT="$HOME/.pyenv"
+    export PATH="$PYENV_ROOT/bin:$PATH"
+    if command -v pyenv 1>/dev/null 2>&1; then
+      eval "$(pyenv init -)"
+    fi
+fi
+
+if [ -d ~/.local/bin ]; then
+    export PATH="$PATH:$HOME/.local/bin"
 fi

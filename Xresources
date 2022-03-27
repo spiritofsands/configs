@@ -1,74 +1,67 @@
+!! Colorscheme
+
+! special
+*.foreground: #ffffff
+*.background: #000000
+*.cursorColor: #afbfbf
+
+! black
+*.color0: #263640
+*.color8: #4a697d
+
+! red
+*.color1: #d12f2c
+*.color9: #fa3935
+
+! green
+*.color2: #819400
+*.color10: #a4bd00
+
+! yellow
+*.color3: #b08500
+*.color11: #d9a400
+
+! blue
+*.color4: #2587cc
+*.color12: #2ca2f5
+
+! magenta
+*.color5: #696ebf
+*.color13: #8086e8
+
+! cyan
+*.color6: #289c93
+*.color14: #33c5ba
+
+! white
+*.color7: #bfbaac
+*.color15: #fdf6e3
+
+!! URxvt Appearance
 URxvt.termName: rxvt-unicode-256color
-! URxvt.termName: xterm-256color
-! URxvt.font: -*-terminus-*-*-*-*-18-*-*-*-*-*-*-*
-URxvt.font: xft:Hack::medium:pixelsize=17
-URxvt.saveLines: 0
-URxvt.skipScroll: true
-URxvt.lineSpace: 3
-URxvt.utf8: 1
+URxvt.font: -*-terminus-medium-*-normal-*-14-*-*-*-*-*-iso10646-1
+URxvt.boldFont: -*-terminus-medium-*-normal-*-14-*-*-*-*-*-iso10646-1
+URxvt.italicFont: -*-terminus-medium-*-normal-*-14-*-*-*-*-*-iso10646-1
+URxvt.boldItalicfont: -*-terminus-medium-*-normal-*-14-*-*-*-*-*-iso10645-1
+URxvt.letterSpace: 0
+URxvt.lineSpace: 2
+URxvt.geometry: 92x24
 URxvt.metaSendsEscape: true
 URxvt.eightBitInput: false
 URxvt.perl-ext-common: font-size
 URxvt.font-size.step: 1
+URxvt.internalBorder: 4
 URxvt.reverseVideo: false
 URxvt.iso14755 : false
-URxvt.letterSpace: 0
-URxvt.internalBorder: 0
 URxvt.skipBuiltinGlyphs: true
-
-! Dark color scheme
-URxvt.background: #000000
-URxvt.foreground: #FFFFFF
-URxvt.color0: #282828
-URxvt.color1: #cc241d
-URxvt.color2: #98971a
-URxvt.color3: #d79921
-URxvt.color4: #8fb5b7
-URxvt.color5: #b16286
-URxvt.color6: #689d6a
-URxvt.color7: #bdae93
-URxvt.color8: #7c6f64
-URxvt.color9: #fb4934
-URxvt.color10: #b8bb26
-URxvt.color11: #fabd2f
-URxvt.color12: #83a598
-URxvt.color13: #d3869b
-URxvt.color14: #8ec07c
-URxvt.color15: #ebdbb2
-URxvt.color24: #076678
-URxvt.color66: #427b58
-URxvt.color88: #9d0006
-URxvt.color96: #8f3f71
-URxvt.color100: #79740e
-URxvt.color108: #8ec07c
-URxvt.color109: #83a598
-URxvt.color130: #af3a03
-URxvt.color136: #b57614
-URxvt.color142: #b8bb26
-URxvt.color167: #fb4934
-URxvt.color175: #d3869b
-URxvt.color208: #fe8019
-URxvt.color214: #fabd2f
-URxvt.color223: #ebdbb2
-URxvt.color228: #f4e8ba
-URxvt.color229: #fdf4c1
-URxvt.color230: #ffffc8
-URxvt.color234: #1d2021
-URxvt.color235: #282828
-URxvt.color236: #32302f
-URxvt.color237: #3c3836
-URxvt.color239: #504945
-URxvt.color241: #665c54
-URxvt.color243: #7c6f64
-URxvt.color244: #928374
-URxvt.color245: #928374
-URxvt.color246: #a89984
-URxvt.color248: #bdae93
-URxvt.color250: #d5c4a1
-
-Xft.dpi: 96
-Xcursor.size: 32
-
+URxvt.cursorUnderline: false
+URxvt.saveline: 0
+URxvt.skipScroll: true
+URxvt.scrollBar: false
+URxvt.scrollBar_right: false
+URxvt.urgentOnBell: true
+URxvt.depth: 24
+!
 ! Fix meta+fN
 ! http://www.netswarm.net/misc/urxvt-xtermcompat.txt
 URxvt.keysym.F1: \033OP

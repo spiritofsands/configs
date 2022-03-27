@@ -3,10 +3,10 @@
 "
 
 " SHELL
-"   bash-language-server: wget https://git.io/n-install -n
+"   bash-language-server: wget https://git.io/n-install
 "                         bash n-install -n -y
 "                         npm i bash-language-server
-"   shellcheck: wget https://storage.googleapis.com/shellcheck/shellcheck-stable.linux.x86_64.tar.xz
+"   shellcheck: sudo apt install shellcheck
 "   shfmt: sudo add-apt-repository ppa:gophers/archive
 "          sudo apt update
 "          sudo apt install golang-1.11-go
@@ -21,12 +21,10 @@
 "   npm install csslint prettier stylelint htmlhint eslint eslint-plugin-react babel-eslint babel-cli babel-preset-flow flow-bin
 "
 " RUBY
-"   gem install rails_best_practices brakeman reek rubocop fasterer
+"   gem install --user-install rails_best_practices brakeman reek rubocop fasterer
 "
 " C
-"   cppcheck: https://github.com/danmar/cppcheck/
-"   flawfinder: https://dwheeler.com/flawfinder/
-"   sudo apt install clang clang-tidy clang-format gcc
+"   sudo apt install cppcheck flawfinder clang clang-tidy clang-format gcc
 "   cquery:
 "       https://github.com/cquery-project/cquery/wiki/Building-cquery
 "   cpplint:
@@ -125,7 +123,6 @@ let g:ale_lint_delay = 100
 let g:ale_fixers = {'*': ['remove_trailing_lines', 'trim_whitespace'], 'c*': ['clang-format'], 'python': ['yapf'] }
 " let g:ale_fix_on_save = 1
 let g:ale_linters = {'python': ['flake8', 'mypy', 'pylint', 'prospector', 'pyflakes', 'pylama', 'pycodestyle', 'pydocstyle']}
-" let g:ale_fix_on_save = 1
 let g:ale_ruby_rubocop_options = '--parallel'
 let g:ale_c_parse_makefile = 1
 
@@ -205,7 +202,7 @@ augroup END
 set nobackup
 set noswapfile
 set undofile
-set undodir=/home/kos/.vim/undo//
+set undodir=~/.vim/undo/
 set undolevels=1000
 set undoreload=1000
 

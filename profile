@@ -15,9 +15,3 @@ if [ -n "$BASH_VERSION" ]; then
         . "$HOME/.bashrc"
     fi
 fi
-
-export PATH="$HOME/.cargo/bin:$PATH"
-
-if [ -d ~/.local/bin ]; then
-    export PATH="$PATH:$HOME/.local/bin"
-fi
