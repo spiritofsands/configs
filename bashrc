@@ -113,10 +113,8 @@ if [[ -d "$HOME/.rbenv/bin" ]]; then
 fi
 
 # fzf
-if [[ -d "$HOME/.local/lib/fzf" ]]; then
-  if [[ -f "$HOME/.local/lib/fzf/shell/key-bindings.bash" ]]; then
-    source "$HOME/.local/lib/fzf/shell/key-bindings.bash"
-  fi
+if [[ -d "$HOME/bin/etc/fzf" ]]; then
+  source "$HOME/bin/etc/fzf/fzf.bash"
 
   export FZF_DEFAULT_COMMAND='fdfind --type f --exclude .git'
   export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
@@ -154,9 +152,10 @@ if [[ -d "$HOME/bin/android-platform-tools" ]]; then
   export ANDROID_JACK_VM_ARGS="-Dfile.encoding=UTF-8 -XX:+TieredCompilation -Xmx5G"
 fi
 
-if [[ -d "$HOME/.pyenv" ]]; then
-    export PYENV_ROOT="$HOME/.pyenv"
+if [[ -d "$HOME/bin/etc/pyenv" ]]; then
+    export PYENV_ROOT="$HOME/bin/etc/pyenv"
     export PATH="$PYENV_ROOT/bin:$PATH"
+    export PATH="$PYENV_ROOT/shims:${PATH}"
     if command -v pyenv 1>/dev/null 2>&1; then
       eval "$(pyenv init -)"
     fi
@@ -165,3 +164,5 @@ fi
 if [ -d ~/.local/bin ]; then
     export PATH="$PATH:$HOME/.local/bin"
 fi
+
+xrdb ~/.Xresources

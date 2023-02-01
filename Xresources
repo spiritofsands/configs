@@ -50,7 +50,7 @@ URxvt.metaSendsEscape: true
 URxvt.eightBitInput: false
 URxvt.perl-ext-common: font-size
 URxvt.font-size.step: 1
-URxvt.internalBorder: 4
+URxvt.internalBorder: 2
 URxvt.reverseVideo: false
 URxvt.iso14755 : false
 URxvt.skipBuiltinGlyphs: true

@@ -1,0 +1,12 @@
+[Common]
+ShadowColor=255,255,255
+ShadowSize=ShadowVeryLarge
+
+[Style]
+AnimationsEnabled=false
+WindowDragMode=WD_NONE
+
+[Windeco]
+AnimationsEnabled=false
+ButtonSize=ButtonSmall
+DrawBackgroundGradient=false
